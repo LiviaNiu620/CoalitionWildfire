@@ -535,8 +535,68 @@ class SFGame:
         return worst / scale
 
     # -- extragradient --------------------------------------------------
+    def potential(self, fH, fF):
+        """Convex potential value for the fixed-reference governance family."""
+        if self.coalitions is None or self.management_slope_mode != "reference":
+            raise RuntimeError("potential is defined here only for reference-mode coalitions")
+        x = self.edge_flow(fH, fF)
+        physical = np.sum(
+            self.t0 * x + self.t0 * BPR_B * x**(BPR_ETA + 1.0)
+            / ((BPR_ETA + 1.0) * self.cap**BPR_ETA)
+            + self.public_edge_penalty * x
+        )
+        own = fF @ self.A.T
+        management = 0.0
+        for block in self.coalitions:
+            idx = np.asarray(block, dtype=int)
+            governance = self.coalition_governance_matrix(block)
+            management += 0.5 * np.sum(
+                self.management_slope
+                * np.einsum("ie,ij,je->e", own[idx], governance, own[idx])
+            )
+        return float(physical + management)
+
+    def solve_potential(self, seed=0, tol=1e-8, max_iter=20000,
+                        verbose=False, warm=None, report_every=2000):
+        """Projected descent for the convex fixed-reference potential."""
+        fH, fF = (warm[0].copy(), warm[1].copy()) if warm is not None else self.initial(seed)
+        fH, fF = self.project(fH, fF)
+        gH, gF, *_ = self.operator(fH, fF)
+        step = 0.1 * self.total_dem / max(np.abs(gH).max(), np.abs(gF).max(), 1e-12)
+        current = self.potential(fH, fF)
+        best = np.inf
+        for it in range(max_iter):
+            accepted = False
+            for _ in range(50):
+                yH = fH - step * gH
+                yF = fF - step * gF
+                yH, yF = self.project(yH, yF)
+                trial = self.potential(yH, yF)
+                if trial <= current + 1e-12 * max(1.0, abs(current)):
+                    accepted = True
+                    break
+                step *= 0.5
+            if not accepted:
+                break
+            fH, fF = yH, yF
+            current = trial
+            gH, gF, *_ = self.operator(fH, fF)
+            if it % 25 == 0:
+                gap = self.vi_gap(fH, fF)
+                best = min(best, gap)
+                if verbose and it % report_every == 0:
+                    print(f"      it={it:6d} gap={gap:.3e} step={step:.2e}", flush=True)
+                if gap < tol:
+                    break
+            step = min(step * 1.05, 0.1 * self.total_dem / max(np.abs(gH).max(), np.abs(gF).max(), 1e-12))
+        gap = self.vi_gap(fH, fF)
+        x = self.edge_flow(fH, fF)
+        J = float(np.dot(x, bpr_cost(x, self.t0, self.cap)))
+        return dict(fH=fH, fF=fF, x=x, J=J, gap=gap, iters=it + 1,
+                    gamma=step, best_gap=best)
+
     def solve(self, seed=0, tol=1e-8, max_iter=20000, gamma0=None,
-              verbose=False, warm=None, report_every=2000):
+              verbose=False, warm=None, report_every=2000, method="extragradient"):
         """
         Korpelevich extragradient with an adaptive step.  For a monotone
         Lipschitz operator this converges to a solution of the VI; for the
@@ -550,6 +610,12 @@ class SFGame:
         quickly after a transient; a slow growth factor was the reason an
         earlier version stalled on the eight-operator case.
         """
+        if method == "potential":
+            if self.coalitions is None or self.management_slope_mode != "reference":
+                raise ValueError("potential method requires reference-mode coalition governance")
+            return self.solve_potential(seed=seed, tol=tol, max_iter=max_iter,
+                                        verbose=verbose, warm=warm,
+                                        report_every=report_every)
         if warm is not None:
             fH, fF = warm[0].copy(), warm[1].copy()
         else:

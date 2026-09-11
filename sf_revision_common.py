@@ -35,11 +35,15 @@ def remap_warm(old_keys, new_keys, sol, players):
     pos = {key: i for i, key in enumerate(old_keys)}
     f_h = np.zeros(len(new_keys))
     f_f = np.zeros((players, len(new_keys)))
+    if isinstance(sol, dict):
+        old_h, old_f = sol["fH"], sol["fF"]
+    else:
+        old_h, old_f = sol
     for j, key in enumerate(new_keys):
         i = pos.get(key)
         if i is not None:
-            f_h[j] = sol["fH"][i]
-            f_f[:, j] = sol["fF"][:, i]
+            f_h[j] = old_h[i]
+            f_f[:, j] = old_f[:, i]
     return f_h, f_f
 
 
@@ -48,8 +52,8 @@ def solve_profile(sf, routes, oracle, alpha, shares, lam_beta,
                   dem_firm_override=None, coalitions=None,
                   objective_types=None, coordination_gamma=0.0,
                   management_slope=None, management_slope_mode="reference",
-                  warm=None, max_rounds=25, solver_max_iter=20000,
-                  operational_pooling=False,
+                  warm=None, warm_keys=None, max_rounds=25, solver_max_iter=20000,
+                  solver_method="extragradient", operational_pooling=False,
                   public_edge_penalty=None, verbose=False):
     """Solve and certify one profile, expanding the shared route set."""
     graph, edge_idx = oracle
@@ -72,8 +76,12 @@ def solve_profile(sf, routes, oracle, alpha, shares, lam_beta,
         operational_pooling=operational_pooling,
     )
     player_count = len(shares)
-    current_warm = (warm if warm is not None
-                    and warm[1].shape == (player_count, game.P) else None)
+    current_warm = None
+    if warm is not None:
+        if warm[1].shape == (player_count, game.P):
+            current_warm = warm
+        elif warm_keys is not None:
+            current_warm = remap_warm(warm_keys, routes.keys(), warm, player_count)
 
     for rnd in range(max_rounds):
         sol = game.solve(
@@ -81,6 +89,7 @@ def solve_profile(sf, routes, oracle, alpha, shares, lam_beta,
             warm=current_warm,
             verbose=False,
             max_iter=solver_max_iter,
+            method=solver_method,
         )
         weights_h, _ = game.edge_weights(sol["fH"], sol["fF"])
         scale = max(float(np.max(game.A.T @ weights_h)), 1e-12)

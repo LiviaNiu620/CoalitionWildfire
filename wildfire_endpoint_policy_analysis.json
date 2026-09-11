@@ -1,0 +1,352 @@
+{
+  "status": "endpoint_policy_analysis",
+  "planning_data": true,
+  "note": "Only four representative partitions are audited; epsilon limits are diagnostics, not universal policy thresholds.",
+  "states": [
+    {
+      "scenario_id": "critical_edge_closure",
+      "alpha": 0.5,
+      "gamma": 0.5,
+      "tstt_best_partition_id": "P06",
+      "tstt_best_K": 2,
+      "pareto_partition_ids": [
+        "P01",
+        "P03",
+        "P06",
+        "P15"
+      ],
+      "pareto_size": 4,
+      "epsilon_choices": [
+        {
+          "critical_vc_limit": 1.7,
+          "feasible": false,
+          "selected_partition_id": null,
+          "selected_K": null,
+          "selected_J": null
+        },
+        {
+          "critical_vc_limit": 1.73,
+          "feasible": true,
+          "selected_partition_id": "P01",
+          "selected_K": 1,
+          "selected_J": 7672422.425305902
+        },
+        {
+          "critical_vc_limit": 1.75,
+          "feasible": true,
+          "selected_partition_id": "P06",
+          "selected_K": 2,
+          "selected_J": 7663463.693161732
+        },
+        {
+          "critical_vc_limit": 1.8,
+          "feasible": true,
+          "selected_partition_id": "P06",
+          "selected_K": 2,
+          "selected_J": 7663463.693161732
+        }
+      ]
+    },
+    {
+      "scenario_id": "critical_edge_closure",
+      "alpha": 0.5,
+      "gamma": 1.0,
+      "tstt_best_partition_id": "P06",
+      "tstt_best_K": 2,
+      "pareto_partition_ids": [
+        "P01",
+        "P03",
+        "P06",
+        "P15"
+      ],
+      "pareto_size": 4,
+      "epsilon_choices": [
+        {
+          "critical_vc_limit": 1.7,
+          "feasible": false,
+          "selected_partition_id": null,
+          "selected_K": null,
+          "selected_J": null
+        },
+        {
+          "critical_vc_limit": 1.73,
+          "feasible": true,
+          "selected_partition_id": "P06",
+          "selected_K": 2,
+          "selected_J": 7660899.768080616
+        },
+        {
+          "critical_vc_limit": 1.75,
+          "feasible": true,
+          "selected_partition_id": "P06",
+          "selected_K": 2,
+          "selected_J": 7660899.768080616
+        },
+        {
+          "critical_vc_limit": 1.8,
+          "feasible": true,
+          "selected_partition_id": "P06",
+          "selected_K": 2,
+          "selected_J": 7660899.768080616
+        }
+      ]
+    },
+    {
+      "scenario_id": "critical_edge_closure",
+      "alpha": 0.9,
+      "gamma": 0.5,
+      "tstt_best_partition_id": "P15",
+      "tstt_best_K": 4,
+      "pareto_partition_ids": [
+        "P01",
+        "P06",
+        "P15"
+      ],
+      "pareto_size": 3,
+      "epsilon_choices": [
+        {
+          "critical_vc_limit": 1.7,
+          "feasible": false,
+          "selected_partition_id": null,
+          "selected_K": null,
+          "selected_J": null
+        },
+        {
+          "critical_vc_limit": 1.73,
+          "feasible": true,
+          "selected_partition_id": "P01",
+          "selected_K": 1,
+          "selected_J": 7741651.081459289
+        },
+        {
+          "critical_vc_limit": 1.75,
+          "feasible": true,
+          "selected_partition_id": "P15",
+          "selected_K": 4,
+          "selected_J": 7625679.206187819
+        },
+        {
+          "critical_vc_limit": 1.8,
+          "feasible": true,
+          "selected_partition_id": "P15",
+          "selected_K": 4,
+          "selected_J": 7625679.206187819
+        }
+      ]
+    },
+    {
+      "scenario_id": "critical_edge_closure",
+      "alpha": 0.9,
+      "gamma": 1.0,
+      "tstt_best_partition_id": "P15",
+      "tstt_best_K": 4,
+      "pareto_partition_ids": [
+        "P01",
+        "P06",
+        "P15"
+      ],
+      "pareto_size": 3,
+      "epsilon_choices": [
+        {
+          "critical_vc_limit": 1.7,
+          "feasible": false,
+          "selected_partition_id": null,
+          "selected_K": null,
+          "selected_J": null
+        },
+        {
+          "critical_vc_limit": 1.73,
+          "feasible": true,
+          "selected_partition_id": "P06",
+          "selected_K": 2,
+          "selected_J": 7681704.276246214
+        },
+        {
+          "critical_vc_limit": 1.75,
+          "feasible": true,
+          "selected_partition_id": "P15",
+          "selected_K": 4,
+          "selected_J": 7625679.213461953
+        },
+        {
+          "critical_vc_limit": 1.8,
+          "feasible": true,
+          "selected_partition_id": "P15",
+          "selected_K": 4,
+          "selected_J": 7625679.213461953
+        }
+      ]
+    },
+    {
+      "scenario_id": "mild_capacity_degradation",
+      "alpha": 0.5,
+      "gamma": 0.5,
+      "tstt_best_partition_id": "P01",
+      "tstt_best_K": 1,
+      "pareto_partition_ids": [
+        "P01"
+      ],
+      "pareto_size": 1,
+      "epsilon_choices": [
+        {
+          "critical_vc_limit": 1.7,
+          "feasible": false,
+          "selected_partition_id": null,
+          "selected_K": null,
+          "selected_J": null
+        },
+        {
+          "critical_vc_limit": 1.73,
+          "feasible": false,
+          "selected_partition_id": null,
+          "selected_K": null,
+          "selected_J": null
+        },
+        {
+          "critical_vc_limit": 1.75,
+          "feasible": true,
+          "selected_partition_id": "P01",
+          "selected_K": 1,
+          "selected_J": 7843277.093277214
+        },
+        {
+          "critical_vc_limit": 1.8,
+          "feasible": true,
+          "selected_partition_id": "P01",
+          "selected_K": 1,
+          "selected_J": 7843277.093277214
+        }
+      ]
+    },
+    {
+      "scenario_id": "mild_capacity_degradation",
+      "alpha": 0.5,
+      "gamma": 1.0,
+      "tstt_best_partition_id": "P01",
+      "tstt_best_K": 1,
+      "pareto_partition_ids": [
+        "P01",
+        "P03",
+        "P06"
+      ],
+      "pareto_size": 3,
+      "epsilon_choices": [
+        {
+          "critical_vc_limit": 1.7,
+          "feasible": false,
+          "selected_partition_id": null,
+          "selected_K": null,
+          "selected_J": null
+        },
+        {
+          "critical_vc_limit": 1.73,
+          "feasible": true,
+          "selected_partition_id": "P01",
+          "selected_K": 1,
+          "selected_J": 7845974.041305787
+        },
+        {
+          "critical_vc_limit": 1.75,
+          "feasible": true,
+          "selected_partition_id": "P01",
+          "selected_K": 1,
+          "selected_J": 7845974.041305787
+        },
+        {
+          "critical_vc_limit": 1.8,
+          "feasible": true,
+          "selected_partition_id": "P01",
+          "selected_K": 1,
+          "selected_J": 7845974.041305787
+        }
+      ]
+    },
+    {
+      "scenario_id": "mild_capacity_degradation",
+      "alpha": 0.9,
+      "gamma": 0.5,
+      "tstt_best_partition_id": "P06",
+      "tstt_best_K": 2,
+      "pareto_partition_ids": [
+        "P01",
+        "P03",
+        "P06",
+        "P15"
+      ],
+      "pareto_size": 4,
+      "epsilon_choices": [
+        {
+          "critical_vc_limit": 1.7,
+          "feasible": false,
+          "selected_partition_id": null,
+          "selected_K": null,
+          "selected_J": null
+        },
+        {
+          "critical_vc_limit": 1.73,
+          "feasible": false,
+          "selected_partition_id": null,
+          "selected_K": null,
+          "selected_J": null
+        },
+        {
+          "critical_vc_limit": 1.75,
+          "feasible": true,
+          "selected_partition_id": "P01",
+          "selected_K": 1,
+          "selected_J": 7807504.3701672545
+        },
+        {
+          "critical_vc_limit": 1.8,
+          "feasible": true,
+          "selected_partition_id": "P06",
+          "selected_K": 2,
+          "selected_J": 7781979.058402477
+        }
+      ]
+    },
+    {
+      "scenario_id": "mild_capacity_degradation",
+      "alpha": 0.9,
+      "gamma": 1.0,
+      "tstt_best_partition_id": "P06",
+      "tstt_best_K": 2,
+      "pareto_partition_ids": [
+        "P01",
+        "P06",
+        "P15"
+      ],
+      "pareto_size": 3,
+      "epsilon_choices": [
+        {
+          "critical_vc_limit": 1.7,
+          "feasible": false,
+          "selected_partition_id": null,
+          "selected_K": null,
+          "selected_J": null
+        },
+        {
+          "critical_vc_limit": 1.73,
+          "feasible": true,
+          "selected_partition_id": "P01",
+          "selected_K": 1,
+          "selected_J": 7903149.413898598
+        },
+        {
+          "critical_vc_limit": 1.75,
+          "feasible": true,
+          "selected_partition_id": "P06",
+          "selected_K": 2,
+          "selected_J": 7785392.157498025
+        },
+        {
+          "critical_vc_limit": 1.8,
+          "feasible": true,
+          "selected_partition_id": "P06",
+          "selected_K": 2,
+          "selected_J": 7785392.157498025
+        }
+      ]
+    }
+  ]
+}

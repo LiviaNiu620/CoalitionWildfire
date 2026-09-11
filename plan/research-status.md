@@ -16,6 +16,8 @@ Date: 2026-09-11
 - Replaced the incidence-ranked hazard catalog with a spatial-footprint catalog: footprint nodes, interior closure candidates, boundary degraded edges, and separate critical edges are recorded. The V0/V2 comparison is now controlled for scenario geometry.
 - Added `public_edge_penalty` to the solver as a fixed common perceived-cost term for future risk/information experiments and extended the potential certificate to a nonzero penalty.
 - Ran and passed a reduced-OD no-hazard adapter regression harness. A full 528-OD 60-profile regression was attempted and interrupted after roughly six minutes because the current route-based projection solver produced no checkpoint output; it generated no result file and is recorded as a scalability bottleneck rather than a numerical pass.
+- Completed the full-OD endpoint hazard audit: 32/32 certified profiles for mild capacity degradation and critical-edge closure across representative grand/partial/singleton partitions, two AV penetrations, and two governance intensities.
+- Added full-OD endpoint Pareto and epsilon-constraint diagnostics. Critical-edge limits can select a different endpoint from TSTT minimization, but these are four-partition pilot diagnostics and not final policy thresholds.
 - Corrected the manuscript's potential/formation wording and added an explicit information-structure assumption, BPR fixed-reference limitation, and gamma=1 tangent-curvature caveat.
 - Added the optional solver switch `management_slope_mode="state"` for state-dependent BPR-slope diagnostics while preserving the default `"reference"` baseline behavior. The state-mode toy solve converged with zero reported VI gap and accounting-cost extraction succeeded.
 
