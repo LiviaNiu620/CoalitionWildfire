@@ -6,6 +6,7 @@ wildfire result until the all-OD scan and its validator are complete.
 from __future__ import annotations
 
 import json
+import argparse
 from pathlib import Path
 
 import numpy as np
@@ -16,18 +17,35 @@ from sf_revision_common import LAM_TIMES_M, SE, network_oracle, solve_benchmarks
 from wildfire_scenarios import apply_snapshot, build_snapshot, hazard_oracle
 
 
-OUT = Path("wildfire_sioux_falls_pilot_results.json")
+OUT = Path("wildfire_sioux_falls_pilot_v2_results.json")
 SHARES = np.full(4, 0.25)
 TYPES = np.array([0.5, 0.5, 1.5, 1.5])
 ALPHAS = (0.5, 0.9)
 GAMMAS = (0.5, 1.0)
 
 
+def hazard_reference_slope(sf, routes, lam_beta):
+    """Calibrate reference curvature from the same-state HDV-only UE."""
+    game = SE.SFGame(
+        sf, alpha=0.9, shares=[1.0], lam_beta=lam_beta,
+        routes=routes, mode="ue",
+    )
+    sol = game.solve(tol=1e-8, max_iter=20000, verbose=False)
+    if sol["gap"] > 1e-8:
+        raise RuntimeError(f"hazard HDV-only reference did not converge: {sol['gap']}")
+    return SE.bpr_deriv(sol["x"], game.t0, game.cap)
+
+
 def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--reference-mode", choices=("base", "hazard"), default="hazard")
+    parser.add_argument("--output", type=Path, default=Path("wildfire_sioux_falls_pilot_v2_results.json"))
+    args = parser.parse_args()
+    global OUT
+    OUT = args.output
     base, scenarios = build_snapshot(od_limit=20, demand_scale=1.0)
     total = sum(item["demand"] for item in base["od_list"])
     lam_beta = LAM_TIMES_M / (0.9 * total)
-    base_oracle = network_oracle()
     ue, ue_game, so = solve_benchmarks(base)
     base_slope = SE.bpr_deriv(ue["x"], ue_game.t0, ue_game.cap)
     rows = []
@@ -35,6 +53,10 @@ def main() -> None:
         sf = apply_snapshot(base, scenario)
         oracle = hazard_oracle(scenario)
         routes = SE.RouteSet(sf["od_list"])
+        hazard_slope = (
+            hazard_reference_slope(sf, routes, lam_beta)
+            if args.reference_mode == "hazard" else base_slope
+        )
         # The no-hazard profile is compared against the same reduced-OD base;
         # no committed full-network result is overwritten.
         for alpha in ALPHAS:
@@ -52,7 +74,7 @@ def main() -> None:
                         coalitions=partition,
                         objective_types=TYPES,
                         coordination_gamma=gamma,
-                        management_slope=base_slope,
+                        management_slope=hazard_slope,
                         warm=warm.get(pid),
                         max_rounds=12,
                     )
@@ -95,7 +117,11 @@ def main() -> None:
             "partitions": len(PARTITIONS),
             "alphas": list(ALPHAS),
             "gammas": list(GAMMAS),
-            "reference_slope": "base reduced-OD HDV UE derivative",
+            "reference_slope": (
+                "same-hazard-state reduced-OD HDV-only UE derivative"
+                if args.reference_mode == "hazard"
+                else "base-network reduced-OD HDV-only UE derivative reused in every hazard state"
+            ),
         },
         "scenarios": scenarios,
         "profiles": rows,

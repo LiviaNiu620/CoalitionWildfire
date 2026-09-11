@@ -12,7 +12,7 @@ from pathlib import Path
 import networkx as nx
 import numpy as np
 
-from sioux_falls_loader import build_sioux_falls, parse_net
+from sioux_falls_loader import build_sioux_falls, parse_net, DATA_DIR
 
 
 SCENARIO_SCHEMA = "wildfire_snapshot_v1"
@@ -28,18 +28,35 @@ def _edge_frequency(sf, limit=20):
 
 
 def scenario_catalog(sf, od_limit=20):
-    """Return deterministic smoke/pilot scenarios based on route incidence."""
+    """Return spatial-footprint scenarios with separate critical edges."""
     freq = _edge_frequency(sf, limit=od_limit)
     ranked = np.argsort(-freq)
-    focus = [int(e) for e in ranked if freq[e] > 0]
-    if not focus:
-        raise ValueError("no route-incidence edges available for scenarios")
-    # Prefer an edge with an alternate route for every selected OD.
-    closure = next(
-        edge for edge in focus
-        if all(any(edge not in path for path in od["paths"]) for od in sf["od_list"])
-    )
-    degraded = focus[: min(5, len(focus))]
+    links = parse_net(str(Path(DATA_DIR) / "SiouxFalls_net.tntp"))
+    graph = nx.Graph()
+    graph.add_edges_from((u, v) for u, v, _, _ in links)
+    seed = 5
+    footprint_nodes = sorted(nx.single_source_shortest_path_length(graph, seed, cutoff=1))
+    footprint = set(footprint_nodes)
+    interior = [
+        int(e) for e, (u, v, _, _) in enumerate(links)
+        if u in footprint and v in footprint and freq[e] > 0
+    ]
+    boundary = [
+        int(e) for e, (u, v, _, _) in enumerate(links)
+        if ((u in footprint) ^ (v in footprint)) and freq[e] > 0
+    ]
+    fallback = [int(e) for e in ranked if freq[e] > 0]
+    if not boundary:
+        boundary = fallback
+    degraded = boundary[: min(3, len(boundary))]
+    critical = [e for e in boundary if e not in degraded][: min(3, len(boundary))]
+    if not critical:
+        critical = [e for e in fallback if e not in degraded][: min(3, len(fallback))]
+    closure_candidates = [
+        e for e in interior
+        if all(any(e not in path for path in od["paths"]) for od in sf["od_list"])
+    ]
+    closure = closure_candidates[0] if closure_candidates else degraded[0]
     return [
         {
             "schema": SCENARIO_SCHEMA,
@@ -48,7 +65,9 @@ def scenario_catalog(sf, od_limit=20):
             "capacity_multiplier": {},
             "free_flow_multiplier": {},
             "risk_score": {},
-            "critical_edges": degraded[: min(3, len(degraded))],
+            "critical_edges": critical,
+            "footprint_nodes": footprint_nodes,
+            "degraded_edges": [],
             "public_information_delay": 0,
         },
         {
@@ -57,8 +76,10 @@ def scenario_catalog(sf, od_limit=20):
             "closed_edges": [],
             "capacity_multiplier": {str(e): 0.75 for e in degraded},
             "free_flow_multiplier": {},
-            "risk_score": {str(e): 0.25 for e in degraded},
-            "critical_edges": degraded,
+            "risk_score": {str(e): 0.25 for e in critical},
+            "critical_edges": critical,
+            "footprint_nodes": footprint_nodes,
+            "degraded_edges": degraded,
             "public_information_delay": 0,
         },
         {
@@ -67,18 +88,22 @@ def scenario_catalog(sf, od_limit=20):
             "closed_edges": [closure],
             "capacity_multiplier": {},
             "free_flow_multiplier": {},
-            "risk_score": {str(e): 1.0 for e in degraded},
-            "critical_edges": degraded,
+            "risk_score": {str(e): 1.0 for e in critical},
+            "critical_edges": critical,
+            "footprint_nodes": footprint_nodes,
+            "degraded_edges": [],
             "public_information_delay": 0,
         },
         {
             "schema": SCENARIO_SCHEMA,
             "scenario_id": "multiple_corridor_degradation",
             "closed_edges": [],
-            "capacity_multiplier": {str(e): 0.55 for e in degraded},
+            "capacity_multiplier": {str(e): 0.55 for e in boundary},
             "free_flow_multiplier": {str(e): 1.15 for e in degraded},
-            "risk_score": {str(e): 0.75 for e in degraded},
-            "critical_edges": degraded,
+            "risk_score": {str(e): 0.75 for e in critical},
+            "critical_edges": critical,
+            "footprint_nodes": footprint_nodes,
+            "degraded_edges": boundary,
             "public_information_delay": 1,
         },
     ]
@@ -108,6 +133,8 @@ def apply_snapshot(sf, scenario):
         "closed_edges": sorted(closed),
         "risk_score": {str(k): float(v) for k, v in scenario.get("risk_score", {}).items()},
         "critical_edges": [int(e) for e in scenario.get("critical_edges", [])],
+        "footprint_nodes": [int(n) for n in scenario.get("footprint_nodes", [])],
+        "degraded_edges": [int(e) for e in scenario.get("degraded_edges", [])],
         "public_information_delay": int(scenario.get("public_information_delay", 0)),
     }
     return out

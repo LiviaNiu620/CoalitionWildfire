@@ -30,6 +30,7 @@ def run_check() -> dict:
         objective_types=[0.5, 1.5],
         coordination_gamma=0.7,
         management_slope=[0.8, 1.1],
+        public_edge_penalty=[0.2, 0.1],
     )
     f_h, f_f = game.initial(seed=0)
     f_h[:] = [2.0, 2.0]
@@ -52,6 +53,7 @@ def run_check() -> dict:
         x = game.edge_flow(h, fleets)
         physical = np.sum(
             game.t0 * x + game.t0 * 0.15 * x**5 / (5.0 * game.cap**4)
+            + game.public_edge_penalty * x
         )
         own = fleets @ game.A.T
         management = 0.0

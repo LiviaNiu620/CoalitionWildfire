@@ -16,7 +16,7 @@ Acceptance: existing validators pass; no committed result changes; potential res
 
 ## Phase 1 static hazard snapshots
 
-Dataset: the Sioux Falls network plus scenario files generated from explicit edge-state rules. Each scenario records `scenario_id`, open/closed edges, capacity multiplier, free-flow multiplier, risk score, public-information delay, and critical-edge set.
+Dataset: the Sioux Falls network plus spatial-footprint scenario files generated from explicit edge-state rules. Each scenario records `scenario_id`, footprint nodes, open/closed edges, degraded edges, capacity multiplier, free-flow multiplier, risk score, public-information delay, and a critical-edge set that is disjoint from degraded edges whenever the network permits.
 
 Factors:
 
@@ -34,13 +34,13 @@ Acceptance: no-hazard outputs match Phase 0; every hazard profile has finite cos
 
 ## Phase 2 reference-curvature robustness
 
-Compare `bbar = kappa * c_prime(x_ref)` for `kappa in {0.25, 0.5, 1, 2, 4}` and for `x_ref` equal to hazard-state HDV-only and no-coordination reference flows. Re-run complete n=4 audits for selected hazard/order states.
+Treat the same-hazard-state HDV-only derivative as the primary wildfire reference. Compare it with the legacy base-network derivative and with `bbar = kappa_b * c_prime(x_ref)` for `kappa_b in {0.25, 0.5, 1, 2, 4}` and `x_ref` equal to hazard-state HDV-only and no-coordination reference flows. Re-run complete n=4 audits for selected hazard/order states.
 
 Report: best K, best partition, grand regret, partial-optimum frequency, transition boundary, and sensitivity intervals. Do not update `bbar` inside an iteration unless a new fixed-point model is explicitly specified.
 
 ## Phase 3 information and HDV robustness
 
-Perturb public road information with zero, one-window, and multi-window delay. Compare deterministic Wardrop with a bounded-rational or logit route-choice sensitivity. Keep the potential model as the primary benchmark and label alternatives as behavioral robustness.
+Use the optional fixed `public_edge_penalty` interface for common public risk/closure penalties. Perturb public road information with zero, one-window, and multi-window delay by separating perceived state from realized evaluation state. Compare deterministic Wardrop with a bounded-rational or logit route-choice sensitivity. Keep the potential model as the primary benchmark and label alternatives as behavioral robustness.
 
 Report: partition changes, TSTT change, critical-edge overload, AV order delay, and regret relative to the full-information policy.
 

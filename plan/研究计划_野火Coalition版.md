@@ -159,48 +159,29 @@ HDV：
 
 ### 3.7 监管者目标
 
-监管者选择 temporary operational partition \(\Pi\) 和 coordination intensity \(\gamma\)，评价：
+监管者选择 temporary operational partition \(\Pi\) 和 coordination intensity \(\gamma\)，首先报告结果向量：
 
 \[
-L^\omega(\Pi)
-=J_{\mathrm{TSTT}}^\omega(\Pi)
-+\lambda_AJ_{\mathrm{order}}^\omega(\Pi)
-+\lambda_RJ_{\mathrm{risk}}^\omega(\Pi)
-+\lambda_CJ_{\mathrm{critical}}^\omega(\Pi)
-+\lambda_GC_{\mathrm{gov}}(\Pi,\gamma).
+\left(J_{\mathrm{TSTT}}^\omega,J_{\mathrm{order}}^\omega,J_{\mathrm{risk}}^\omega,J_{\mathrm{critical}}^\omega,C_{\mathrm{gov}}\right).
 \]
 
-这里不使用 evacuee-specific objective。\(J_{\mathrm{critical}}\) 表示应急敏感道路的拥堵或容量占用，不等于居民疏散流。
+如需单一 regulator choice，主规则采用 epsilon-约束：在订单延误和 critical-corridor overload 的上限约束下最小化 TSTT 加治理成本。加权和只作为敏感性分析，因为订单延误已经部分包含在 TSTT 中，而当前 synthetic 情景中的 risk 和 critical 指标可能高度相关。这里不使用 evacuee-specific objective。
 
 ## 四、研究假设
 
-### H1：Coalition effect
+### H-A：HDV de-screening
 
-在 hazard state、订单 OD 和 HDV demand 相同的情况下，改变 coalition structure 会改变商业 AV route response 和网络拥堵。
+删除或降低 HDV 替代路径的容量会削弱 HDV 对 AV coalition response 的吸收，因此协调价值应随 substitute-route loss 上升。中介量是 activated response 的秩、范数或相对于 raw response 的保留比例。
 
-### H2：State dependence
+### H-B：Exposure-based grouping
 
-最优 coalition count 取决于道路关闭、容量退化、订单 corridor exposure、HDV response 和治理成本。
+对灾害关键道路具有相似暴露且共享使用边较多的运营商更可能从合并中受益；没有共享使用边的合并在 identity-preserving 模型下应当是惰性的。
 
-### H3：Partial coordination
+### H-C：Coalition versus access control
 
-Grand coalition 不一定普遍最优；在订单空间异质、路线暴露不同或治理成本较高时，partial coalition 可能更好。
+在给定 AV access restriction 或 order-retention rule 后，coalition design 仍可能改变网络拥堵和 critical-corridor burden；也可能出现组织结构近似无关的状态。两种结果都具有政策含义。
 
-### H4：HHI insufficiency
-
-相同公司质量和 HHI 下，不同订单 OD exposure、objective composition 和 coalition grouping 仍可产生不同结果。
-
-### H5：Reference-slope sensitivity
-
-高 AV load 下的 coalition transition 可能依赖 \(\bar b\) calibration，必须通过 state-dependent slope 和 reference-state robustness 检验。
-
-### H6：Information robustness
-
-公开道路信息延迟和 regulator-side state error 会增加 partition-selection regret，但不一定消除 coalition design 的价值。
-
-### H7：Score-guided selection
-
-固定-support merge score 可以作为 candidate screening 工具，但不能未经 finite-endpoint audit 就声称 global optimality。
+Reference-slope、information-error、HHI 和 merge-score 属于方法验证与诊断，不作为 substantive hypotheses。
 
 ## 五、实验阶段
 

@@ -1,46 +1,25 @@
 {
   "status": "regression",
   "source_baseline": "sf_coalition_partition_scan_results.json",
-  "network": "Sioux Falls OD limit 20",
+  "network": "Sioux Falls full OD",
   "scenario_id": "no_hazard",
   "profiles": [
     {
       "alpha": 0.5,
       "gamma": 0.5,
       "partition_id": "P01",
-      "new_J": 386738.18152215646,
-      "VI_gap": 7.35875968133585e-07,
-      "certified": true
-    },
-    {
-      "alpha": 0.5,
-      "gamma": 0.5,
-      "partition_id": "P02",
-      "new_J": 386738.1104239747,
-      "VI_gap": 4.102532252996193e-07,
-      "certified": true
-    },
-    {
-      "alpha": 0.5,
-      "gamma": 0.5,
-      "partition_id": "P03",
-      "new_J": 386738.16250700434,
-      "VI_gap": 6.479498589680982e-07,
-      "certified": true
-    },
-    {
-      "alpha": 0.5,
-      "gamma": 0.5,
-      "partition_id": "P04",
-      "new_J": 386738.1499323617,
-      "VI_gap": 5.899430536293246e-07,
-      "certified": true
+      "new_J": 7317045.333300418,
+      "VI_gap": 9.827228851780686e-07,
+      "certified": true,
+      "baseline_J": 7317045.333300418,
+      "abs_delta_J": 0.0,
+      "relative_delta_J": 0.0
     }
   ],
-  "baseline_comparable": false,
-  "max_abs_delta_J": null,
-  "max_relative_delta_J": null,
-  "max_VI_gap": 7.35875968133585e-07,
-  "certified_rows": 4,
+  "baseline_comparable": true,
+  "max_abs_delta_J": 0.0,
+  "max_relative_delta_J": 0.0,
+  "max_VI_gap": 9.827228851780686e-07,
+  "certified_rows": 1,
   "passed": true
 }

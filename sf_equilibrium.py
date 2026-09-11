@@ -177,7 +177,7 @@ class SFGame:
                  dem_firm_override=None, coalitions=None,
                  objective_types=None, coordination_gamma=0.0,
                  management_slope=None, management_slope_mode="reference",
-                 operational_pooling=False):
+                 public_edge_penalty=None, operational_pooling=False):
         """
         kappa      : prior slope multiplier.  The prior mean slope on edge e is
                      theta_bar_e = kappa * c'_e(x^UE_e), so beta0_e =
@@ -213,10 +213,21 @@ class SFGame:
                      current BPR derivative c'(x) in the coalition gradient.
                      The latter is an optional nonlinear atomic-internalization
                      diagnostic and is not a potential-game guarantee.
+        public_edge_penalty : optional nonnegative public route-cost addition
+                     applied to every population. It represents a declared
+                     common risk/information penalty and preserves the common
+                     potential when fixed during a solve.
         """
         self.sf, self.mode = sf, mode
         self.E = sf["edges"]
         self.t0, self.cap = sf["t0"], sf["cap"]
+        if public_edge_penalty is None:
+            self.public_edge_penalty = np.zeros(self.E)
+        else:
+            penalty = np.asarray(public_edge_penalty, dtype=float)
+            if penalty.shape != (self.E,) or np.any(penalty < 0):
+                raise ValueError("public_edge_penalty must be a nonnegative length-E vector")
+            self.public_edge_penalty = penalty
         self.routes = routes
         self.od_list = sf["od_list"]
         self.n_od = len(self.od_list)
@@ -407,7 +418,7 @@ class SFGame:
     def operator(self, fH, fF):
         """Return (grad_H, grad_F) : perceived marginal route costs."""
         x = self.edge_flow(fH, fF)
-        ce = bpr_cost(x, self.t0, self.cap)
+        ce = bpr_cost(x, self.t0, self.cap) + self.public_edge_penalty
         cp = bpr_deriv(x, self.t0, self.cap)
         if self.mode == "so":
             eff = ce + x * cp
@@ -443,7 +454,7 @@ class SFGame:
         the plain shortest path and the test fires spuriously.
         """
         x = self.edge_flow(fH, fF)
-        ce = bpr_cost(x, self.t0, self.cap)
+        ce = bpr_cost(x, self.t0, self.cap) + self.public_edge_penalty
         cp = bpr_deriv(x, self.t0, self.cap)
         if self.mode == "so":
             w = ce + x * cp

@@ -48,9 +48,9 @@ def solve_profile(sf, routes, oracle, alpha, shares, lam_beta,
                   dem_firm_override=None, coalitions=None,
                   objective_types=None, coordination_gamma=0.0,
                   management_slope=None, management_slope_mode="reference",
-                  warm=None, max_rounds=25,
+                  warm=None, max_rounds=25, solver_max_iter=20000,
                   operational_pooling=False,
-                  verbose=False):
+                  public_edge_penalty=None, verbose=False):
     """Solve and certify one profile, expanding the shared route set."""
     graph, edge_idx = oracle
     game = SE.SFGame(
@@ -68,6 +68,7 @@ def solve_profile(sf, routes, oracle, alpha, shares, lam_beta,
         coordination_gamma=coordination_gamma,
         management_slope=management_slope,
         management_slope_mode=management_slope_mode,
+        public_edge_penalty=public_edge_penalty,
         operational_pooling=operational_pooling,
     )
     player_count = len(shares)
@@ -75,7 +76,12 @@ def solve_profile(sf, routes, oracle, alpha, shares, lam_beta,
                     and warm[1].shape == (player_count, game.P) else None)
 
     for rnd in range(max_rounds):
-        sol = game.solve(tol=VI_TOL, warm=current_warm, verbose=False)
+        sol = game.solve(
+            tol=VI_TOL,
+            warm=current_warm,
+            verbose=False,
+            max_iter=solver_max_iter,
+        )
         weights_h, _ = game.edge_weights(sol["fH"], sol["fF"])
         scale = max(float(np.max(game.A.T @ weights_h)), 1e-12)
         violations, worst = SE.certificate(

@@ -54,7 +54,7 @@ The exact activated-response theorem remains affine and support-conditional. BPR
 
 ## HDV information
 
-Baseline HDVs observe public road travel-time and closure information and respond through deterministic Wardrop conditions. They do not observe private company objectives or private order portfolios and are not directly routed. Information delay and bounded rationality are robustness treatments.
+Baseline HDVs observe public road travel-time and closure information and respond through deterministic Wardrop conditions. They do not observe private company objectives or private order portfolios and are not directly routed. A fixed `public_edge_penalty` can represent a common public risk signal in the perceived cost; delayed information uses a stale perceived penalty while realized TSTT uses the current physical state. Information delay and bounded rationality are robustness treatments.
 
 ## Regulator objective
 
@@ -73,6 +73,7 @@ L^s(\Pi)=J_{\mathrm{TSTT}}^s(\Pi)+\lambda_AJ_{\mathrm{order}}^s(\Pi)+\lambda_RJ_
 5. HDVs are ordinary informed but uncontrolled users.
 6. Physical costs are common across vehicle classes.
 7. Fixed-reference governance is symmetric PSD in the primary potential benchmark.
-8. Reference curvature is a declared calibration parameter, not an unobserved implementation detail.
+8. Reference curvature is a declared calibration parameter; same-hazard-state HDV-only slope is the primary application calibration and base-network slope is a misspecification control.
 9. The primary partition is regulator-selected, not a voluntary stable formation outcome.
 10. Real wildfire and operator data are used for calibration/validation only when available; otherwise scenarios are labeled synthetic or calibrated.
+11. AV-specific feasible-edge sets are a declared extension. They require separate AV/HDV route sets and are not assumed by the current shared-route solver.

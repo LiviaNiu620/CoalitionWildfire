@@ -12,15 +12,15 @@ When wildfire-induced network disruption changes road accessibility and public i
 
 ## Research hypotheses
 
-H1. Coalition structure changes network performance because joint routing authority changes the aggregate AV response even when order ownership and OD obligations are fixed.
+The paper separates substantive hypotheses from method checks. The substantive hypotheses are:
 
-H2. The preferred coalition count is state-dependent. Grand coordination is not uniformly optimal because order exposure, objective heterogeneity, hazard topology, HDV rerouting, and governance burden can favor partial coordination.
+H-A (de-screening). Removing or degrading HDV substitute routes increases the portion of the AV coalition response that remains active in edge space, so the value of coordination rises with the loss of substitute-route capacity.
 
-H3. Company mass or HHI is not a sufficient emergency coordination state. Holding mass concentration fixed, order exposure to critical corridors and member objective composition can change the preferred partition.
+H-B (exposure-based grouping). Operators with similar exposure to emergency-sensitive corridors and substantial shared route incidence are more likely to benefit from coordination than operators with disjoint exposure; merges with no shared used edges are behaviorally inert under the identity-preserving model.
 
-H4. A fixed reference-curvature calibration can alter high-AV-load rankings. State-dependent slope and reference-state robustness are therefore required before interpreting a grand-to-partial transition.
+H-C (coordination versus access control). After a declared AV access restriction or order-retention rule is fixed, coalition design can still change the remaining network congestion and critical-corridor burden; alternatively, the restriction can make organization nearly irrelevant. Both outcomes are policy-relevant and will be reported.
 
-H5. A response-aware merge score can reduce equilibrium solves, but it is a fixed-support screening tool rather than a global optimality guarantee.
+Reference-curvature, information-error, HHI, and merge-score results are method-validation diagnostics rather than substantive hypotheses.
 
 ## Institutional setting
 
@@ -64,15 +64,13 @@ with a symmetric PSD quadratic governance term. Under fixed-reference curvature,
 +\sum_{C\in\Pi}\Psi_{C,t}(y_t^C).
 \]
 
-HDVs use public experienced road costs and optional public risk penalties. They are informed but not directly controllable. The regulator selects \(\Pi_t\) and coordination intensity \(\gamma_t\), then evaluates the continuation equilibrium using
+HDVs use public experienced road costs and optional public risk penalties. They are informed but not directly controllable. The regulator selects \(\Pi_t\) and coordination intensity \(\gamma_t\), then reports the outcome vector
 
 \[
-L_t^\omega(\Pi_t)=J_{\mathrm{TSTT}}
-+\lambda_AJ_{\mathrm{order}}
-+\lambda_RJ_{\mathrm{risk}}
-+\lambda_CJ_{\mathrm{critical}}
-+\lambda_GC_{\mathrm{gov}}.
+\left(J_{\mathrm{TSTT}},J_{\mathrm{order}},J_{\mathrm{risk}},J_{\mathrm{critical}},C_{\mathrm{gov}}\right).
 \]
+
+When a single regulator choice is required, the primary rule is an epsilon-constrained design: minimize network TSTT plus governance burden subject to declared upper bounds on order delay and critical-corridor overload. Weighted sums are secondary sensitivity analyses because order delay is already part of TSTT and risk/critical indicators can be correlated in synthetic scenarios.
 
 ## Work packages
 

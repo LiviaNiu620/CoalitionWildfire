@@ -24,6 +24,8 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--od-limit", type=int, default=20)
     parser.add_argument("--max-profiles", type=int, default=4)
+    parser.add_argument("--resume", action="store_true")
+    parser.add_argument("--solver-max-iter", type=int, default=20000)
     args = parser.parse_args()
     od_limit = None if args.od_limit <= 0 else args.od_limit
     base, scenarios = build_snapshot(od_limit=od_limit, demand_scale=1.0)
@@ -39,17 +41,25 @@ def main() -> None:
     lookup = ({(r["alpha"], r["gamma"], r["partition_id"]): r for r in baseline["profiles"]}
               if baseline is not None else {})
     rows = []
+    if args.resume and OUT.exists():
+        old = json.loads(OUT.read_text())
+        if old.get("status") in {"running", "regression"}:
+            rows = list(old.get("profiles", []))
+    done = {(r["alpha"], r["gamma"], r["partition_id"]) for r in rows}
     target = min(args.max_profiles, len(ALPHAS) * len(GAMMAS) * len(PARTITIONS))
     for alpha in ALPHAS:
         for gamma in GAMMAS:
             warm = {}
             for partition in PARTITIONS:
                 pid = PARTITION_IDS[partition]
+                if (alpha, gamma, pid) in done:
+                    continue
                 sol, game = solve_profile(
                     sf, routes, oracle, alpha, SHARES, lam_beta,
                     coalitions=partition, objective_types=TYPES,
                     coordination_gamma=gamma, management_slope=slope,
                     warm=warm.get(pid), max_rounds=25,
+                    solver_max_iter=args.solver_max_iter,
                 )
                 row = {
                     "alpha": alpha,
@@ -69,6 +79,7 @@ def main() -> None:
                         ),
                     )
                 rows.append(row)
+                done.add((alpha, gamma, pid))
                 warm[pid] = (sol["fH"], sol["fF"])
                 # Checkpoint after every profile so long runs remain inspectable.
                 OUT.write_text(json.dumps({"status": "running", "profiles": rows}, indent=2) + "\n")
