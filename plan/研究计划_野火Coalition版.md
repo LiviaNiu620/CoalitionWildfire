@@ -262,15 +262,7 @@ Reference-slope、information-error、HHI 和 merge-score 属于方法验证与�
 
 目的：确认 hazard state 是否真的改变 coalition ranking。
 
-设计：
-
-- n=4；
-- 全部 15 个 partitions；
-- ordinary HDV；
-- fixed commercial AV OD；
-- no hazard、capacity loss、critical closure、multiple degradation；
-- 两个 AV load；
-- 两个 gamma。
+核心设计：n=4、全部 15 个 partitions、ordinary HDV、fixed commercial AV OD；3 类 hazard（local footprint、critical-corridor closure、multiple-corridor degradation）× 3 个 severity × \(\alpha\in\{0.3,0.6,0.9\}\) × \(\gamma\in\{0.25,0.5,0.75\}\) × 2 种订单暴露设计，共 162 个状态，即每种 slope mode 2,430 个 profiles。总需求 \(D\)、AV 份额 \(\alpha\) 和订单保留比例 \(\rho\) 分开定义，不再使用与 \(\alpha\) 重叠的 AV load 因子。更宽的参数空间使用分层或 Latin-hypercube 采样。
 
 报告：
 
@@ -289,10 +281,11 @@ Reference-slope、information-error、HHI 和 merge-score 属于方法验证与�
 
 扫描因素：
 
-- hazard severity；
-- closure topology；
+- hazard class and severity；
 - capacity multiplier；
-- AV load；
+- total demand \(D\)；
+- AV share \(\alpha\)；
+- accepted-order retention \(\rho\)；
 - order exposure to critical corridors；
 - objective composition；
 - gamma；

@@ -18,17 +18,9 @@ Acceptance: existing validators pass; no committed result changes; potential res
 
 Dataset: the Sioux Falls network plus spatial-footprint scenario files generated from explicit edge-state rules. Each scenario records `scenario_id`, footprint nodes, open/closed edges, degraded edges, capacity multiplier, free-flow multiplier, risk score, public-information delay, and a critical-edge set that is disjoint from degraded edges whenever the network permits.
 
-Factors:
+Core design (before any broad sweep): 3 hazard classes (local footprint, critical-corridor closure, multi-corridor degradation) x 3 severity levels x `alpha in {0.3, 0.6, 0.9}` x `gamma in {0.25, 0.5, 0.75}` x 2 order-exposure designs (low versus high overlap with critical edges) = 162 states. Each selected state has all 15 n=4 partitions, or 2,430 profiles per slope mode. Use total demand `D`, AV share `alpha`, and accepted-order retention `rho` as separate variables; do not use an ambiguous AV-order-load factor that duplicates `alpha`. Broader parameter ranges are sampled with stratification or Latin hypercube after the core design.
 
-- hazard severity: none, mild, moderate, severe;
-- disruption pattern: local closure, corridor closure, multiple closures, asymmetric north/south degradation;
-- AV order load: low, medium, high;
-- order exposure: low, mixed, high overlap with critical edges;
-- AV penetration: 0.1, 0.3, 0.5, 0.7, 0.9;
-- governance intensity: 0, 0.25, 0.5, 0.75, 1;
-- partition: all 15 n=4 partitions for audit states.
-
-Metrics: network TSTT, commercial AV order delay/detour, critical-edge overload, risk-weighted road use, governance burden, best partition set, best K, and regret of fixed grand/singleton policies.
+Metrics: network TSTT, commercial AV order delay/detour, critical-edge volume-to-capacity, risk-weighted road use, governance burden, best partition set, best K, and regret of fixed grand/singleton policies. Report the full outcome vector before applying any epsilon-constrained regulator rule.
 
 Acceptance: no-hazard outputs match Phase 0; every hazard profile has finite costs, valid routes, VI gap <= 1e-6, and relative omitted-route slack <= 1e-6.
 

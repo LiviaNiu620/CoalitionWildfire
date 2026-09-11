@@ -30,7 +30,7 @@ Gate B: no-hazard results match baseline within `1e-8` relative TSTT; every haza
 
 Purpose: test whether hazard state can change coalition ranking before launching a large grid.
 
-Design: n=4, all 15 partitions, ordinary HDVs, fixed commercial AV OD, two AV loads, two governance intensities, and four hazard scenarios (none, capacity loss, one critical closure, multiple degradation). Run fixed-reference and state-slope diagnostic modes separately.
+Design: n=4, all 15 partitions, ordinary HDVs, fixed commercial AV OD, three hazard classes, three severity levels, `alpha in {0.3, 0.6, 0.9}`, `gamma in {0.25, 0.5, 0.75}`, and two order-exposure designs. This is 162 states and 2,430 profiles per slope mode. Keep total demand `D`, AV share `alpha`, and order-retention fraction `rho` distinct. Run fixed-reference and same-hazard-state slope modes separately.
 
 Data: Sioux Falls plus Stage B scenarios.
 
