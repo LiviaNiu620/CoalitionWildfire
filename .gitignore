@@ -11,3 +11,6 @@ repo_add.zip
 *.synctex.gz
 *.fdb_latexmk
 *.fls
+
+# experiment logs in prototype/ are results, keep them
+!prototype/*.log

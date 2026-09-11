@@ -1,0 +1,2 @@
+0 0.5 1.0 pred sign acc 0.673 {'one_step': (0.227, 84), 'two_step': (0.0, 533), 'pred2_k2': (0.765, 15), 'pred2_k3': (0.199, 46)}
+1 0.5 1.0 pred sign acc 0.668 {'one_step': (0.286, 84), 'two_step': (0.0, 533), 'pred2_k2': (0.0, 23), 'pred2_k3': (0.0, 47)}

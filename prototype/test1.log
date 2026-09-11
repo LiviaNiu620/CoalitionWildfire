@@ -1,0 +1,20 @@
+== braess alpha=0.5: routes=3, vars=15
+ solve time 0.004s  J=310408.1633  compl-res=6.2e-15 minrc=-1.2e-12
+  merge [0] [2]  adjoint=-5964.97  FD=-5964.95
+  merge [0, 1] [2, 3]  adjoint=-23859.9  FD=-23859.6
+  merge [1] [3]  adjoint=-5964.97  FD=-5964.95
+== braess alpha=0.9: routes=3, vars=15
+ solve time 0.001s  J=290718.3673  compl-res=4.4e-15 minrc=-9.7e-13
+  merge [0] [2]  adjoint=-8446.4  FD=-8446.34
+  merge [0, 1] [2, 3]  adjoint=-33785.6  FD=-33784.7
+  merge [1] [3]  adjoint=-8446.4  FD=-8446.34
+== grid alpha=0.5: routes=31, vars=155
+ solve time 0.260s  J=189576.9308  compl-res=9.4e-16 minrc=-1.8e-13
+  merge [0] [2]  adjoint=-6.03143  FD=-6.03107
+  merge [0, 1] [2, 3]  adjoint=-24.1257  FD=-24.1241
+  merge [1] [3]  adjoint=-6.03143  FD=-6.03107
+== grid alpha=0.9: routes=31, vars=155
+ solve time 0.230s  J=189507.1798  compl-res=2.0e-15 minrc=-7.1e-13
+  merge [0] [2]  adjoint=-21.4425  FD=-21.4411
+  merge [0, 1] [2, 3]  adjoint=-85.7698  FD=-85.7627
+  merge [1] [3]  adjoint=-21.4425  FD=-21.4411

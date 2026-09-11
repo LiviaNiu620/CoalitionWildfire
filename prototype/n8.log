@@ -1,0 +1,6 @@
+0 0.9 1.0 optK [1] grand 0.000 one_step:0.000/85 two_step:0.000/533 surrogate+refine:0.000/10 audit 4140 partitions 246s
+0 0.5 1.0 optK [3] grand 0.199 one_step:0.227/84 two_step:0.000/533 surrogate+refine:0.199/10 audit 4140 partitions 990s
+1 0.9 1.0 optK [1] grand 0.000 one_step:0.000/85 two_step:0.000/533 surrogate+refine:0.000/10 audit 4140 partitions 203s
+1 0.5 1.0 optK [1] grand 0.000 one_step:0.286/84 two_step:0.000/533 surrogate+refine:0.000/10 audit 4140 partitions 100s
+2 0.9 1.0 optK [1] grand 0.000 one_step:0.000/85 two_step:0.000/533 surrogate+refine:0.000/10 audit 4140 partitions 62s
+2 0.5 1.0 optK [3] grand 0.163 one_step:0.000/84 two_step:0.000/533 surrogate+refine:0.163/10 audit 4140 partitions 118s

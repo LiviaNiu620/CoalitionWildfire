@@ -1,0 +1,5 @@
+grid a=0.7 g=1.0: frozen pick ((0, 1, 2), (3,)) -> regret 12.06 pp ; grand-vs-singleton (true) 48.47 pp
+grid a=0.9 g=0.5: frozen pick ((0, 1), (2, 3)) -> regret 12.50 pp ; grand-vs-singleton (true) 30.40 pp
+grid a=0.9 g=1.0: frozen pick ((0, 1), (2, 3)) -> regret 8.17 pp ; grand-vs-singleton (true) 34.17 pp
+braess a=0.5 g=1.0: frozen pick ((0, 1, 2), (3,)) -> regret 2.53 pp ; grand-vs-singleton (true) 29.25 pp
+braess a=0.9 g=1.0: frozen pick ((0, 1, 2), (3,)) -> regret 7.53 pp ; grand-vs-singleton (true) 35.64 pp

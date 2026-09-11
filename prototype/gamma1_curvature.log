@@ -1,0 +1,3 @@
+gamma 0.5  min eig(Z^T H_C Z) = -1.826e-16   max = 7.531e-01
+gamma 0.9  min eig(Z^T H_C Z) = -2.378e-16   max = 8.730e-01
+gamma 1.0  min eig(Z^T H_C Z) = -2.523e-16   max = 9.066e-01
