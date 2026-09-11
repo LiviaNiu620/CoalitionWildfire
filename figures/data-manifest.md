@@ -11,6 +11,9 @@
 | Sioux Falls coalition composition | `sf_coalition_composition_results.json`, `sf_coalition_composition_summary.json` | `response_paper/figures/gen_fig_sf_coalition_composition.py` | `response_paper/figures/fig_sf_coalition_composition.pdf`, `.png`, `.svg` | Real, 40/40 certified identity-preserving coalition profiles |
 | Sioux Falls coalition degree | `sf_coalition_degree_results.json`, `sf_coalition_degree_summary.json` | `response_paper/figures/gen_fig_sf_coalition_degree.py` | `response_paper/figures/fig_sf_coalition_degree.pdf`, `.png`, `.svg` | Real, 54/54 certified profiles |
 | Regime and cross-network validation | `regime_theorem_verification.json`, `cross_network_regime_summary.json`, `sf_coalition_design_analysis.json` | `response_paper/figures/gen_fig_regime_validation.py` | `response_paper/figures/fig_regime_validation.pdf`, `.png`, `.svg` | Real analytical and certified results; 480/480 cross-network profiles |
+| Wildfire hazard regime map | Planned hazard-state summary JSON | Planned generator | best-K and regret heatmaps | Pending; no manuscript figure until certified |
+| Reference-curvature transition stability | Planned V0/V1/V2 summary JSON | Planned generator | transition and cross-regret figure | Pending; no manuscript figure until certified |
+| Merge-score accuracy and savings | Planned score audit JSON | Planned generator | accuracy/regret/solve-count figure | Pending; no manuscript figure until certified |
 
 All numerical figures must be regenerated from committed machine-readable data.
 No mock or planning values may enter manuscript prose.

@@ -176,7 +176,8 @@ class SFGame:
                  kappa=None, theta_bar=None, beta_override=None,
                  dem_firm_override=None, coalitions=None,
                  objective_types=None, coordination_gamma=0.0,
-                 management_slope=None, operational_pooling=False):
+                 management_slope=None, management_slope_mode="reference",
+                 operational_pooling=False):
         """
         kappa      : prior slope multiplier.  The prior mean slope on edge e is
                      theta_bar_e = kappa * c'_e(x^UE_e), so beta0_e =
@@ -207,6 +208,11 @@ class SFGame:
                      the coalition management objective.  It is fixed during
                      the equilibrium solve, so the added objective is convex
                      quadratic even though physical BPR costs remain nonlinear.
+        management_slope_mode : ``reference`` uses management_slope as a fixed
+                     curvature (the paper's baseline); ``state`` uses the
+                     current BPR derivative c'(x) in the coalition gradient.
+                     The latter is an optional nonlinear atomic-internalization
+                     diagnostic and is not a potential-game guarantee.
         """
         self.sf, self.mode = sf, mode
         self.E = sf["edges"]
@@ -265,6 +271,9 @@ class SFGame:
         self.objective_types = None
         self.coordination_gamma = float(coordination_gamma)
         self.operational_pooling = bool(operational_pooling)
+        if management_slope_mode not in {"reference", "state"}:
+            raise ValueError("management_slope_mode must be 'reference' or 'state'")
+        self.management_slope_mode = management_slope_mode
         self.management_slope = None
         if coalitions is not None:
             if mode != "eq":
@@ -278,9 +287,16 @@ class SFGame:
             types = np.asarray(objective_types, dtype=float)
             if types.shape != (self.K,) or np.any(types <= 0):
                 raise ValueError("objective_types must be a positive length-K vector")
-            slope = np.asarray(management_slope, dtype=float)
-            if slope.shape != (self.E,) or np.any(slope < 0):
-                raise ValueError("management_slope must be a nonnegative length-E vector")
+            if management_slope_mode == "reference":
+                if management_slope is None:
+                    raise ValueError("management_slope is required in reference mode")
+                slope = np.asarray(management_slope, dtype=float)
+                if slope.shape != (self.E,) or np.any(slope < 0):
+                    raise ValueError("management_slope must be a nonnegative length-E vector")
+            else:
+                slope = None if management_slope is None else np.asarray(management_slope, dtype=float)
+                if slope is not None and (slope.shape != (self.E,) or np.any(slope < 0)):
+                    raise ValueError("management_slope must be a nonnegative length-E vector")
             self.coalitions = tuple(blocks)
             self.objective_types = types
             self.management_slope = slope
@@ -295,7 +311,7 @@ class SFGame:
 
         self.rebuild()
 
-    def coalition_management_edge_gradient(self, own_edge_flows):
+    def coalition_management_edge_gradient(self, own_edge_flows, cp=None):
         """Return the convex quadratic management gradient for every company.
 
         Companies remain separate flow coordinates and preserve their own OD
@@ -305,11 +321,17 @@ class SFGame:
         """
         if self.coalitions is None:
             raise RuntimeError("coalition governance is not configured")
+        if self.management_slope_mode == "state":
+            if cp is None:
+                raise ValueError("state slope mode requires current BPR derivatives")
+            slope = np.asarray(cp, dtype=float)
+        else:
+            slope = self.management_slope
         out = np.zeros_like(own_edge_flows)
         for block in self.coalitions:
             idx = np.asarray(block, dtype=int)
             governance = self.coalition_governance_matrix(block)
-            out[idx] = (governance @ own_edge_flows[idx]) * self.management_slope
+            out[idx] = (governance @ own_edge_flows[idx]) * slope
         return out
 
     def coalition_governance_matrix(self, block):
@@ -403,7 +425,7 @@ class SFGame:
                 th = self.perceived_slope(cp, xk)   # (K, E)
                 marginal_management = th * xk
             else:
-                marginal_management = self.coalition_management_edge_gradient(xk)
+                marginal_management = self.coalition_management_edge_gradient(xk, cp)
             gF = pc[None, :] + (marginal_management @ self.A)
         return gH, gF, x, ce, cp
 
@@ -432,7 +454,7 @@ class SFGame:
         if self.coalitions is None:
             marginal_management = self.perceived_slope(cp, xk) * xk
         else:
-            marginal_management = self.coalition_management_edge_gradient(xk)
+            marginal_management = self.coalition_management_edge_gradient(xk, cp)
         wF = ce[None, :] + marginal_management
         return ce, wF
 

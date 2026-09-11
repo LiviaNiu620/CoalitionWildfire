@@ -54,6 +54,8 @@ If $\mathcal A_Hv=0$, then $v=L_HK_H^{-1}L_H^\top Bv$, proving $\ker\mathcal A_H
 
 \subsection{BPR continuation diagnostic}
 
+The fixed-reference BPR implementation used in the main experiments is a convex potential-based behavioral continuation model; it is not the exact nonlinear own-travel-time atomic game unless the physical slope is constant.
+
 The exact activated-response theorem is affine. It should not be read as a closed-form solution for the BPR continuation game. For BPR costs, the monotonicity proof in Proposition~\ref{prop:coalition-monotone} applies directly because BPR costs are continuous and nondecreasing and the coalition management matrices are PSD. The earlier perceived-slope specification has a more restrictive pointwise symmetric-Jacobian condition. On one edge, with fleet flows $f^k$, coefficients $\beta_k$, and $x=\sum_kf^k+h$, the condition is
 \begin{equation}\label{eq:bpr-exact-psd}
  \frac{c''(x)}{c'(x)}

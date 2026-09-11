@@ -23,8 +23,11 @@ def company_accounting_costs(sol, game):
     x = np.asarray(sol["x"], dtype=float)
     physical_cost = SE.bpr_cost(x, game.t0, game.cap)
     travel = own_edge @ physical_cost
+    slope = game.management_slope
+    if game.management_slope_mode == "state":
+        slope = SE.bpr_deriv(x, game.t0, game.cap)
     management = 0.5 * np.sum(
-        game.management_slope[None, :]
+        slope[None, :]
         * game.objective_types[:, None]
         * own_edge ** 2,
         axis=1,

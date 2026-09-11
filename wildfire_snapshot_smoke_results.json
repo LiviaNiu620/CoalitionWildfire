@@ -1,0 +1,176 @@
+{
+  "status": "smoke_only",
+  "planning_data": true,
+  "model": "ordinary HDV + commercial AV orders + temporary coalition",
+  "note": "Fixed-route smoke test; not wildfire evidence and not a full Sioux Falls certification.",
+  "scenarios": [
+    {
+      "scenario": "no_hazard",
+      "capacities": [
+        100.0,
+        100.0,
+        100.0
+      ],
+      "open_paths": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ]
+      ],
+      "profiles": [
+        {
+          "partition": "singleton",
+          "n_coalitions": 4,
+          "J": 106.96035987946038,
+          "x": [
+            80.19229825972802,
+            19.80770174027201,
+            0.0
+          ],
+          "cost": [
+            1.0620328736377314,
+            1.1002539921508385,
+            1.2
+          ],
+          "VI_gap": 8.221887985252845e-10,
+          "iterations": 76,
+          "certified_on_fixed_routes": true
+        },
+        {
+          "partition": "grand",
+          "n_coalitions": 1,
+          "J": 106.84234634580038,
+          "x": [
+            73.20805025652058,
+            16.725620093130857,
+            10.066329650348564
+          ],
+          "cost": [
+            1.0430850519545687,
+            1.1001291257497134,
+            1.200018482346121
+          ],
+          "VI_gap": 1.7413690958661757e-10,
+          "iterations": 76,
+          "certified_on_fixed_routes": true
+        }
+      ]
+    },
+    {
+      "scenario": "capacity_degradation",
+      "capacities": [
+        100.0,
+        45.0,
+        100.0
+      ],
+      "open_paths": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ]
+      ],
+      "profiles": [
+        {
+          "partition": "singleton",
+          "n_coalitions": 4,
+          "J": 107.21577925453616,
+          "x": [
+            80.92836781354164,
+            19.071632186458373,
+            0.0
+          ],
+          "cost": [
+            1.0643419746270506,
+            1.1053233538918017,
+            1.2
+          ],
+          "VI_gap": 1.1506473551747831e-09,
+          "iterations": 76,
+          "certified_on_fixed_routes": true
+        },
+        {
+          "partition": "grand",
+          "n_coalitions": 1,
+          "J": 106.90451278913281,
+          "x": [
+            73.26690319721604,
+            16.598700301810965,
+            10.13439650097299
+          ],
+          "cost": [
+            1.0432237657348848,
+            1.1030544303295258,
+            1.200018987337589
+          ],
+          "VI_gap": 2.352747406777903e-11,
+          "iterations": 76,
+          "certified_on_fixed_routes": true
+        }
+      ]
+    },
+    {
+      "scenario": "single_edge_closure",
+      "capacities": [
+        100.0,
+        100.0,
+        100.0
+      ],
+      "open_paths": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "profiles": [
+        {
+          "partition": "singleton",
+          "n_coalitions": 4,
+          "J": 106.96035987808611,
+          "x": [
+            80.19229825314936,
+            19.80770174685064,
+            0.0
+          ],
+          "cost": [
+            1.0620328736173756,
+            1.1002539921511763,
+            1.2
+          ],
+          "VI_gap": 9.165227382945054e-10,
+          "iterations": 76,
+          "certified_on_fixed_routes": true
+        },
+        {
+          "partition": "grand",
+          "n_coalitions": 1,
+          "J": 106.51303904167328,
+          "x": [
+            77.84978218170372,
+            22.150217818296284,
+            0.0
+          ],
+          "cost": [
+            1.0550961010083795,
+            1.100397187844938,
+            1.2
+          ],
+          "VI_gap": 2.272954389540786e-10,
+          "iterations": 76,
+          "certified_on_fixed_routes": true
+        }
+      ]
+    }
+  ]
+}

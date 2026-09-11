@@ -47,7 +47,8 @@ def solve_profile(sf, routes, oracle, alpha, shares, lam_beta,
                   theta_bar=None, beta_override=None,
                   dem_firm_override=None, coalitions=None,
                   objective_types=None, coordination_gamma=0.0,
-                  management_slope=None, warm=None, max_rounds=25,
+                  management_slope=None, management_slope_mode="reference",
+                  warm=None, max_rounds=25,
                   operational_pooling=False,
                   verbose=False):
     """Solve and certify one profile, expanding the shared route set."""
@@ -66,6 +67,7 @@ def solve_profile(sf, routes, oracle, alpha, shares, lam_beta,
         objective_types=objective_types,
         coordination_gamma=coordination_gamma,
         management_slope=management_slope,
+        management_slope_mode=management_slope_mode,
         operational_pooling=operational_pooling,
     )
     player_count = len(shares)
