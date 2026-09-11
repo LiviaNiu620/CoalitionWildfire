@@ -48,6 +48,7 @@ def scenario_catalog(sf, od_limit=20):
     fallback = [int(e) for e in ranked if freq[e] > 0]
     if not boundary:
         boundary = fallback
+    boundary.sort(key=lambda e: (-freq[e], e))
     degraded = boundary[: min(3, len(boundary))]
     critical = [e for e in boundary if e not in degraded][: min(3, len(boundary))]
     if not critical:

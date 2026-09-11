@@ -35,6 +35,17 @@ where $u^\omega$ is optional exogenous background traffic, $h$ is ordinary HDV f
 
 The emergency application may designate a set $E_{\mathrm{critical}}^\omega$ of roads whose capacity should be preserved for emergency-sensitive network access. This set enters the regulator's ex post evaluation or a declared capacity-protection constraint. The paper does not model household evacuation demand, rescue dispatch, shelter assignment, or resident-level evacuation behavior.
 
+For a specified emergency state, the regulator first reports the outcome vector
+\begin{equation}\label{eq:regulator-outcome-vector}
+ \mathcal O^\omega(\Pi)
+ :=\bigl(J_{\mathrm{TSTT}}^\omega(\Pi),
+ J_{\mathrm{order}}^\omega(\Pi),
+ J_{\mathrm{risk}}^\omega(\Pi),
+ J_{\mathrm{critical}}^\omega(\Pi),
+ C_{\mathrm{gov}}(\Pi,\gamma)\bigr).
+\end{equation}
+When a single arrangement must be selected, we use an epsilon-constrained rule: minimize TSTT plus governance burden subject to declared upper bounds on commercial-order delay and critical-edge overload. Weighted sums are secondary sensitivity analyses. This separation prevents a reported policy ranking from being determined solely by arbitrary weights when order delay is already part of TSTT or when risk and critical-edge indicators are correlated.
+
 \subsection{Companies, AV demand, and coalition partitions}\label{sec:model_companies}
 
 Let $N=\{1,\ldots,n\}$ be the underlying AV companies. Company $i$ controls an accepted OD-demand vector $d^i=(d_w^i)_{w\in W}$ and mass $m_i=\sum_wd_w^i$. HDV demand is $d^H=(d_w^H)_{w\in W}$, and the realized demand batch satisfies

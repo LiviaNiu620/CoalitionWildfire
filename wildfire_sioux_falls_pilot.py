@@ -36,6 +36,17 @@ def hazard_reference_slope(sf, routes, lam_beta):
     return SE.bpr_deriv(sol["x"], game.t0, game.cap)
 
 
+def realized_critical_edges(scenario, base_ue_x, n_edges=3):
+    """Choose critical edges with realized baseline flow, disjoint from disruptions."""
+    excluded = set(int(e) for e in scenario.get("closed_edges", []))
+    excluded.update(int(e) for e in scenario.get("degraded_edges", []))
+    ranked = np.argsort(-np.asarray(base_ue_x, dtype=float))
+    selected = [int(e) for e in ranked if int(e) not in excluded and base_ue_x[int(e)] > 1e-9]
+    if len(selected) < n_edges:
+        selected.extend(int(e) for e in ranked if int(e) not in set(selected) and int(e) not in set(scenario.get("closed_edges", [])))
+    return selected[:n_edges]
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--reference-mode", choices=("base", "hazard"), default="hazard")
@@ -50,6 +61,13 @@ def main() -> None:
     base_slope = SE.bpr_deriv(ue["x"], ue_game.t0, ue_game.cap)
     rows = []
     for scenario in scenarios:
+        scenario = dict(scenario)
+        scenario["critical_edges"] = realized_critical_edges(scenario, ue["x"])
+        default_risk = 0.0 if scenario["scenario_id"] == "no_hazard" else 0.25
+        scenario["risk_score"] = {
+            str(e): float(scenario.get("risk_score", {}).get(str(e), default_risk))
+            for e in scenario["critical_edges"]
+        }
         sf = apply_snapshot(base, scenario)
         oracle = hazard_oracle(scenario)
         routes = SE.RouteSet(sf["od_list"])
@@ -83,6 +101,8 @@ def main() -> None:
                         float(scenario.get("risk_score", {}).get(str(e), 0.0)) * x[int(e)]
                         for e in scenario.get("critical_edges", [])
                     )
+                    critical = [int(e) for e in scenario.get("critical_edges", [])]
+                    vc = x[critical] / np.maximum(game.cap[critical], 1e-12) if critical else np.zeros(1)
                     rows.append(
                         {
                             "scenario_id": scenario["scenario_id"],
@@ -94,6 +114,11 @@ def main() -> None:
                             "coalition_HHI": coalition_hhi(partition),
                             "J": float(sol["J"]),
                             "critical_risk_weighted_flow": float(risk),
+                            "critical_vc_max": float(np.max(vc)),
+                            "critical_vc_mean": float(np.mean(vc)),
+                            "edge_flow": x.tolist(),
+                            "capacity": game.cap.tolist(),
+                            "total_av_travel_cost": float(np.sum(company_accounting_costs(sol, game)["company_travel_cost"])),
                             "VI_gap": float(sol["gap"]),
                             "omitted_route_slack": float(sol["max_reduced_cost"]),
                             "route_cost_scale": float(sol["route_cost_scale"]),

@@ -1,0 +1,422 @@
+{
+  "status": "pilot_outcome_analysis",
+  "planning_data": true,
+  "objective_direction": "minimize TSTT, AV order cost, critical v/c, and risk diagnostic",
+  "note": "Pareto diagnostics do not select a single policy without declared epsilon constraints.",
+  "states": [
+    {
+      "scenario_id": "critical_edge_closure",
+      "alpha": 0.5,
+      "gamma": 0.5,
+      "tstt_best_partition_id": "P02",
+      "tstt_best_K": 2,
+      "pareto_partition_ids": [
+        "P02",
+        "P07"
+      ],
+      "pareto_size": 2,
+      "critical_vc_min_partition_id": "P02",
+      "critical_vc_min": 1.3618204487866332,
+      "tstt_range": [
+        386738.11047023255,
+        386738.1816857656
+      ],
+      "critical_vc_range": [
+        1.3618204487866332,
+        1.3618213347885966
+      ]
+    },
+    {
+      "scenario_id": "critical_edge_closure",
+      "alpha": 0.5,
+      "gamma": 1.0,
+      "tstt_best_partition_id": "P02",
+      "tstt_best_K": 2,
+      "pareto_partition_ids": [
+        "P02",
+        "P07"
+      ],
+      "pareto_size": 2,
+      "critical_vc_min_partition_id": "P02",
+      "critical_vc_min": 1.3618204611159945,
+      "tstt_range": [
+        386738.11216891557,
+        386738.1932031093
+      ],
+      "critical_vc_range": [
+        1.3618204611159945,
+        1.3618214853196837
+      ]
+    },
+    {
+      "scenario_id": "critical_edge_closure",
+      "alpha": 0.9,
+      "gamma": 0.5,
+      "tstt_best_partition_id": "P01",
+      "tstt_best_K": 1,
+      "pareto_partition_ids": [
+        "P01",
+        "P02",
+        "P04",
+        "P05",
+        "P07",
+        "P09",
+        "P10",
+        "P11",
+        "P13",
+        "P14"
+      ],
+      "pareto_size": 10,
+      "critical_vc_min_partition_id": "P01",
+      "critical_vc_min": 1.038122640544847,
+      "tstt_range": [
+        375060.601250938,
+        378407.2900739369
+      ],
+      "critical_vc_range": [
+        1.038122640544847,
+        1.2115552887440753
+      ]
+    },
+    {
+      "scenario_id": "critical_edge_closure",
+      "alpha": 0.9,
+      "gamma": 1.0,
+      "tstt_best_partition_id": "P01",
+      "tstt_best_K": 1,
+      "pareto_partition_ids": [
+        "P01",
+        "P02",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P13",
+        "P14",
+        "P15"
+      ],
+      "pareto_size": 13,
+      "critical_vc_min_partition_id": "P01",
+      "critical_vc_min": 1.038122640544847,
+      "tstt_range": [
+        375060.601250938,
+        378407.2900739369
+      ],
+      "critical_vc_range": [
+        1.038122640544847,
+        1.211555288744075
+      ]
+    },
+    {
+      "scenario_id": "mild_capacity_degradation",
+      "alpha": 0.5,
+      "gamma": 0.5,
+      "tstt_best_partition_id": "P02",
+      "tstt_best_K": 2,
+      "pareto_partition_ids": [
+        "P02",
+        "P07"
+      ],
+      "pareto_size": 2,
+      "critical_vc_min_partition_id": "P02",
+      "critical_vc_min": 1.3618204565248826,
+      "tstt_range": [
+        386747.0343182244,
+        386747.10541567346
+      ],
+      "critical_vc_range": [
+        1.3618204565248826,
+        1.3618213635816019
+      ]
+    },
+    {
+      "scenario_id": "mild_capacity_degradation",
+      "alpha": 0.5,
+      "gamma": 1.0,
+      "tstt_best_partition_id": "P02",
+      "tstt_best_K": 2,
+      "pareto_partition_ids": [
+        "P02",
+        "P07"
+      ],
+      "pareto_size": 2,
+      "critical_vc_min_partition_id": "P02",
+      "critical_vc_min": 1.361820474492432,
+      "tstt_range": [
+        386747.03595254885,
+        386747.1168450434
+      ],
+      "critical_vc_range": [
+        1.361820474492432,
+        1.3618215126638002
+      ]
+    },
+    {
+      "scenario_id": "mild_capacity_degradation",
+      "alpha": 0.9,
+      "gamma": 0.5,
+      "tstt_best_partition_id": "P01",
+      "tstt_best_K": 1,
+      "pareto_partition_ids": [
+        "P01",
+        "P02",
+        "P04",
+        "P05",
+        "P07",
+        "P09",
+        "P10",
+        "P11",
+        "P13",
+        "P14"
+      ],
+      "pareto_size": 10,
+      "critical_vc_min_partition_id": "P01",
+      "critical_vc_min": 1.038122640544847,
+      "tstt_range": [
+        375069.52514545294,
+        378416.2139810262
+      ],
+      "critical_vc_range": [
+        1.038122640544847,
+        1.2115552870507342
+      ]
+    },
+    {
+      "scenario_id": "mild_capacity_degradation",
+      "alpha": 0.9,
+      "gamma": 1.0,
+      "tstt_best_partition_id": "P01",
+      "tstt_best_K": 1,
+      "pareto_partition_ids": [
+        "P01",
+        "P02",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P13",
+        "P14",
+        "P15"
+      ],
+      "pareto_size": 13,
+      "critical_vc_min_partition_id": "P01",
+      "critical_vc_min": 1.038122640544847,
+      "tstt_range": [
+        375069.52514545294,
+        378416.2139810263
+      ],
+      "critical_vc_range": [
+        1.038122640544847,
+        1.2115552870507342
+      ]
+    },
+    {
+      "scenario_id": "multiple_corridor_degradation",
+      "alpha": 0.5,
+      "gamma": 0.5,
+      "tstt_best_partition_id": "P02",
+      "tstt_best_K": 2,
+      "pareto_partition_ids": [
+        "P02",
+        "P07"
+      ],
+      "pareto_size": 2,
+      "critical_vc_min_partition_id": "P02",
+      "critical_vc_min": 1.361820464945729,
+      "tstt_range": [
+        389305.8902537065,
+        389305.96214481967
+      ],
+      "critical_vc_range": [
+        1.361820464945729,
+        1.3618213835077457
+      ]
+    },
+    {
+      "scenario_id": "multiple_corridor_degradation",
+      "alpha": 0.5,
+      "gamma": 1.0,
+      "tstt_best_partition_id": "P02",
+      "tstt_best_K": 2,
+      "pareto_partition_ids": [
+        "P02",
+        "P07"
+      ],
+      "pareto_size": 2,
+      "critical_vc_min_partition_id": "P02",
+      "critical_vc_min": 1.3618204471819473,
+      "tstt_range": [
+        389305.8891162622,
+        389305.9736145546
+      ],
+      "critical_vc_range": [
+        1.3618204471819473,
+        1.3618215329033472
+      ]
+    },
+    {
+      "scenario_id": "multiple_corridor_degradation",
+      "alpha": 0.9,
+      "gamma": 0.5,
+      "tstt_best_partition_id": "P01",
+      "tstt_best_K": 1,
+      "pareto_partition_ids": [
+        "P01",
+        "P02",
+        "P04",
+        "P05",
+        "P07",
+        "P09",
+        "P10",
+        "P11",
+        "P13",
+        "P14",
+        "P15"
+      ],
+      "pareto_size": 11,
+      "critical_vc_min_partition_id": "P01",
+      "critical_vc_min": 1.038122640544847,
+      "tstt_range": [
+        377628.38045803446,
+        380975.0715334936
+      ],
+      "critical_vc_range": [
+        1.038122640544847,
+        1.2115553492016862
+      ]
+    },
+    {
+      "scenario_id": "multiple_corridor_degradation",
+      "alpha": 0.9,
+      "gamma": 1.0,
+      "tstt_best_partition_id": "P01",
+      "tstt_best_K": 1,
+      "pareto_partition_ids": [
+        "P01",
+        "P02",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P13",
+        "P14",
+        "P15"
+      ],
+      "pareto_size": 13,
+      "critical_vc_min_partition_id": "P01",
+      "critical_vc_min": 1.038122640544847,
+      "tstt_range": [
+        377628.38045803446,
+        380975.0695293718
+      ],
+      "critical_vc_range": [
+        1.038122640544847,
+        1.2115552944203192
+      ]
+    },
+    {
+      "scenario_id": "no_hazard",
+      "alpha": 0.5,
+      "gamma": 0.5,
+      "tstt_best_partition_id": "P02",
+      "tstt_best_K": 2,
+      "pareto_partition_ids": [
+        "P02",
+        "P07"
+      ],
+      "pareto_size": 2,
+      "critical_vc_min_partition_id": "P02",
+      "critical_vc_min": 1.361820456517264,
+      "tstt_range": [
+        386738.1104239634,
+        386738.18152212887
+      ],
+      "critical_vc_range": [
+        1.361820456517264,
+        1.3618213635539218
+      ]
+    },
+    {
+      "scenario_id": "no_hazard",
+      "alpha": 0.5,
+      "gamma": 1.0,
+      "tstt_best_partition_id": "P02",
+      "tstt_best_K": 2,
+      "pareto_partition_ids": [
+        "P02",
+        "P07"
+      ],
+      "pareto_size": 2,
+      "critical_vc_min_partition_id": "P02",
+      "critical_vc_min": 1.3618204744790594,
+      "tstt_range": [
+        386738.1120584379,
+        386738.1929514131
+      ],
+      "critical_vc_range": [
+        1.3618204744790594,
+        1.3618215126366826
+      ]
+    },
+    {
+      "scenario_id": "no_hazard",
+      "alpha": 0.9,
+      "gamma": 0.5,
+      "tstt_best_partition_id": "P01",
+      "tstt_best_K": 1,
+      "pareto_partition_ids": [
+        "P01",
+        "P04",
+        "P05"
+      ],
+      "pareto_size": 3,
+      "critical_vc_min_partition_id": "P01",
+      "critical_vc_min": 1.038122640544847,
+      "tstt_range": [
+        375060.601250938,
+        378407.29008643364
+      ],
+      "critical_vc_range": [
+        1.038122640544847,
+        1.2115552870531547
+      ]
+    },
+    {
+      "scenario_id": "no_hazard",
+      "alpha": 0.9,
+      "gamma": 1.0,
+      "tstt_best_partition_id": "P01",
+      "tstt_best_K": 1,
+      "pareto_partition_ids": [
+        "P01",
+        "P04",
+        "P05",
+        "P06",
+        "P08"
+      ],
+      "pareto_size": 5,
+      "critical_vc_min_partition_id": "P01",
+      "critical_vc_min": 1.038122640544847,
+      "tstt_range": [
+        375060.601250938,
+        378407.29008643376
+      ],
+      "critical_vc_range": [
+        1.038122640544847,
+        1.211555287053155
+      ]
+    }
+  ]
+}

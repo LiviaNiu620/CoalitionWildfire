@@ -70,9 +70,9 @@
       "v2_best_partition_id": "P02",
       "best_K_changed": false,
       "partition_changed": false,
-      "v0_grand_regret": 0.07128961209673434,
-      "v2_grand_regret": 0.07128959603141993,
-      "v2_minus_v0_best_J": -1.1175870895385742e-08
+      "v0_grand_regret": 0.07109747792128474,
+      "v2_grand_regret": 0.07109744905028492,
+      "v2_minus_v0_best_J": -1.4202669262886047e-08
     },
     {
       "scenario_id": "mild_capacity_degradation",
@@ -84,9 +84,9 @@
       "v2_best_partition_id": "P02",
       "best_K_changed": false,
       "partition_changed": false,
-      "v0_grand_regret": 0.03353164705913514,
-      "v2_grand_regret": 0.033531647408381104,
-      "v2_minus_v0_best_J": -1.8742866814136505e-08
+      "v0_grand_regret": 0.033471519127488136,
+      "v2_grand_regret": 0.03347141807898879,
+      "v2_minus_v0_best_J": -2.5262124836444855e-08
     },
     {
       "scenario_id": "mild_capacity_degradation",
@@ -126,23 +126,23 @@
       "v2_best_partition_id": "P02",
       "best_K_changed": false,
       "partition_changed": false,
-      "v0_grand_regret": 0.046651103417389095,
-      "v2_grand_regret": 0.04665107687469572,
-      "v2_minus_v0_best_J": -5.6694261729717255e-08
+      "v0_grand_regret": 0.07189119898248464,
+      "v2_grand_regret": 0.07189111318439245,
+      "v2_minus_v0_best_J": -2.759043127298355e-08
     },
     {
       "scenario_id": "multiple_corridor_degradation",
       "alpha": 0.5,
       "gamma": 1.0,
-      "v0_best_K": 3,
-      "v0_best_partition_id": "P10",
-      "v2_best_K": 3,
-      "v2_best_partition_id": "P10",
+      "v0_best_K": 2,
+      "v0_best_partition_id": "P02",
+      "v2_best_K": 2,
+      "v2_best_partition_id": "P02",
       "best_K_changed": false,
       "partition_changed": false,
-      "v0_grand_regret": 0.008346537593752146,
-      "v2_grand_regret": 0.008346237940713763,
-      "v2_minus_v0_best_J": -5.5762939155101776e-08
+      "v0_grand_regret": 0.03664254012983292,
+      "v2_grand_regret": 0.03664251498412341,
+      "v2_minus_v0_best_J": -5.78584149479866e-08
     },
     {
       "scenario_id": "multiple_corridor_degradation",
@@ -231,6 +231,6 @@
   ],
   "best_K_change_count": 0,
   "partition_change_count": 0,
-  "v0_max_grand_regret": 0.07128961209673434,
-  "v2_max_grand_regret": 0.07128959603141993
+  "v0_max_grand_regret": 0.07189119898248464,
+  "v2_max_grand_regret": 0.07189111318439245
 }
