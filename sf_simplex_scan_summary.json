@@ -1,0 +1,197 @@
+{
+  "design_n": 200,
+  "certified_n": 200,
+  "failed_n": 0,
+  "spearman": 0.9668581714542864,
+  "kendall": 0.840502512562814,
+  "pairwise": [
+    {
+      "min_abs_delta_HHI": 0.0,
+      "eligible_pairs": 19900,
+      "inverted_pairs": 1587,
+      "inversion_rate": 0.07974874371859296,
+      "median_abs_delta_J": 2823.385061552748,
+      "max_abs_delta_J": 20984.926504551433,
+      "median_abs_delta_J_pct_UE": 0.03774465118825692,
+      "max_abs_delta_J_pct_UE": 0.2805386845426941,
+      "share_inversions_over_0.10pct_UE": 0.12413358538122243,
+      "share_inversions_over_0.25pct_UE": 0.000630119722747322,
+      "share_inversions_over_0.50pct_UE": 0.0
+    },
+    {
+      "min_abs_delta_HHI": 0.02,
+      "eligible_pairs": 17896,
+      "inverted_pairs": 886,
+      "inversion_rate": 0.04950827000447027,
+      "median_abs_delta_J": 2980.492902163882,
+      "max_abs_delta_J": 18214.53870646842,
+      "median_abs_delta_J_pct_UE": 0.03984496004217791,
+      "max_abs_delta_J_pct_UE": 0.24350253155074666,
+      "share_inversions_over_0.10pct_UE": 0.1275395033860045,
+      "share_inversions_over_0.25pct_UE": 0.0,
+      "share_inversions_over_0.50pct_UE": 0.0
+    },
+    {
+      "min_abs_delta_HHI": 0.05,
+      "eligible_pairs": 15259,
+      "inverted_pairs": 484,
+      "inversion_rate": 0.031718985516744215,
+      "median_abs_delta_J": 3081.1834987560287,
+      "max_abs_delta_J": 16244.272456137463,
+      "median_abs_delta_J_pct_UE": 0.0411910504136478,
+      "max_abs_delta_J_pct_UE": 0.2171628680810257,
+      "share_inversions_over_0.10pct_UE": 0.12190082644628099,
+      "share_inversions_over_0.25pct_UE": 0.0,
+      "share_inversions_over_0.50pct_UE": 0.0
+    }
+  ],
+  "bootstrap": {
+    "replicates": 10000,
+    "seed": 20260732,
+    "spearman_95pct": [
+      0.9544166758686501,
+      0.973201117640908
+    ],
+    "kendall_95pct": [
+      0.8167196973143706,
+      0.8617523389425231
+    ],
+    "inversion_rate_95pct": [
+      0.06912383052873847,
+      0.09164015134281468
+    ],
+    "interpretation": "design-set resampling, not market-population uncertainty"
+  },
+  "by_dirichlet_concentration": {
+    "0.2": {
+      "n": 40,
+      "HHI_range": [
+        0.3457818813610461,
+        0.9897707106978914
+      ],
+      "recovery_range": [
+        0.7591542096140951,
+        0.910427890712535
+      ],
+      "spearman": 0.8547842401500939,
+      "kendall": 0.7102564102564103,
+      "pairwise": {
+        "min_abs_delta_HHI": 0.0,
+        "eligible_pairs": 780,
+        "inverted_pairs": 113,
+        "inversion_rate": 0.14487179487179488,
+        "median_abs_delta_J": 3472.701578314416,
+        "max_abs_delta_J": 11720.157463557087,
+        "median_abs_delta_J_pct_UE": 0.046425091475939324,
+        "max_abs_delta_J_pct_UE": 0.15668187147314605,
+        "share_inversions_over_0.10pct_UE": 0.07964601769911504,
+        "share_inversions_over_0.25pct_UE": 0.0,
+        "share_inversions_over_0.50pct_UE": 0.0
+      }
+    },
+    "0.5": {
+      "n": 40,
+      "HHI_range": [
+        0.2537958357755718,
+        0.9881227144710424
+      ],
+      "recovery_range": [
+        0.7044286508963705,
+        0.9097074856214442
+      ],
+      "spearman": 0.9133208255159476,
+      "kendall": 0.7589743589743589,
+      "pairwise": {
+        "min_abs_delta_HHI": 0.0,
+        "eligible_pairs": 780,
+        "inverted_pairs": 94,
+        "inversion_rate": 0.12051282051282051,
+        "median_abs_delta_J": 3861.249506538268,
+        "max_abs_delta_J": 14802.150837128982,
+        "median_abs_delta_J_pct_UE": 0.051619425830270606,
+        "max_abs_delta_J_pct_UE": 0.19788374876366846,
+        "share_inversions_over_0.10pct_UE": 0.2553191489361702,
+        "share_inversions_over_0.25pct_UE": 0.0,
+        "share_inversions_over_0.50pct_UE": 0.0
+      }
+    },
+    "1.0": {
+      "n": 40,
+      "HHI_range": [
+        0.2624939321846721,
+        0.7063740124650285
+      ],
+      "recovery_range": [
+        0.7047604066195816,
+        0.8426972768608417
+      ],
+      "spearman": 0.9232645403377111,
+      "kendall": 0.7666666666666667,
+      "pairwise": {
+        "min_abs_delta_HHI": 0.0,
+        "eligible_pairs": 780,
+        "inverted_pairs": 91,
+        "inversion_rate": 0.11666666666666667,
+        "median_abs_delta_J": 2484.09818041604,
+        "max_abs_delta_J": 14246.233452801593,
+        "median_abs_delta_J_pct_UE": 0.03320886711981898,
+        "max_abs_delta_J_pct_UE": 0.190451922320064,
+        "share_inversions_over_0.10pct_UE": 0.06593406593406594,
+        "share_inversions_over_0.25pct_UE": 0.0,
+        "share_inversions_over_0.50pct_UE": 0.0
+      }
+    },
+    "2.0": {
+      "n": 40,
+      "HHI_range": [
+        0.2511813030904805,
+        0.511175780814044
+      ],
+      "recovery_range": [
+        0.6989049430492712,
+        0.8164124026527083
+      ],
+      "spearman": 0.876923076923077,
+      "kendall": 0.717948717948718,
+      "pairwise": {
+        "min_abs_delta_HHI": 0.0,
+        "eligible_pairs": 780,
+        "inverted_pairs": 110,
+        "inversion_rate": 0.14102564102564102,
+        "median_abs_delta_J": 2418.101988406852,
+        "max_abs_delta_J": 14416.667608145624,
+        "median_abs_delta_J_pct_UE": 0.032326591697645395,
+        "max_abs_delta_J_pct_UE": 0.19273038508861312,
+        "share_inversions_over_0.10pct_UE": 0.03636363636363636,
+        "share_inversions_over_0.25pct_UE": 0.0,
+        "share_inversions_over_0.50pct_UE": 0.0
+      }
+    },
+    "5.0": {
+      "n": 40,
+      "HHI_range": [
+        0.2505713276587455,
+        0.35031243518597266
+      ],
+      "recovery_range": [
+        0.6978721672171021,
+        0.76364574719681
+      ],
+      "spearman": 0.8756097560975611,
+      "kendall": 0.6743589743589744,
+      "pairwise": {
+        "min_abs_delta_HHI": 0.0,
+        "eligible_pairs": 780,
+        "inverted_pairs": 127,
+        "inversion_rate": 0.16282051282051282,
+        "median_abs_delta_J": 1522.4640651186928,
+        "max_abs_delta_J": 8631.480113491416,
+        "median_abs_delta_J_pct_UE": 0.020353183795963476,
+        "max_abs_delta_J_pct_UE": 0.11539063890312473,
+        "share_inversions_over_0.10pct_UE": 0.007874015748031496,
+        "share_inversions_over_0.25pct_UE": 0.0,
+        "share_inversions_over_0.50pct_UE": 0.0
+      }
+    }
+  }
+}

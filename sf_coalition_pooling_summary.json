@@ -1,0 +1,48 @@
+{
+  "protocol": {
+    "governance": "same identity-preserving coalition objective versus operational pooling",
+    "partition": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "objective_types": [
+      0.5,
+      0.5,
+      1.5,
+      1.5
+    ],
+    "gamma": 1.0,
+    "alphas": [
+      0.5,
+      0.9
+    ],
+    "company_masses_fixed": true,
+    "aggregate_OD_fixed": true,
+    "VI_tolerance": 1e-06,
+    "omitted_route_relative_tolerance": 1e-06
+  },
+  "rows": 4,
+  "certified_rows": 4,
+  "max_VI_gap": 9.844691162722582e-07,
+  "max_relative_omitted_route_slack": 3.134842061831961e-08,
+  "pooling_minus_identity": [
+    {
+      "alpha": 0.5,
+      "delta_J_pooling_minus_identity": -0.0029478762298822403,
+      "delta_J_over_J_UE": -3.9408921424931994e-10,
+      "delta_recovery_percentage_points": 1.0308357056842965e-06
+    },
+    {
+      "alpha": 0.9,
+      "delta_J_pooling_minus_identity": -1.1351890861988068e-05,
+      "delta_J_over_J_UE": -1.5175866967194967e-12,
+      "delta_recovery_percentage_points": 3.9696135267774935e-09
+    }
+  ]
+}

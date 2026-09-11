@@ -1,0 +1,122 @@
+\section{Coalition Structure and Objective Composition}\label{sec:ownership}
+
+The model separates three organizational dimensions that are often compressed into one market-share statistic. The underlying company count $n$ determines how many heterogeneous management objectives exist. The coalition count $K=|\Pi|$ determines how many independent routing decision centers remain. The coalition-size and objective-type composition determine which cross-member interactions are internalized. HHI is a descriptive summary of mass concentration at either the company or coalition level; it does not determine these governance objects.
+
+\subsection{What a coalition changes}
+
+For identity-preserving coordination, coalition formation leaves every member's accepted OD obligation intact. Its direct equilibrium effect comes from the off-diagonal elements of $\Omega_{C,e}$ and from any governance weights applied to member objectives. A coalition therefore changes the curvature matrix $H_C$ in the KKT response, and hence changes $P_C$, $R_\Pi$, and the activated response. The partition itself is inert when all off-diagonal terms are zero, as established in Proposition~\ref{prop:governance}.
+
+Operational pooling is a different intervention. It relaxes member-level conservation constraints and can enlarge the coalition's feasible tangent. Proposition~\ref{prop:pooling} shows that this enlargement may disappear at the aggregate level when members have identical route sets and the objective depends only on total coalition flow. The empirical design keeps pooling separate so that the composition and degree results identify objective coordination rather than a demand-reassignment channel.
+
+\subsection{Objective composition at fixed coalition size}
+
+Consider four equal-mass companies with objective types $(L_1,L_2,H_1,H_2)$, where $L$ and $H$ denote low and high management curvature. The assortative partition
+\[
+ \Pi_{\mathrm{assort}}=\{\{L_1,L_2\},\{H_1,H_2\}\}
+\]
+and the mixed partition
+\[
+ \Pi_{\mathrm{mixed}}=\{\{L_1,H_1\},\{L_2,H_2\}\}
+\]
+have the same number of coalitions, the same coalition sizes, the same company masses, and the same company and coalition HHI. They differ only in how heterogeneous objectives are grouped. Under $\gamma>0$, the two partitions generate different cross-member governance matrices and therefore different activated responses. This is the cleanest comparison for the paper's central question.
+
+\subsection{Coalition degree and company count}
+
+The degree of organization has two levels. Holding $n$ fixed, decreasing $K$ from $n$ to one aggregates more companies into each routing decision center. Holding total AV mass fixed while changing $n$ changes both the number of heterogeneous objective holders and the mass of each company. These comparisons answer different questions and are reported separately. A change in HHI across $n$ is a consequence of equal-mass design, not an interpretation of the coalition mechanism.
+
+The degree scan uses $n\in\{2,4,8\}$ and balanced partitions. At full coordination, the grand-minus-singleton effect can change sign across $n$ and AV penetration. Thus neither $K$ nor $n$ supplies a universal congestion ordering. The network's route geometry and the HDV tangent determine how the coalition response is activated.
+
+\subsection{Coalition structure as a state-contingent design variable}
+
+The continuation model also defines a practical outer design problem. Let
+$x^*(\Pi,\mathcal G;\alpha,\theta)$ denote the certified equilibrium induced by
+partition $\Pi$, governance rule $\mathcal G$, AV penetration $\alpha$, and
+objective-type vector $\theta$. A network manager who can select from a declared
+menu of coordination arrangements faces the conditional problem
+\begin{equation}\label{eq:coalition-design-outer}
+ \Pi^*(\alpha,\theta,\mathcal G)
+ \in\arg\min_{\Pi\in\mathfrak P(N)}J\bigl(x^*(\Pi,\mathcal G;\alpha,\theta)\bigr),
+ \end{equation}
+where $\mathfrak P(N)$ is the set of feasible partitions. This is a
+continuation-design problem, not an endogenous formation game: it evaluates the
+congestion consequences of each specified arrangement without asserting that
+firms would voluntarily choose the minimizer. Because numerical equilibria can
+be tied up to certification tolerance, the empirical implementation uses the
+set-valued rule
+\begin{equation}\label{eq:epsilon-optimal-partitions}
+ \mathfrak P_\varepsilon^*(s)
+ :=\{\Pi:J(\Pi;s)-J^*(s)\leq\varepsilon J^{UE}\},
+ \qquad J^*(s):=\min_{\Pi\in\mathfrak P(N)}J(\Pi;s).
+\end{equation}
+At $\alpha=0.5$ and $\gamma\in\{0.5,1\}$, the grand coalition is the unique
+best arrangement in the 15-partition Sioux Falls menu. At $\alpha=0.9$, the
+best set contains symmetry-equivalent three--one partitions at $\gamma=0.5$
+and a two--one--one partition at $\gamma=1$. The preferred organizational
+granularity therefore changes with the state.
+
+Coordination also consumes managerial, informational, contracting, or
+computational resources. To separate this burden from congestion performance,
+define the normalized governance burden
+\begin{equation}\label{eq:governance-burden}
+ C_{\mathrm{gov}}(\Pi,\gamma)
+ :=\gamma^2\frac{\sum_{C\in\Pi}\binom{|C|}{2}}{\binom n2}
+\end{equation}
+and the penalized continuation loss
+\begin{equation}\label{eq:penalized-coalition-loss}
+ \mathcal L_\lambda(\Pi;s)
+ :=\frac{J(\Pi;s)-J^{SO}}{J^{UE}-J^{SO}}
+ +\lambda C_{\mathrm{gov}}(\Pi,\gamma),
+ \qquad \lambda\geq0.
+\end{equation}
+The burden in \eqref{eq:governance-burden} is a transparent design primitive,
+not an empirical estimate. Its pair count records the fraction of company
+pairs that require cross-member governance, while $\gamma^2$ makes stronger
+coupling more costly.
+
+\begin{proposition}[Governance-cost threshold]\label{prop:governance-cost-threshold}
+Fix a state $s$. Consider arrangements $A$ and $B$ such that $J_A<J_B$ and
+$C_A>C_B$, where $C_A=C_{\mathrm{gov}}(A,\gamma)$ and similarly for $B$. Their
+penalized losses are equal at
+\begin{equation}\label{eq:governance-lambda-threshold}
+ \lambda_{A,B}^*
+ =\frac{J_B-J_A}{(J^{UE}-J^{SO})(C_A-C_B)}.
+\end{equation}
+Arrangement $A$ is preferred for $\lambda<\lambda_{A,B}^*$, and $B$ is
+preferred for $\lambda>\lambda_{A,B}^*$. The optimal organization over a
+finite menu is the lower envelope of these affine losses and is therefore
+piecewise constant in $\lambda$.
+\end{proposition}
+
+\begin{proof}
+Subtract \eqref{eq:penalized-coalition-loss} for the two arrangements. The
+common system-optimum term cancels, leaving
+\[
+ \mathcal L_\lambda(A;s)-\mathcal L_\lambda(B;s)
+ =\frac{J_A-J_B}{J^{UE}-J^{SO}}+\lambda(C_A-C_B).
+\]
+This affine difference crosses zero once at
+\eqref{eq:governance-lambda-threshold}; its slope is positive. Taking the
+pointwise minimum across a finite collection gives the lower-envelope result.
+\end{proof}
+
+The proposition yields grand, partial, and fragmented governance regimes
+without treating enumeration itself as the scientific conclusion. Network
+equilibrium determines the intercept of each arrangement's loss, governance
+burden determines its slope, and the pairwise thresholds determine where the
+recommended organization changes.
+
+\subsection{Why HHI remains auxiliary}
+
+For company shares $s_i=m_i/\sum_jm_j$, company HHI is $\sum_i s_i^2$. For coalition shares $s_C=m_C/\sum_Dm_D$, coalition HHI is $\sum_Cs_C^2$. These scalars record only the distribution of mass. They do not record:
+\begin{enumerate}
+\item the objective curvature $H_C$ or fixed marginal terms $q_C$;
+\item the OD constraints $\Gamma_C$ and the routes available to each member;
+\item the cross-member governance terms in $\Omega_{C,e}$;
+\item the HDV adjustment space $\range(L_H)$;
+\item the active support on which the response is valid.
+\end{enumerate}
+The fixed-HHI spatial experiment in Section~\ref{sec:experiments} supplies a direct network witness: equal company shares and equal HHI can still produce materially different congestion when spatial OD portfolios change. HHI is therefore useful as a control descriptor, but it is not the paper's equilibrium state variable.
+
+\subsection{Relation to endogenous coalition formation}
+
+The main paper studies the equilibrium consequences of specified coalition structures. Endogenous formation is a separate partition-function game because a coalition's cost depends on the full partition and because its cost must be allocated among member companies. A stability claim would require an equilibrium-selection rule, a transfer or payoff-allocation rule, and a deviation protocol. Without these primitives, comparing the continuation equilibria of two partitions is not evidence that either partition is stable or that firms would choose it.

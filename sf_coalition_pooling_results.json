@@ -1,0 +1,166 @@
+{
+  "protocol": {
+    "governance": "same identity-preserving coalition objective versus operational pooling",
+    "partition": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "objective_types": [
+      0.5,
+      0.5,
+      1.5,
+      1.5
+    ],
+    "gamma": 1.0,
+    "alphas": [
+      0.5,
+      0.9
+    ],
+    "company_masses_fixed": true,
+    "aggregate_OD_fixed": true,
+    "VI_tolerance": 1e-06,
+    "omitted_route_relative_tolerance": 1e-06
+  },
+  "J_UE": 7480225.601955376,
+  "J_SO": 7194256.052892987,
+  "profiles": [
+    {
+      "alpha": 0.5,
+      "regime": "identity",
+      "operational_pooling": false,
+      "gamma": 1.0,
+      "partition": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "objective_types": [
+        0.5,
+        0.5,
+        1.5,
+        1.5
+      ],
+      "company_HHI": 0.25,
+      "coalition_HHI": 0.5,
+      "J": 7320596.701692159,
+      "recovery": 0.5582024407374601,
+      "VI_gap": 9.690917490192914e-07,
+      "omitted_route_slack": 2.424195173489352e-06,
+      "route_cost_scale": 77.3306956355142,
+      "certified": true,
+      "iterations": 1076,
+      "cg_rounds": 4,
+      "paths": 1775
+    },
+    {
+      "alpha": 0.5,
+      "regime": "pooling",
+      "operational_pooling": true,
+      "gamma": 1.0,
+      "partition": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "objective_types": [
+        0.5,
+        0.5,
+        1.5,
+        1.5
+      ],
+      "company_HHI": 0.25,
+      "coalition_HHI": 0.5,
+      "J": 7320596.698744283,
+      "recovery": 0.5582024510458171,
+      "VI_gap": 9.54166267334194e-07,
+      "omitted_route_slack": 2.4106994800376924e-06,
+      "route_cost_scale": 77.33069573897771,
+      "certified": true,
+      "iterations": 1,
+      "cg_rounds": 1,
+      "paths": 1775
+    },
+    {
+      "alpha": 0.9,
+      "regime": "identity",
+      "operational_pooling": false,
+      "gamma": 1.0,
+      "partition": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "objective_types": [
+        0.5,
+        0.5,
+        1.5,
+        1.5
+      ],
+      "company_HHI": 0.25,
+      "coalition_HHI": 0.5,
+      "J": 7232072.361669592,
+      "recovery": 0.8677610644189439,
+      "VI_gap": 9.844691162722582e-07,
+      "omitted_route_slack": 6.632699580677581e-07,
+      "route_cost_scale": 70.0421181491628,
+      "certified": true,
+      "iterations": 3401,
+      "cg_rounds": 2,
+      "paths": 1780
+    },
+    {
+      "alpha": 0.9,
+      "regime": "pooling",
+      "operational_pooling": true,
+      "gamma": 1.0,
+      "partition": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "objective_types": [
+        0.5,
+        0.5,
+        1.5,
+        1.5
+      ],
+      "company_HHI": 0.25,
+      "coalition_HHI": 0.5,
+      "J": 7232072.36165824,
+      "recovery": 0.86776106445864,
+      "VI_gap": 9.832627161215827e-07,
+      "omitted_route_slack": 8.323945763777374e-07,
+      "route_cost_scale": 70.0421181145601,
+      "certified": true,
+      "iterations": 1,
+      "cg_rounds": 1,
+      "paths": 1780
+    }
+  ]
+}

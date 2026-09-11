@@ -1,0 +1,338 @@
+\section{Coalition Response and HDV Screening}\label{sec:response}
+
+The equilibrium definition specifies how coalitions choose routes, but it does not yet show which parts of their heterogeneous objectives reach aggregate congestion. The derivation follows the causal structure of the model. Existence and monotonicity establish that the continuation game is well posed. The coalition KKT system is then restricted to directions that preserve member OD obligations; this produces a projected response matrix rather than an unconstrained inverse of $H_C$. These response blocks are aggregated in edge space and screened by the HDV directions that can be reproduced through Wardrop reallocation. The resulting activated coalition signature is sufficient for a fixed-support affine equilibrium, while the BPR experiments remain numerical continuation results outside that closed form.
+
+\subsection{Existence and aggregate-flow uniqueness}\label{sec:response_wellposed}
+
+\begin{proposition}[Existence]\label{prop:wellposed}
+Under the standing assumptions in Section~\ref{sec:model}, every fixed coalition structure has at least one heterogeneous-coalition mixed Nash--Wardrop equilibrium.
+\end{proposition}
+
+\begin{proof}
+The feasible set $\mathcal Z_\Pi$ in \eqref{eq:feasible} is a nonempty compact convex polytope. The physical costs are continuous, and the gradient of each convex management objective is continuous. Therefore the stacked operator $\mathcal F_\Pi$ is continuous on $\mathcal Z_\Pi$. The finite-dimensional Hartman--Stampacchia theorem gives a solution of the VI in \eqref{eq:VI}. Convexity makes each coalition block equivalent to its best-response optimality condition, while the HDV block is Wardrop's condition.
+\end{proof}
+
+\begin{proposition}[Monotonicity and unique congestible-edge flow]\label{prop:coalition-monotone}
+Suppose physical costs are continuous and nondecreasing and the management objectives have the quadratic form \eqref{eq:quadratic-objective}. The stacked routing operator is monotone. If $z^1,z^2$ are equilibria, then
+\[
+ x_e^1=x_e^2
+\]
+on every edge whose physical cost is strictly increasing between the two equilibrium flows. In particular, affine edges with $b_e>0$ and nonconstant BPR edges have unique aggregate flow. If $H_C$ is positive definite on $\ker\Gamma_C$ for each coalition, active coalition route flows are unique after duplicate-route coordinates are removed.
+\end{proposition}
+
+\begin{proof}
+Let $\Delta y^C=y^{C,1}-y^{C,2}$, $\Delta h=h^1-h^2$, and $\Delta x=\Lambda_H\Delta h+\sum_C\Lambda_C\Delta y^C$. Using \eqref{eq:coalition-gradient} and \eqref{eq:quadratic-objective},
+\begin{align*}
+ &[\mathcal F_\Pi(z^1)-\mathcal F_\Pi(z^2)]^\top(z^1-z^2)\\
+ &\qquad=\Delta x^\top[c(x^1)-c(x^2)]
+ +\sum_{C\in\Pi}(\Delta y^C)^\top H_C\Delta y^C\geq0.
+\end{align*}
+Each edge term is nonnegative because $c_e$ is nondecreasing, and each quadratic term is nonnegative. Adding the two equilibrium variational inequalities forces this expression to be zero. On an edge where $c_e$ is strictly increasing, the edge contribution can vanish only when $\Delta x_e=0$. If $H_C$ is positive definite on $\ker\Gamma_C$, feasibility implies $\Delta y^C\in\ker\Gamma_C$, and its zero quadratic form implies $\Delta y^C=0$ in nonredundant coordinates.
+\end{proof}
+
+Continuity and compact feasibility deliver existence; monotonicity, together with strict increase on congestible edges and tangent curvature where invoked, delivers the stated aggregate-flow and active-response uniqueness. These well-posedness statements are separate from the affine fixed-support representation below and from the BPR diagnostics in Section~\ref{sec:experiments}.
+
+\subsection{OD-restricted response of one coalition}\label{sec:coalition_response}
+
+Fix an active route support for coalition $C$. Restrict $\Lambda_C$ and $\Gamma_C$ to positive coalition routes and assume $\Gamma_C$ has full row rank. A fixed support means that the currently positive routes are treated as the local coordinates; support inequalities are checked after solving. Let $Z_C$ have orthonormal columns spanning $\ker\Gamma_C$. The relevant curvature condition is
+\begin{equation}\label{eq:coalition-tangent-pd}
+ v^\top H_Cv>0
+ \qquad\text{for every }v\in\ker\Gamma_C\setminus\{0\}.
+\end{equation}
+
+\begin{lemma}[Coalition bordered nonsingularity]\label{lem:coalition-bordered}
+The matrix
+\begin{equation}\label{eq:coalition-bordered}
+ \mathcal B_C=\begin{bmatrix}H_C&-\Gamma_C^\top\\\Gamma_C&0\end{bmatrix}
+\end{equation}
+is nonsingular if and only if $\ker H_C\cap\ker\Gamma_C=\{0\}$. For $H_C\succeq0$, this is equivalent to \eqref{eq:coalition-tangent-pd}.
+\end{lemma}
+
+\begin{proof}
+If $\mathcal B_C(v,\mu)^\top=0$, then $H_Cv-\Gamma_C^\top\mu=0$ and $\Gamma_Cv=0$. Premultiplying the first equation by $v^\top$ gives $v^\top H_Cv=0$. Positive semidefiniteness implies $v\in\ker H_C$, and the intersection condition gives $v=0$. Full row rank then gives $\mu=0$. Conversely, any nonzero $v\in\ker H_C\cap\ker\Gamma_C$ produces a null vector $(v,0)$.
+\end{proof}
+
+Define the projected inverse
+\begin{equation}\label{eq:coalition-projected-inverse}
+ P_C:=Z_C(Z_C^\top H_CZ_C)^{-1}Z_C^\top.
+\end{equation}
+Choose a feasible particular flow $y_C^0$ with $\Gamma_Cy_C^0=d^C$ and define
+\begin{equation}\label{eq:coalition-intercept}
+ g_C:=(I-P_CH_C)y_C^0-P_Cq_C.
+\end{equation}
+This vector is independent of the particular flow because $P_CH_CZ_C=Z_C$.
+
+\begin{proposition}[OD-restricted coalition response]\label{prop:coalition-response}
+On the fixed support, coalition $C$'s KKT equations imply
+\begin{equation}\label{eq:coalition-response}
+ y^C=g_C-P_C\Lambda_C^\top(a+Bx).
+\end{equation}
+Consequently, the aggregate coalition response is
+\begin{equation}\label{eq:coalition-aggregate-response}
+ \sum_{C\in\Pi}\Lambda_Cy^C=s_\Pi-R_\Pi(a+Bx),
+\end{equation}
+where
+\begin{equation}\label{eq:coalition-response-objects}
+ R_\Pi:=\sum_{C\in\Pi}\Lambda_CP_C\Lambda_C^\top,
+ \qquad s_\Pi:=\sum_{C\in\Pi}\Lambda_Cg_C.
+\end{equation}
+The matrix $R_\Pi$ is symmetric positive semidefinite.
+\end{proposition}
+
+\begin{proof}
+On active routes, the coalition KKT system is
+\[
+ H_Cy^C-\Gamma_C^\top\lambda_C=-\Lambda_C^\top(a+Bx)-q_C,
+ \qquad \Gamma_Cy^C=d^C.
+\]
+Write $y^C=y_C^0+Z_Cu$ and premultiply the first equation by $Z_C^\top$. Solving the resulting positive-definite system gives \eqref{eq:coalition-response}. Summing edge images gives \eqref{eq:coalition-aggregate-response}. Since each $P_C$ is symmetric positive semidefinite, the sum in \eqref{eq:coalition-response-objects} has the stated properties.
+\end{proof}
+
+This result identifies exactly where objective heterogeneity enters. Differences in $H_C$ matter only on the OD-preserving tangent, because directions normal to that tangent are ruled out by the demand equalities. Differences in $q_C$ enter the intercept and therefore shift the baseline response. A change in a coalition label without a change in these objects or in its feasible constraints cannot change the response. This is why coalition size or HHI alone cannot serve as a sufficient state for the continuation equilibrium.
+
+\subsection{HDV screening}\label{sec:hdv_screening}
+
+Let $Z_H$ span $\ker\Gamma_H$ on the active HDV routes and define the HDV feasible edge tangent
+\begin{equation}\label{eq:hdv-tangent}
+ L_H:=\Lambda_HZ_H.
+\end{equation}
+After removing directions that change flow only on constant-cost edges, assume
+\begin{equation}\label{eq:hdv-tangent-pd}
+ L_H^\top BL_H\succ0.
+\end{equation}
+Define
+\begin{equation}\label{eq:hdv-screening}
+ \mathcal A_H:=I-L_H(L_H^\top BL_H)^{-1}L_H^\top B.
+\end{equation}
+
+\begin{lemma}[HDV screening projection]\label{lem:screening}
+The operator in \eqref{eq:hdv-screening} satisfies
+\begin{align*}
+ \mathcal A_H^2&=\mathcal A_H, &
+ \mathcal A_HL_H&=0, &
+ \ker\mathcal A_H&=\range(L_H),\\
+ \range(\mathcal A_H)&=\ker(L_H^\top B), &
+ \mathcal A_H^\top B&=B\mathcal A_H.&&
+\end{align*}
+\end{lemma}
+
+\begin{proof}
+Let $K_H=L_H^\top BL_H$. Direct multiplication gives $\mathcal A_HL_H=0$ and
+\[
+\mathcal A_H^2=I-2L_HK_H^{-1}L_H^\top B+L_HK_H^{-1}K_HK_H^{-1}L_H^\top B=\mathcal A_H.
+\]
+Thus $\range(L_H)\subseteq\ker\mathcal A_H$. If $\mathcal A_Hv=0$, then $v=L_HK_H^{-1}L_H^\top Bv$, so $v\in\range(L_H)$. Moreover, $L_H^\top B\mathcal A_H=0$, while $\mathcal A_Hv=v$ whenever $L_H^\top Bv=0$; hence $\range(\mathcal A_H)=\ker(L_H^\top B)$. Finally, symmetry of $B$ and $K_H$ gives $\mathcal A_H^\top B=B\mathcal A_H$.
+\end{proof}
+
+\subsection{Activated coalition-response theorem}\label{sec:activated_theorem}
+
+Choose $h^0$ satisfying $\Gamma_Hh^0=d^H$ and write $\ell_H^0=\Lambda_Hh^0$. First remove zero-slope edge directions, so $B\succ0$ on the retained edge space. Define the $B$-orthogonal representative space
+\begin{equation}\label{eq:hdv-representative-space}
+ \mathcal Q_H:=\ker(L_H^\top B)=\range(\mathcal A_H).
+\end{equation}
+Let $U_H$ have columns spanning $\mathcal Q_H$ and normalize them so that $U_H^\top B U_H=I$. Then $\mathcal A_H=U_HU_H^\top B$. This construction supplies explicit coordinates for the quotient by HDV-reallocation directions.
+
+\begin{theorem}[Activated coalition response and equilibrium equivalence]\label{thm:activated-response}
+Under the affine physical-cost specification, fixed coalition and HDV supports, and the conditions above, aggregate edge flow satisfies
+\begin{equation}\label{eq:activated-system}
+ [I+\mathcal A_HR_\Pi B]x
+ =\mathcal A_H(s_\Pi+\ell_H^0-R_\Pi a)
+ -L_H(L_H^\top BL_H)^{-1}L_H^\top a.
+\end{equation}
+The coefficient is nonsingular on the retained positive-slope edge space. Hence all coalition objectives and the coalition partition enter the conditional aggregate equilibrium only through
+\begin{equation}\label{eq:activated-signature}
+ \boxed{\mathfrak S_\Pi^{\mathrm{act}}=(\mathcal A_HR_\Pi,\mathcal A_Hs_\Pi).}
+\end{equation}
+Two governance arrangements with the same signature induce the same aggregate congestible-edge flow and TSTT whenever the common solution satisfies both arrangements' support inequalities. The support qualification is essential: when a route enters or leaves the active set, the local affine representation changes and a new signature must be computed.
+\end{theorem}
+
+\begin{proof}
+Substitute \eqref{eq:coalition-aggregate-response} into $x=\Lambda_Hh+\sum_C\Lambda_Cy^C$ and write $h=h^0+Z_Hu$:
+\[
+ x=s_\Pi-R_\Pi(a+Bx)+\ell_H^0+L_Hu.
+\]
+The HDV equal-cost equations, premultiplied by $Z_H^\top$, give $L_H^\top(a+Bx)=0$. Eliminating $u$ yields \eqref{eq:activated-system}. Let $M_\Pi=I+\mathcal A_HR_\Pi B$ and suppose $M_\Pi v=0$. Premultiplication by $I-\mathcal A_H$ gives $(I-\mathcal A_H)v=0$, so $v\in\mathcal Q_H$. By the self-adjointness in Lemma~\ref{lem:screening},
+\[
+ v^\top B[I+\mathcal A_HR_\Pi B]v
+ =v^\top Bv+(Bv)^\top R_\Pi(Bv)>0,
+\]
+because $B\succ0$ and $R_\Pi\succeq0$. Thus $v=0$ and $M_\Pi$ is nonsingular. The only organization-dependent terms are $\mathcal A_HR_\Pi$ and $\mathcal A_Hs_\Pi$, proving sufficiency.
+\end{proof}
+
+Let $x_H^a=-L_H(L_H^\top BL_H)^{-1}L_H^\top a$. Every edge flow satisfying the active HDV equal-cost equations has a unique representation $x=x_H^a+U_Hz$. Define the reduced organization-dependent objects
+\begin{equation}\label{eq:reduced-activated-signature}
+ \widehat R_\Pi:=U_H^\top B R_\Pi B U_H,
+ \qquad
+ \widehat q_\Pi:=U_H^\top B\{s_\Pi-R_\Pi(a+Bx_H^a)\}.
+\end{equation}
+
+\begin{proposition}[Minimal reduced activated signature]\label{prop:response-map-minimality}
+Fix the affine physical costs, coalition and HDV supports, and hence a common pair $(\mathcal Q_H,U_H)$. Let a common additive forcing $r\in\mathbb R^{\dim\mathcal Q_H}$ vary over a nonempty open set for which the support inequalities remain valid. Two governance arrangements generate the same reduced response map $z(r)$ on that set if and only if they have the same pair $(\widehat R_\Pi,\widehat q_\Pi)$.
+\end{proposition}
+
+\begin{proof}
+Substitution of $x=x_H^a+U_Hz$ into the screened consistency equation and premultiplication by $U_H^\top B$ gives
+\[
+ z_\Pi(r)=(I+\widehat R_\Pi)^{-1}(\widehat q_\Pi+\widehat \ell_H^0+r),
+ \qquad \widehat \ell_H^0:=U_H^\top B\ell_H^0,
+\]
+where $\widehat \ell_H^0$ is common across the arrangements. Equality on an open set implies equality of derivatives with respect to $r$, hence equality of $(I+\widehat R_\Pi)^{-1}$ and then $\widehat R_\Pi$. Equality at one forcing then gives equality of $\widehat q_\Pi$. The converse follows directly from the displayed map.
+\end{proof}
+
+The necessity statement concerns the reduced conditional response map on a common support, not one observed equilibrium and not the primitive matrices outside $\mathcal Q_H$. Different primitive objectives may produce the same reduced curvature and intercept, while a raw coalition displacement may be fully absorbed by HDVs. The reduced signature is therefore a minimal mechanism-level object in the precise coordinate system in which the response is observed.
+
+\subsection{Comparative statics of objective heterogeneity}\label{sec:comparative-statics}
+
+Let $\eta$ parameterize an objective, coalition composition, coordination rule, or feasible partition while the affine support and HDV tangent remain fixed. Define $K_\Pi=I+\mathcal A_HR_\Pi B$.
+
+\begin{proposition}[Objective-to-flow derivative]\label{prop:comparative-statics}
+If $R_\Pi(\eta)$ and $s_\Pi(\eta)$ are differentiable, then
+\begin{equation}\label{eq:comparative-statics}
+ \frac{\partial x}{\partial\eta}
+ =K_\Pi^{-1}\mathcal A_H
+ \left[
+ \frac{\partial s_\Pi}{\partial\eta}
+ -\frac{\partial R_\Pi}{\partial\eta}(a+Bx)
+ \right].
+\end{equation}
+For a fixed coalition tangent and curvature perturbation $\dot H_C$,
+\begin{equation}\label{eq:projected-curvature-derivative}
+ \dot P_C=-P_C\dot H_CP_C.
+\end{equation}
+Under affine costs,
+\begin{equation}\label{eq:tstt-derivative}
+ \frac{\partial J}{\partial\eta}=(a+2Bx)^\top\frac{\partial x}{\partial\eta}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Differentiate \eqref{eq:activated-system}. The organization-dependent derivative on the right is $\mathcal A_H(\dot s_\Pi-\dot R_\Pi a)$, and the derivative of the left side contributes $K_\Pi\dot x+\mathcal A_H\dot R_\Pi Bx$. Rearranging gives \eqref{eq:comparative-statics}. Differentiating \eqref{eq:coalition-projected-inverse} gives \eqref{eq:projected-curvature-derivative}. Finally, $J(x)=a^\top x+x^\top Bx$ gives \eqref{eq:tstt-derivative}.
+\end{proof}
+
+An objective or governance perturbation is locally irrelevant for aggregate flow when
+\[
+ \mathcal A_H\left[\dot s_\Pi-\dot R_\Pi(a+Bx)\right]=0.
+\]
+In particular, a displacement in $\range(L_H)$ is completely absorbed by HDV reallocation. No universal sign for the TSTT derivative exists on a general network because the residual response can shift flow across multiple congested edges. Any sign reported in the numerical section is therefore conditional on the declared objective family, demand allocation, network, and support.
+
+The derivative also provides a local decision rule for coalition design. Under
+identity-preserving coordination, a proposed merge of two existing blocks can
+be embedded in a differentiable path $\eta\in[0,1]$ that activates their
+cross-member governance terms while preserving all member OD constraints. For
+such a path, define the merge-direction score
+\begin{equation}\label{eq:merge-score}
+ \mathcal M_\Pi(\eta)
+ :=(a+2Bx)^{\top}K_\Pi^{-1}\mathcal A_H
+ \left[\dot s_\Pi-\dot R_\Pi(a+Bx)\right].
+\end{equation}
+
+\begin{proposition}[General-network merge regimes]\label{prop:merge-regimes}
+On a common affine support satisfying the conditions of
+Theorem~\ref{thm:activated-response}, the score in
+\eqref{eq:merge-score} equals $dJ/d\eta$. Hence stronger coupling along the
+proposed merge path lowers, leaves unchanged, or raises TSTT according as
+$\mathcal M_\Pi(\eta)$ is negative, zero, or positive. If its sign is uniform
+on $[0,1]$ and the support remains valid, the same ordering holds for the
+finite comparison between the two endpoints.
+\end{proposition}
+
+\begin{proof}
+Substituting \eqref{eq:comparative-statics} into
+\eqref{eq:tstt-derivative} gives
+$dJ/d\eta=\mathcal M_\Pi(\eta)$. The local statements follow immediately.
+For the finite comparison, the fundamental theorem of calculus gives
+\[
+ J(1)-J(0)=\int_0^1\mathcal M_\Pi(\eta)\,d\eta,
+\]
+so a uniform sign determines the endpoint ordering.
+\end{proof}
+
+This score does not impose a global lattice ordering on partitions. A merge
+can change the response direction as $\eta$ varies, and a support change
+requires recomputing the score. It nevertheless replaces a purely ex post
+statement with a testable condition: centralization is favored along a
+candidate merge precisely when its OD-feasible response, after HDV screening,
+has negative system-cost projection.
+
+\subsection{Low-dimensional bottleneck reduction}\label{sec:bottleneck-reduction}
+
+The general construction reduces to a scalar expression on a two-route bottleneck. Let $c_1(x_1)=t_0+t_1x_1$ and $c_2\equiv a$, and define $x^{UE}=(a-t_0)/t_1$. Let $D$ contain coalitions that use both routes, and let $H$ contain HDV bottleneck flow and coalition flow fixed at corners. For an interior coalition with perceived slope $\widehat\theta_C=\beta_Ct_1$, its bottleneck flow $b_C$ satisfies
+\[
+ b_C=\frac{x^{UE}-x_1}{\beta_C}.
+\]
+Summing gives
+\begin{equation}\label{eq:xHSigma}
+ x_1=\frac{H+\Sigma x^{UE}}{1+\Sigma},
+ \qquad \Sigma=\sum_{C\in D}\frac1{\beta_C}.
+\end{equation}
+Within a fixed responsive set,
+\[
+ \frac{\partial x_1}{\partial\Sigma}=\frac{x^{UE}-H}{(1+\Sigma)^2},
+ \qquad
+ \frac{\partial x_1}{\partial H}=\frac1{1+\Sigma}.
+\]
+Let total two-route demand be $N$. Up to the constant $Na$, system travel time
+on this support is
+\begin{equation}\label{eq:bottleneck-tstt-sigma}
+ J(\Sigma)=Na+t_1\{x_1(\Sigma)^2-x^{UE}x_1(\Sigma)\}.
+\end{equation}
+
+\begin{theorem}[Canonical coalition-design regimes]\label{thm:canonical-regimes}
+Consider the two-route network above and a fixed coalition objective family.
+If HDVs use both routes in the interior, their Wardrop equality pins
+$x_1=x^{UE}$, so coalition organization is locally neutral for aggregate flow
+and TSTT. Otherwise suppose the responsive support is described by
+\eqref{eq:xHSigma}, with $0\leq H<x^{UE}$ and $\Sigma\geq0$. Then
+\begin{equation}\label{eq:bottleneck-tstt-derivative}
+ \frac{dJ}{d\Sigma}
+ =\frac{t_1(x^{UE}-H)
+ \left[2H+(\Sigma-1)x^{UE}\right]}{(1+\Sigma)^3}.
+\end{equation}
+Consequently:
+\begin{enumerate}
+ \item if $H\geq x^{UE}/2$, $J$ is nondecreasing in $\Sigma$, and every
+ organizational change that lowers effective response improves TSTT;
+ \item if $H<x^{UE}/2$, $J$ decreases for
+ $\Sigma<\Sigma^\star$ and increases for $\Sigma>\Sigma^\star$, where
+ \begin{equation}\label{eq:sigma-star}
+  \Sigma^\star=1-\frac{2H}{x^{UE}};
+ \end{equation}
+ among attainable organizations on the same support, the preferred one moves
+ effective response toward $\Sigma^\star$.
+\end{enumerate}
+Thus a grand coalition is preferred when its effective response lies closest
+to the relevant boundary or interior target, whereas a partial coalition can
+strictly dominate both grand and singleton organization when it is closer to
+$\Sigma^\star$ than either endpoint.
+\end{theorem}
+
+\begin{proof}
+Substitute \eqref{eq:xHSigma} into \eqref{eq:bottleneck-tstt-sigma} and use
+\[
+ \frac{dJ}{d\Sigma}
+ =t_1(2x_1-x^{UE})\frac{dx_1}{d\Sigma}.
+\]
+Because
+\[
+ 2x_1-x^{UE}
+ =\frac{2H+(\Sigma-1)x^{UE}}{1+\Sigma},
+\]
+equation \eqref{eq:bottleneck-tstt-derivative} follows. Under
+$0\leq H<x^{UE}$, every factor outside the bracket is positive. The bracket
+has no nonnegative root when $H\geq x^{UE}/2$ and has the unique root
+$\Sigma^\star\in(0,1]$ otherwise, which proves the stated regimes. If HDVs are
+interior on both routes, Wardrop equality gives
+$t_0+t_1x_1=a$ and hence $x_1=x^{UE}$ independently of coalition response.
+\end{proof}
+
+The theorem answers the organizational question without claiming that every
+merger moves $\Sigma$ in the same direction. In the screened regime,
+organization has no first-order congestion effect. In the monotone regime, a
+merge is desirable when it lowers effective response. In the interior regime,
+neither maximal centralization nor maximal fragmentation is generically
+optimal; the relevant target is $\Sigma^\star$. The scalar pair $(H,\Sigma)$
+is sufficient only because this network has one feasible diversion margin.
+Once a coalition has several interacting routes or several OD obligations,
+$R_\Pi$ is generally a matrix with cross-edge entries, and
+Proposition~\ref{prop:merge-regimes} supplies the corresponding network-level
+criterion.

@@ -1,0 +1,16 @@
+{
+  "derivative": "t1*(x_ue-h)*(2*h+(sigma-1)*x_ue)/(1+sigma)^3",
+  "threshold": "1-2*h/x_ue",
+  "verification": "exact coefficient equality after clearing (1+sigma)^3",
+  "assumptions": [
+    "0 <= h < x_ue",
+    "sigma >= 0",
+    "t1 > 0",
+    "fixed active support"
+  ],
+  "regimes": {
+    "screened": "HDVs remain interior and pin x=x_ue; organization is neutral",
+    "centralization": "h >= x_ue/2, so dJ/dsigma >= 0 and lower effective response is preferred",
+    "interior_target": "h < x_ue/2, so J decreases below sigma_star and increases above sigma_star"
+  }
+}

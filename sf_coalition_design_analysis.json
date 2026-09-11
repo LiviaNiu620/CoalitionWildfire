@@ -1,0 +1,327 @@
+{
+  "protocol": {
+    "source": "sf_coalition_partition_scan_results.json",
+    "near_tie_relative_TSTT_tolerance": 1e-08,
+    "greedy_rule": "start from singletons; choose the best improving pairwise merge; stop when no merge improves TSTT",
+    "coordination_burden": "gamma^2 times within-coalition company-pair share",
+    "penalized_loss": "TSTT gap from state best divided by UE-SO gap plus lambda times coordination burden"
+  },
+  "states": [
+    {
+      "alpha": 0.5,
+      "gamma": 0.5,
+      "global_optimal_partition_ids": [
+        "P01"
+      ],
+      "global_best_J": 7317045.333300418,
+      "best_minus_second_J": 12843.358082744293,
+      "best_minus_second_pct_UE": 0.1716974696510084,
+      "greedy_path": [
+        "P15",
+        "P12",
+        "P05",
+        "P01"
+      ],
+      "greedy_partition_id": "P01",
+      "greedy_regret": {
+        "delta_J": 0.0,
+        "delta_J_pct_UE": 0.0,
+        "recovery_regret_pp": 0.0
+      },
+      "two_step_path": [
+        "P15",
+        "P12",
+        "P04",
+        "P01"
+      ],
+      "two_step_partition_id": "P01",
+      "two_step_regret": {
+        "delta_J": 0.0,
+        "delta_J_pct_UE": 0.0,
+        "recovery_regret_pp": 0.0
+      },
+      "always_grand_regret": {
+        "delta_J": 0.0,
+        "delta_J_pct_UE": 0.0,
+        "recovery_regret_pp": 0.0
+      },
+      "always_singleton_regret": {
+        "delta_J": 51748.484648271464,
+        "delta_J_pct_UE": 0.6918037957938609,
+        "recovery_regret_pp": 18.09580244398039
+      },
+      "coordination_cost_regimes": [
+        {
+          "lambda_min": 0.0,
+          "lambda_max": 0.35929302612404523,
+          "optimal_partition_ids": [
+            "P01"
+          ]
+        },
+        {
+          "lambda_min": 0.35929302612404523,
+          "lambda_max": 0.6959849251757719,
+          "optimal_partition_ids": [
+            "P05"
+          ]
+        },
+        {
+          "lambda_min": 0.6959849251757719,
+          "lambda_max": 0.9512693870173087,
+          "optimal_partition_ids": [
+            "P06",
+            "P08"
+          ]
+        },
+        {
+          "lambda_min": 0.9512693870173087,
+          "lambda_max": 1.617859195990076,
+          "optimal_partition_ids": [
+            "P12"
+          ]
+        },
+        {
+          "lambda_min": 1.617859195990076,
+          "lambda_max": null,
+          "optimal_partition_ids": [
+            "P15"
+          ]
+        }
+      ]
+    },
+    {
+      "alpha": 0.5,
+      "gamma": 1.0,
+      "global_optimal_partition_ids": [
+        "P01"
+      ],
+      "global_best_J": 7315003.274759805,
+      "best_minus_second_J": 5594.001624523662,
+      "best_minus_second_pct_UE": 0.07478386244208138,
+      "greedy_path": [
+        "P15",
+        "P12",
+        "P03",
+        "P01"
+      ],
+      "greedy_partition_id": "P01",
+      "greedy_regret": {
+        "delta_J": 0.0,
+        "delta_J_pct_UE": 0.0,
+        "recovery_regret_pp": 0.0
+      },
+      "two_step_path": [
+        "P15",
+        "P12",
+        "P04",
+        "P01"
+      ],
+      "two_step_partition_id": "P01",
+      "two_step_regret": {
+        "delta_J": 0.0,
+        "delta_J_pct_UE": 0.0,
+        "recovery_regret_pp": 0.0
+      },
+      "always_grand_regret": {
+        "delta_J": 0.0,
+        "delta_J_pct_UE": 0.0,
+        "recovery_regret_pp": 0.0
+      },
+      "always_singleton_regret": {
+        "delta_J": 53790.54747320432,
+        "delta_J_pct_UE": 0.7191032775688363,
+        "recovery_regret_pp": 18.80988645454312
+      },
+      "coordination_cost_regimes": [
+        {
+          "lambda_min": 0.0,
+          "lambda_max": 0.02934229348648187,
+          "optimal_partition_ids": [
+            "P01"
+          ]
+        },
+        {
+          "lambda_min": 0.02934229348648187,
+          "lambda_max": 0.26776179961604457,
+          "optimal_partition_ids": [
+            "P03"
+          ]
+        },
+        {
+          "lambda_min": 0.26776179961604457,
+          "lambda_max": 0.7434622137106147,
+          "optimal_partition_ids": [
+            "P12"
+          ]
+        },
+        {
+          "lambda_min": 0.7434622137106147,
+          "lambda_max": null,
+          "optimal_partition_ids": [
+            "P15"
+          ]
+        }
+      ]
+    },
+    {
+      "alpha": 0.9,
+      "gamma": 0.5,
+      "global_optimal_partition_ids": [
+        "P04",
+        "P05"
+      ],
+      "global_best_J": 7230540.6499404805,
+      "best_minus_second_J": 5.578622221946716e-07,
+      "best_minus_second_pct_UE": 7.457826165681997e-12,
+      "greedy_path": [
+        "P15",
+        "P12",
+        "P04"
+      ],
+      "greedy_partition_id": "P04",
+      "greedy_regret": {
+        "delta_J": 0.0,
+        "delta_J_pct_UE": 0.0,
+        "recovery_regret_pp": 0.0
+      },
+      "two_step_path": [
+        "P15",
+        "P12",
+        "P04"
+      ],
+      "two_step_partition_id": "P04",
+      "two_step_regret": {
+        "delta_J": 0.0,
+        "delta_J_pct_UE": 0.0,
+        "recovery_regret_pp": 0.0
+      },
+      "always_grand_regret": {
+        "delta_J": 2678.6493646912277,
+        "delta_J_pct_UE": 0.035809740337123155,
+        "recovery_regret_pp": 0.9366904180790447
+      },
+      "always_singleton_regret": {
+        "delta_J": 25008.34275385365,
+        "delta_J_pct_UE": 0.3343260495688301,
+        "recovery_regret_pp": 8.745106895419019
+      },
+      "coordination_cost_regimes": [
+        {
+          "lambda_min": 0.0,
+          "lambda_max": 0.09204614203589827,
+          "optimal_partition_ids": [
+            "P04",
+            "P05"
+          ]
+        },
+        {
+          "lambda_min": 0.09204614203589827,
+          "lambda_max": 0.09204614208271687,
+          "optimal_partition_ids": [
+            "P04",
+            "P05",
+            "P06",
+            "P08"
+          ]
+        },
+        {
+          "lambda_min": 0.09204614208271687,
+          "lambda_max": 1.0033897564089238,
+          "optimal_partition_ids": [
+            "P06",
+            "P08"
+          ]
+        },
+        {
+          "lambda_min": 1.0033897564089238,
+          "lambda_max": null,
+          "optimal_partition_ids": [
+            "P15"
+          ]
+        }
+      ]
+    },
+    {
+      "alpha": 0.9,
+      "gamma": 1.0,
+      "global_optimal_partition_ids": [
+        "P12"
+      ],
+      "global_best_J": 7231128.365579097,
+      "best_minus_second_J": 943.8693033456802,
+      "best_minus_second_pct_UE": 0.01261819300074248,
+      "greedy_path": [
+        "P15",
+        "P12"
+      ],
+      "greedy_partition_id": "P12",
+      "greedy_regret": {
+        "delta_J": 0.0,
+        "delta_J_pct_UE": 0.0,
+        "recovery_regret_pp": 0.0
+      },
+      "two_step_path": [
+        "P15",
+        "P12"
+      ],
+      "two_step_partition_id": "P12",
+      "two_step_regret": {
+        "delta_J": 0.0,
+        "delta_J_pct_UE": 0.0,
+        "recovery_regret_pp": 0.0
+      },
+      "always_grand_regret": {
+        "delta_J": 53461.936007471755,
+        "delta_J_pct_UE": 0.7147102086532856,
+        "recovery_regret_pp": 18.694975105831336
+      },
+      "always_singleton_regret": {
+        "delta_J": 24420.628438343294,
+        "delta_J_pct_UE": 0.3264691432830528,
+        "recovery_regret_pp": 8.539590497803495
+      },
+      "coordination_cost_regimes": [
+        {
+          "lambda_min": 0.0,
+          "lambda_max": 0.5123754298682103,
+          "optimal_partition_ids": [
+            "P12"
+          ]
+        },
+        {
+          "lambda_min": 0.5123754298682103,
+          "lambda_max": null,
+          "optimal_partition_ids": [
+            "P15"
+          ]
+        }
+      ]
+    }
+  ],
+  "policy_regret_summary": {
+    "greedy_merge": {
+      "mean_recovery_regret_pp": 0.0,
+      "max_recovery_regret_pp": 0.0,
+      "mean_delta_J_pct_UE": 0.0,
+      "max_delta_J_pct_UE": 0.0
+    },
+    "two_step_merge": {
+      "mean_recovery_regret_pp": 0.0,
+      "max_recovery_regret_pp": 0.0,
+      "mean_delta_J_pct_UE": 0.0,
+      "max_delta_J_pct_UE": 0.0
+    },
+    "always_grand": {
+      "mean_recovery_regret_pp": 4.907916380977595,
+      "max_recovery_regret_pp": 18.694975105831336,
+      "mean_delta_J_pct_UE": 0.1876299872476022,
+      "max_delta_J_pct_UE": 0.7147102086532856
+    },
+    "always_singleton": {
+      "mean_recovery_regret_pp": 13.547596572936506,
+      "max_recovery_regret_pp": 18.80988645454312,
+      "mean_delta_J_pct_UE": 0.5179255665536451,
+      "max_delta_J_pct_UE": 0.7191032775688363
+    }
+  }
+}

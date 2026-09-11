@@ -1,0 +1,31 @@
+\section{Positioning in the Literature}\label{sec:related-work}
+
+\subsection{Multiple operators and mixed-autonomy networks}
+
+Research on automated mobility-on-demand and ride-sourcing has established that several operators can compete for demand while interacting through congestion. Existing formulations study operator competition and market decisions \citep{turan2022,wang2022amod}, jointly model ride-hailing competition with transit planning \citep{wei2022}, or embed ride-sourcing services in urban traffic-network equilibrium \citep{xu2021ridesourcing}. A related control literature studies the equilibrium and incentive consequences of routing AVs alongside individually routed vehicles \citep{mehr2019,lazar2021,biyik2021}. These strands motivate the distinction between positive-mass controlled flows and nonatomic HDVs, but they leave a different organizational question open: conditional on fixed demand, how should heterogeneous routing objectives be grouped into independent or coordinated decision centers? Operator count or market share alone does not answer that question, because it does not specify objective composition, coalition governance, or member-level OD authority. The present paper isolates that operational layer while holding the physical road-cost function common across vehicle classes.
+
+\subsection{Atomic congestion games, collusion, and coalition structure}
+
+Atomic congestion and Nash--Wardrop models provide the natural language for positive-mass routing authorities whose choices affect the costs faced by other users \citep{haurie1985,orda1993,harker1988,boulogne2002}. Multiclass assignment and strategic routing further show how equilibrium depends on the interaction between populations with different decision rules \citep{dafermos1972,cominetti2009}. Work on collusion and concentration in congestion games demonstrates that changing the strategic grouping of users can alter equilibrium efficiency \citep{hayrapetyan2006,roughgarden2002}. The gap relevant here is not the existence of coalition effects; it is their identification in a mixed-autonomy network with heterogeneous company objectives and fixed OD obligations. A coalition in our model is therefore more than a larger atomic mass. Its governance matrix determines which member effects are internalized, while the partition determines how many strategic response centers remain. This distinction allows the same company masses and coalition HHI to produce different continuation equilibria.
+
+\subsection{Equilibrium sensitivity and the transmission of organizational change}
+
+Sensitivity analysis for equilibrium network flows uses active supports, bordered systems, and derivatives restricted to polyhedral feasible sets \citep{tobin1988,qiu1989,patriksson2004,josefsson2006}. Recent work on atomic splittable games addresses the complementary computational problem of locating and traversing parametric equilibrium supports \citep{klimm2025}. We use these tools for their established purpose and do not present the bordered inverse as a new numerical primitive. The paper's addition is to compose three response blocks that are usually kept separate: the OD-restricted response of each coalition, its edge-space aggregation, and the endogenous HDV Wardrop adjustment space. The resulting activated signature identifies the part of an organizational change that can reach aggregate congestion on a fixed support. This composition is also why scalar concentration summaries need not order network outcomes: the same coalition-side displacement can be fully screened in one HDV support and remain active in another.
+
+\subsection{Ownership, information, and interoperability}
+
+Ownership and information architecture are related institutional choices but are not interchangeable operational mechanisms. HHI is an ownership-concentration statistic used in merger screening \citep{usdojftc2023}; information-design studies show that changing what users know can itself alter network congestion and need not improve it monotonically \citep{acemoglu2018,massicot2022}. Transport policy and data-system work likewise treats interoperability as a coordination standard that can be implemented without common ownership \citep{marquez2025,ec2023mobilitydataspace}. These sources motivate a separation that is central to our design interpretation. Identity-preserving coalition coordination changes the aggregation of management objectives at fixed member authority; operational pooling changes the feasible authority by relaxing member-level OD constraints; and information sharing is a possible microfoundation for better response estimation, not a guarantee of lower network travel time. The paper keeps these channels separate in both the model and the experiments.
+
+\subsection{Position of this paper}
+
+The literature supplies the ingredients for our analysis but does not connect
+them to a regime and selection theory for coalition organization. We combine
+atomic coalition control, mixed-autonomy equilibrium, and support-conditional
+sensitivity in a model with common physical costs and heterogeneous AV
+management objectives. The activated response yields a general-network merge
+score and a canonical threshold at which partial coordination can dominate
+both endpoints. Complete partition scans then serve as audit baselines for
+local policies with measurable regret, while governance burden produces
+explicit organizational intervals. The resulting claim is operational and
+bounded: coalition design matches a response state, whereas HHI and coalition
+size remain descriptors rather than sufficient equilibrium controls.

@@ -1,0 +1,95 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage[round]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\setlength{\emergencystretch}{3em}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{definition}{Definition}
+\newtheorem{assumption}{Assumption}
+\newtheorem{remark}{Remark}
+\newcommand{\HHI}{\mathrm{HHI}}
+\newcommand{\range}{\operatorname{range}}
+
+\title{\textbf{Coalition Design under Heterogeneous AV Objectives: Regimes and Low-Regret Selection in Mixed-Autonomy Networks}}
+\author{Luyao Niu \and Ruolin Li}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}\sloppy
+When several autonomous-vehicle (AV) operators share a road network, should
+their routing be centralized, or should some independent decision centers be
+retained? We study this question when operators have heterogeneous management
+objectives, aggregate demand is fixed, and human-driven vehicles (HDVs)
+continue to reroute. Each coalition is an atomic splittable player with a
+convex management objective and member-level origin--destination obligations;
+HDVs form a nonatomic Wardrop population. On a fixed affine support, we project
+each coalition response onto its demand-feasible tangent and remove the
+directions that HDVs can reproduce. The resulting activated response signature
+is sufficient for aggregate equilibrium and minimal for the conditional
+response map. It yields a general-network merge-direction score: stronger
+coupling improves congestion exactly when the screened response has negative
+system-cost projection. A canonical bottleneck theorem then identifies three
+regimes. Coalition organization is neutral when HDVs fully screen the response;
+centralization is favored when it moves effective response toward the relevant
+boundary; and partial coordination can dominate both endpoints when the
+system-cost-minimizing response is interior. We evaluate local merge policies
+against complete four-company audit scans. In Sioux Falls, one- and two-step
+policies attain an optimal arrangement in all four tested states, whereas an
+always-grand rule loses up to $18.695$ recovery percentage points. Across 480
+certified profiles on independent Braess and directed-grid networks, one-step
+merging is exact in $29$ of $32$ states with mean regret $0.332$ points, while
+two-step lookahead is exact in all $32$. Both networks move from grand to
+partial coordination at high AV penetration under sufficiently strong
+governance, although the transition boundary differs. Adding an explicit
+governance burden generates grand, partial, and fragmented policy intervals.
+HHI remains descriptive because it does not identify objective composition,
+demand authority, or the response that survives HDV reallocation. The results
+concern conditional continuation design, not endogenous coalition formation or
+empirical calibration of operator objectives.
+\end{abstract}
+
+\noindent\textbf{Keywords:} mixed autonomy; coalition structure; heterogeneous AV management objectives; atomic splittable routing; Nash--Wardrop equilibrium; congestion; fleet organization
+
+\input{response_paper/chapters/01_introduction}
+\input{response_paper/chapters/01_related_work}
+\input{response_paper/chapters/02_model}
+\input{response_paper/chapters/03_response}
+\input{response_paper/chapters/04_ownership_interoperability}
+\input{response_paper/chapters/05_experiments}
+\input{response_paper/chapters/06_discussion}
+\input{response_paper/chapters/07_conclusion}
+\section*{Data Availability Statement}
+All analytical derivations, experiment scripts, machine-readable result files, figure generators, and numerical validators used for this manuscript are included in the repository accompanying the paper. The Sioux Falls network inputs are identified in Appendix~\ref{app:sf-params}.
+
+\section*{Ethics Statement}
+This study uses public benchmark network data and controlled computational scenarios. It does not involve human participants, personal data, or animal subjects.
+
+\section*{Author Contributions}
+Luyao Niu: conceptualization, methodology, mathematical analysis, software, experiments, and writing. Ruolin Li: conceptualization, methodology, mathematical analysis, review, and writing.
+
+\section*{Conflict of Interest}
+The authors declare no conflict of interest.
+
+\section*{Funding}
+No external funding was received for this study.
+
+\section*{AI-Assisted Writing Disclosure}
+Generative AI tools were used for drafting assistance, code-review support, and language editing. The authors verified the mathematical derivations, experimental outputs, citations, and final manuscript and remain responsible for all content.
+\input{response_paper/chapters/appendices}
+
+\bibliographystyle{plainnat}
+\bibliography{refs}
+
+\end{document}

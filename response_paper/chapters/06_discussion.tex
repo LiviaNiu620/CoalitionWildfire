@@ -1,0 +1,147 @@
+\section{Discussion: From Coalition Effects to Coalition Policy}\label{sec:discussion}
+
+\subsection{The organizational question resolved by the model}
+
+The paper begins with a routing-control question rather than a concentration
+question. AV companies face a common physical congestion technology but can
+use different management objectives for their controlled vehicles. Coalition
+governance determines which of those objectives are optimized jointly and
+which cross-member effects are internalized. Because each member retains its
+accepted OD demand, an organizational change first alters an OD-feasible route
+response. The road network maps that response into edge flows, and HDVs then
+absorb the component they can reproduce through Wardrop reallocation. Only the
+remaining activated response can change aggregate congestion.
+
+This mechanism explains why coalition degree lacks a universal ordering. A
+larger coalition need not generate a larger or more socially aligned activated
+response. Its cross-member terms can rotate the response toward a different
+set of congested edges, and HDV substitution can remove some directions but
+not others. The relevant policy object is therefore the system-cost projection
+of the screened response. Proposition~\ref{prop:merge-regimes} makes this
+statement operational: a proposed increase in coupling improves TSTT when its
+merge-direction score is negative, is neutral when the score is zero, and is
+harmful when the score is positive.
+
+\subsection{When centralization and partial independence are preferred}
+
+The canonical theorem turns the general directional criterion into a regime
+map. When interior HDVs can offset the coalition response, they pin the
+congested route at the Wardrop flow and organization is locally neutral. Once
+that screening support disappears, the fixed component $H$ and effective
+coalition response $\Sigma$ determine system performance. If
+$H\geq x^{UE}/2$, TSTT is nondecreasing in $\Sigma$, so a centralizing move is
+desirable when it reduces effective response. If $H<x^{UE}/2$, system cost is
+minimized at the interior target
+$\Sigma^*=1-2H/x^{UE}$. A partial coalition can then dominate both complete
+centralization and complete fragmentation because it produces a response
+closer to the target.
+
+The theorem does not assert that a merger always reduces $\Sigma$. That
+relationship depends on the declared objective family and governance matrix.
+It instead states a sharper condition: once the response induced by an
+organization is known or estimated, the preferred direction follows from its
+position relative to the active regime. On a general network, the scalar
+target becomes the merge-direction score, which must be recomputed after a
+support change.
+
+\subsection{What the network evidence adds}
+
+The Sioux Falls audit scan is consistent with the regime logic. At
+$\alpha=0.5$, the grand coalition minimizes TSTT for both tested positive
+governance intensities. At $\alpha=0.9$, the optimal set retains independent
+decision centers: symmetry-equivalent three--one partitions at $\gamma=0.5$
+and a two--one--one partition at $\gamma=1$. The two-network validation shows
+the same qualitative transition. All tested Braess and grid states with
+$\alpha\leq0.7$ select the grand coalition, whereas high penetration and
+sufficiently strong governance produce partial optima on both networks. The
+transition occurs at different values of $\gamma$, so topology changes the
+boundary without eliminating the regime.
+
+These results improve upon a list of partition rankings in two ways. First,
+the analytic theorem explains why an interior organization can be optimal.
+Second, policy regret asks whether a decision rule can recover the organization
+without treating the full partition lattice as the prescription. One-step
+merging is exact in all four Sioux Falls states and $29$ of $32$ cross-network
+states, with only $0.332$ points of mean cross-network regret. Its three Braess
+failures are informative: local improvement can stop before a jointly valuable
+sequence of merges becomes visible. Two-step lookahead crosses these local
+traps and reaches an audit optimum in all $36$ states. This observed exactness
+does not establish universal optimality, particularly because the four-company
+two-step neighborhood covers much of the small partition lattice.
+
+\subsection{Governance burden changes the recommendation}
+
+Minimizing TSTT alone treats coordination as costless. The burden model in
+\eqref{eq:governance-burden} separates the network benefit from the resources
+needed to maintain cross-company governance. Each arrangement then defines an
+affine loss in $\lambda$: its congestion performance is the intercept and its
+coordination burden is the slope. The lower envelope yields exact switching
+thresholds. In the Sioux Falls example at $\alpha=0.5,\gamma=1$, the selected
+organization moves from grand coordination to two pairs, then to one pair, and
+finally to singletons as the governance-cost weight rises.
+
+This result gives partial coalitions a substantive interpretation. They are not
+arbitrary intermediate points or evidence that moderation is always best.
+They appear when the marginal congestion benefit of an additional cross-member
+link no longer covers its governance burden. Alternative cost functions could
+change the thresholds or remove an intermediate interval; the lower-envelope
+method remains valid once that burden is specified.
+
+\subsection{Why HHI cannot implement the policy}
+
+The response-based policy needs variables that a passive ownership cross
+section does not reveal. The controlled composition experiment holds company
+and coalition HHI, masses, coalition sizes, OD obligations, and route access
+fixed, yet changing which objective types are grouped alters recovery and can
+reverse the ordering along the governance path. Across the full Sioux Falls
+audit, the coalition-HHI/recovery Spearman correlation falls to $0.236$ and the
+pairwise inversion rate reaches $40.74\%$ at high penetration and full
+governance. At fixed company HHI, changing spatial OD portfolios creates even
+larger variation because it changes the network directions controlled by each
+company.
+
+HHI remains useful for describing the distribution of fleet mass. It cannot
+select a coalition organization because it omits objective curvature,
+cross-member governance, OD authority, route access, active support, and HDV
+screening. The policy should therefore treat HHI as a screening covariate and
+estimate or simulate the activated response directly.
+
+\subsection{Observability and implementation}
+
+Implementation requires four classes of inputs: accepted company-level OD
+obligations, available routes or dispatch authority, calibrated physical delay
+functions, and a defensible approximation of each company's marginal
+management objective. Under a stable support, OD-preserving perturbations can
+identify screened aggregate-flow responses and provide the ingredients for the
+merge score. When supports change, the manager can use the certified
+continuation solver to evaluate the local one- or two-step merge neighborhood.
+This creates an auditable workflow: diagnose the response regime, evaluate
+candidate local merges, report regret against richer audit scans when feasible,
+and include governance burden before recommending an organization.
+
+The recommendation applies to an operator, platform, or regulator that can
+compare specified governance arrangements. It does not imply that every member
+would accept the system-optimal continuation design. Private implementation
+requires a payoff-allocation or transfer rule, contracting costs, deviation
+protocols, and a partition-formation concept.
+
+\subsection{Scope and limitations}
+
+The exact response and regime results require affine physical costs, fixed
+active supports, nonredundant OD tangents, and positive curvature on
+coalition-feasible directions. The BPR experiments provide certified numerical
+continuation equilibria, not a global nonlinear extension of the affine
+theorem. The governance burden is a transparent sensitivity primitive rather
+than an externally calibrated institutional cost. Objective types are also
+controlled primitives; estimating them from operator dispatch data remains an
+important empirical task.
+
+The routing stage conditions on an externally realized batch of accepted
+requests. Pricing, passenger choice, endogenous demand, empty-vehicle
+repositioning, service quality, capacity and headway effects, private profit,
+and endogenous coalition stability remain outside the model. The complete
+partition scans cover four-company benchmark menus rather than a population of
+markets, and the two-step policy has no general optimality guarantee. These
+boundaries leave a clear next step: combine empirically identified objectives
+with scalable local search and a partition-function formation game, while
+retaining the continuation-equilibrium mechanism established here.

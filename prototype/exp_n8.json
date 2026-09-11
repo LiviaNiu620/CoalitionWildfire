@@ -1,0 +1,140 @@
+[
+ {
+  "trial": 0,
+  "alpha": 0.9,
+  "gamma": 1.0,
+  "optK": [
+   1
+  ],
+  "grand": 0.0,
+  "audit_s": 245.89363074302673,
+  "n_part": 4140,
+  "one_step": {
+   "regret": 0.0,
+   "solves": 85
+  },
+  "two_step": {
+   "regret": 0.0,
+   "solves": 533
+  },
+  "surrogate+refine": {
+   "regret": 0.0,
+   "solves": 10
+  }
+ },
+ {
+  "trial": 0,
+  "alpha": 0.5,
+  "gamma": 1.0,
+  "optK": [
+   3
+  ],
+  "grand": 0.19855021144104837,
+  "audit_s": 990.4272282123566,
+  "n_part": 4140,
+  "one_step": {
+   "regret": 0.2273266454235386,
+   "solves": 84
+  },
+  "two_step": {
+   "regret": 0.0,
+   "solves": 533
+  },
+  "surrogate+refine": {
+   "regret": 0.19855021144104837,
+   "solves": 10
+  }
+ },
+ {
+  "trial": 1,
+  "alpha": 0.9,
+  "gamma": 1.0,
+  "optK": [
+   1
+  ],
+  "grand": 0.0,
+  "audit_s": 203.3039903640747,
+  "n_part": 4140,
+  "one_step": {
+   "regret": 0.0,
+   "solves": 85
+  },
+  "two_step": {
+   "regret": 0.0,
+   "solves": 533
+  },
+  "surrogate+refine": {
+   "regret": 0.0,
+   "solves": 10
+  }
+ },
+ {
+  "trial": 1,
+  "alpha": 0.5,
+  "gamma": 1.0,
+  "optK": [
+   1
+  ],
+  "grand": 0.0,
+  "audit_s": 99.67507791519165,
+  "n_part": 4140,
+  "one_step": {
+   "regret": 0.2860311435615994,
+   "solves": 84
+  },
+  "two_step": {
+   "regret": 0.0,
+   "solves": 533
+  },
+  "surrogate+refine": {
+   "regret": 0.0,
+   "solves": 10
+  }
+ },
+ {
+  "trial": 2,
+  "alpha": 0.9,
+  "gamma": 1.0,
+  "optK": [
+   1
+  ],
+  "grand": 0.0,
+  "audit_s": 61.93592023849487,
+  "n_part": 4140,
+  "one_step": {
+   "regret": 0.0,
+   "solves": 85
+  },
+  "two_step": {
+   "regret": 0.0,
+   "solves": 533
+  },
+  "surrogate+refine": {
+   "regret": 0.0,
+   "solves": 10
+  }
+ },
+ {
+  "trial": 2,
+  "alpha": 0.5,
+  "gamma": 1.0,
+  "optK": [
+   3
+  ],
+  "grand": 0.16297133461202817,
+  "audit_s": 117.59288787841797,
+  "n_part": 4140,
+  "one_step": {
+   "regret": 0.0,
+   "solves": 84
+  },
+  "two_step": {
+   "regret": 0.0,
+   "solves": 533
+  },
+  "surrogate+refine": {
+   "regret": 0.16297133461202817,
+   "solves": 10
+  }
+ }
+]

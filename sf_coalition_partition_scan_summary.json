@@ -1,0 +1,273 @@
+{
+  "protocol": {
+    "governance": "identity-preserving coordination",
+    "n_companies": 4,
+    "partition_count": 15,
+    "alphas": [
+      0.5,
+      0.9
+    ],
+    "gammas": [
+      0.5,
+      1.0
+    ],
+    "partition_ids": {
+      "P01": [
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ],
+      "P02": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3
+        ]
+      ],
+      "P03": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "P04": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "P05": [
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          2
+        ]
+      ],
+      "P06": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "P07": [
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1
+        ]
+      ],
+      "P08": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "P09": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "P10": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "P11": [
+        [
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2
+        ]
+      ],
+      "P12": [
+        [
+          0,
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "P13": [
+        [
+          0,
+          2
+        ],
+        [
+          1
+        ],
+        [
+          3
+        ]
+      ],
+      "P14": [
+        [
+          0,
+          3
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ]
+      ],
+      "P15": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ]
+    },
+    "objective_types": [
+      0.5,
+      0.5,
+      1.5,
+      1.5
+    ],
+    "total_AV_mass_fixed": true,
+    "VI_tolerance": 1e-06,
+    "omitted_route_relative_tolerance": 1e-06
+  },
+  "partition_count": 15,
+  "rows": 60,
+  "certified_rows": 60,
+  "max_VI_gap": 9.995677827042746e-07,
+  "max_relative_omitted_route_slack": 9.9282836711912e-07,
+  "by_group": [
+    {
+      "alpha": 0.5,
+      "gamma": 0.5,
+      "rows": 15,
+      "spearman_coalition_HHI_recovery": 0.9061483101720128,
+      "kendall_coalition_HHI_recovery": 0.8070857209481023,
+      "pairwise_inversion_rate": 0.04938271604938271,
+      "recovery_range": [
+        0.3896631105376023,
+        0.5706211349774062
+      ],
+      "recovery_sd": 0.04606743962561045,
+      "max_J_range_over_J_UE": 0.006918037957938608,
+      "class_means": {
+        "assortative": 0.4850342889517231,
+        "mixed_pairs": 0.49671013482957665,
+        "other": 0.47055456857497474
+      }
+    },
+    {
+      "alpha": 0.5,
+      "gamma": 1.0,
+      "rows": 15,
+      "spearman_coalition_HHI_recovery": 0.7928706098703036,
+      "kendall_coalition_HHI_recovery": 0.671100001350857,
+      "pairwise_inversion_rate": 0.12345679012345678,
+      "recovery_range": [
+        0.38966309555586914,
+        0.5777619601013003
+      ],
+      "recovery_sd": 0.05501201103070824,
+      "max_J_range_over_J_UE": 0.007191032775688363,
+      "class_means": {
+        "assortative": 0.5582004311103124,
+        "mixed_pairs": 0.539434698078921,
+        "other": 0.4894129213382525
+      }
+    },
+    {
+      "alpha": 0.9,
+      "gamma": 0.5,
+      "rows": 15,
+      "spearman_coalition_HHI_recovery": 0.8153633931290356,
+      "kendall_coalition_HHI_recovery": 0.671100001350857,
+      "pairwise_inversion_rate": 0.12345679012345678,
+      "recovery_range": [
+        0.785666201166141,
+        0.8731172701203312
+      ],
+      "recovery_sd": 0.029067906237795805,
+      "max_J_range_over_J_UE": 0.003343260495688301,
+      "class_means": {
+        "assortative": 0.8576698703061644,
+        "mixed_pairs": 0.869282014200218,
+        "other": 0.8325365155440284
+      }
+    },
+    {
+      "alpha": 0.9,
+      "gamma": 1.0,
+      "rows": 15,
+      "spearman_coalition_HHI_recovery": 0.23617422421668616,
+      "kendall_coalition_HHI_recovery": 0.16502459049611237,
+      "pairwise_inversion_rate": 0.4074074074074074,
+      "recovery_range": [
+        0.6841123504591261,
+        0.8710621015174395
+      ],
+      "recovery_sd": 0.045806422536973174,
+      "max_J_range_over_J_UE": 0.007147102086532856,
+      "class_means": {
+        "assortative": 0.86776150777786,
+        "mixed_pairs": 0.8574537706538021,
+        "other": 0.8214928783275942
+      }
+    }
+  ]
+}

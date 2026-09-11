@@ -1,0 +1,184 @@
+\section{A Two-Stage Coalition-Formation and Routing Game}\label{sec:model}
+
+The model has two stages. In Stage~1, AV companies endogenously form a partition through consensual merge-and-split moves and transferable utility. In Stage~2, each coalition routes its members' accepted requests as an atomic splittable player, while human-driven vehicles (HDVs) form a Wardrop population. Backward induction links the stages: firms evaluate a proposed organizational move using the continuation equilibrium induced by the resulting full partition. Four objects must remain distinct. Physical link cost is a property of the road; a coalition routing objective governs dispatch; a company's realized accounting cost determines its private payoff; and coalition governance cost records the resources required to operate the agreement. This separation prevents the routing objective, which need not be additively separable across firms, from being used incorrectly as a transferable payoff.
+
+\subsection{Network, routes, and fixed demand}\label{sec:model_network}
+
+Traffic uses a finite directed graph $G=(V,E)$ and a finite set $W$ of origin--destination (OD) pairs. For each $w\in W$, total demand $d_w>0$ is fixed and the admissible route set is $\mathcal R_w$. Let $\mathcal R=\bigcup_{w\in W}\mathcal R_w$, and let $\delta_{er}=1$ if edge $e$ belongs to route $r$. For any population, route flows $f$ induce edge flow
+\begin{equation}\label{eq:route-edge-map}
+ x_e=\sum_{r\in\mathcal R}\delta_{er}f_r.
+\end{equation}
+Every vehicle experiences the same physical link cost $c_e(x_e)$. This common-cost assumption is what makes AV governance a behavioral mechanism rather than a vehicle-class-specific road technology. The numerical model uses the Bureau of Public Roads function
+\begin{equation}\label{eq:bpr}
+ c_e(x_e)=t_e^0\left[1+B\left(\frac{x_e}{\kappa_e}\right)^\eta\right],
+ \qquad B=0.15,\quad \eta=4,
+\end{equation}
+where $t_e^0$ is free-flow time and $\kappa_e$ is capacity. The theoretical results require only that $c_e$ be continuous and nondecreasing; affine results use
+\begin{equation}\label{eq:affine}
+ c_e(x_e)=a_e+b_ex_e,\qquad b_e\geq0.
+\end{equation}
+The experienced cost of route $r$ is $C_r(x)=\sum_{e\in E}\delta_{er}c_e(x_e)$. The BPR specification is used for numerical continuation experiments; it is not used to claim the affine closed form below.
+
+\subsection{Companies, AV demand, and coalition partitions}\label{sec:model_companies}
+
+Let $N=\{1,\ldots,n\}$ be the underlying AV companies. Company $i$ controls an accepted OD-demand vector $d^i=(d_w^i)_{w\in W}$ and mass $m_i=\sum_wd_w^i$. HDV demand is $d^H=(d_w^H)_{w\in W}$, and the realized demand batch satisfies
+\begin{equation}\label{eq:company-demand}
+ d_w^H+\sum_{i\in N}d_w^i=d_w,\qquad w\in W.
+\end{equation}
+The routing stage is conditional on this accepted batch. Request acceptance, pricing, passenger platform choice, empty-vehicle repositioning, and inter-batch balancing are outside the model. Thus a company can change the path of an assigned request but cannot change its OD pair during the routing game. Holding the batch fixed is deliberate: it lets the comparisons identify routing and governance effects without conflating them with market-share or demand-formation effects.
+
+A coalition structure is a partition $\Pi=\{C_1,\ldots,C_K\}$ of $N$, where $K=|\Pi|$ is the number of independent routing decision centers. Stage~1 selects this partition endogenously from the finite set $\mathfrak P(N)$ through the formation protocol in Section~\ref{sec:ownership}; conditional on $\Pi$, Stage~2 treats its blocks as the routing players. The number $n$ of underlying companies and the number $K$ of active coalitions are distinct: changing $n$ changes the population of objectives, whereas changing $K$ changes which objectives are jointly optimized. Company-level HHI is a function of the $m_i$; coalition-level HHI is a function of the aggregate masses $m_C=\sum_{i\in C}m_i$. Neither index defines a coalition's management objective or formation payoff.
+
+For company $i$, let $y^i$ denote its route-flow vector and let $\Lambda_i$ map routes to company edge flows. A coalition $C$ may use the stacked member vector $y^C=(y^i)_{i\in C}$. Under the main identity-preserving governance rule, every member retains its own OD obligation:
+\begin{equation}\label{eq:identity-feasible}
+ \mathcal Y_C^{\mathrm{id}}=
+ \left\{y^C\geq0:\Gamma_Cy^C=d^C\right\},
+ \qquad
+ \Gamma_C=\operatorname{blkdiag}(\Gamma_i)_{i\in C}.
+\end{equation}
+The coalition jointly chooses $y^C$ but cannot reassign an accepted passenger obligation from one member to another. This is the main treatment because it changes the decision maker while holding ownership of requests fixed; the resulting comparison isolates objective aggregation and coordination from a change in service authority.
+
+An operational-pooling governance rule instead preserves only the coalition total on each OD pair:
+\begin{equation}\label{eq:pool-feasible}
+ \mathcal Y_C^{\mathrm{pool}}=
+ \left\{y^C\geq0:\sum_{i\in C}\sum_{r\in\mathcal R_w}y_r^i
+ =\sum_{i\in C}d_w^i,\ \forall w\right\}.
+\end{equation}
+Pooling is a separate intervention because it changes the feasible set, whereas identity-preserving coordination changes only the objective aggregation and cross-member internalization. The distinction matters empirically: a pooling result cannot be interpreted as evidence about coordination alone when pooling also permits one member to serve another member's accepted demand.
+
+\begin{proposition}[Pooling changes feasible authority]\label{prop:pooling}
+For every coalition $C$, $\mathcal Y_C^{\mathrm{id}}\subseteq\mathcal Y_C^{\mathrm{pool}}$. The inclusion can be strict. If all members have identical admissible routes for every OD pair and the coalition objective depends only on aggregate coalition flow, the two sets induce the same aggregate route-flow set.
+\end{proposition}
+
+\begin{proof}
+Summing the member-specific equalities in \eqref{eq:identity-feasible} gives the pooled equalities in \eqref{eq:pool-feasible}. Hence the identity-preserving set is contained in the pooling set. The inclusion is strict whenever a pooled solution allocates more than $d_w^i$ of OD-$w$ flow to member $i$. Conversely, if all members share the same route set, any pooled aggregate route vector $\bar y_w$ can be split as $y_w^i=(d_w^i/d_w^C)\bar y_w$, where $d_w^C=\sum_{i\in C}d_w^i$. This split satisfies every member equality and produces the same aggregate vector. If the objective depends only on that aggregate vector, the induced aggregate optimization problems coincide.
+\end{proof}
+
+\subsection{Company management objectives}\label{sec:model_objectives}
+
+Let $F_e^C=\Lambda_Cy^C$ be coalition $C$'s edge flow and $x_e^{-C}=x_e-F_e^C$ be the flow controlled by other populations. The coalition management objective is
+\begin{equation}\label{eq:coalition-objective}
+ \Phi_C(y^C;y^{-C},h)
+ =\sum_{e\in E}\int_0^{F_e^C}c_e(x_e^{-C}+s)\,ds
+ +\Psi_C(y^C).
+\end{equation}
+The first term is the common physical routing component. It is written as an integral because, conditional on the other populations' flow, its derivative with respect to coalition flow is the experienced link cost $c_e(x_e)$. This gives the coalition the correct marginal road delay while preserving a convex objective whenever $c_e$ is nondecreasing. The convex function $\Psi_C$ is the company- and governance-specific management objective. It may represent own-fleet congestion internalization, energy, reliability, service commitments, route preferences, or cross-member coordination. These interpretations are alternative economic readings of the same reduced-form routing objective; the numerical design below uses the congestion-curvature component and does not claim to estimate each interpretation separately.
+
+The route marginal field used by coalition $C$ is
+\begin{equation}\label{eq:coalition-gradient}
+ G_C(y)=\nabla_{y^C}\Phi_C
+ =\Lambda_C^\top c(x)+\nabla\Psi_C(y^C).
+\end{equation}
+HDVs use $G_H(y,h)=\Lambda_H^\top c(x)$.
+
+For the exact response analysis, use a convex quadratic management objective:
+\begin{equation}\label{eq:quadratic-objective}
+ \Psi_C(y^C)=\frac12(y^C)^\top H_Cy^C+q_C^\top y^C,
+ \qquad H_C=H_C^\top\succeq0.
+\end{equation}
+The matrix $H_C$ is the curvature of the coalition's management objective on route flows, and $q_C$ contains fixed marginal operating costs or route-specific priorities. Positive semidefiniteness is the modeling restriction that rules out locally concave management incentives; strict curvature is imposed only on the feasible OD-preserving tangent when a unique response is needed. The earlier perceived-slope model is nested by
+\begin{equation}\label{eq:slope-nested}
+ H_C=\Lambda_C^\top\operatorname{diag}(\widehat\theta^C)\Lambda_C,\qquad q_C=0.
+\end{equation}
+Thus $\widehat\theta_e^C$ is an edge-separable parameterization of objective curvature, not the complete company objective. In particular, it should not be read as a measured coefficient of the BPR road function.
+
+Under identity-preserving coordination, collect member edge flows on edge $e$ in $\bm f_{C,e}=(f_e^i)_{i\in C}$. We parameterize governance by
+\begin{equation}\label{eq:governance-matrix}
+ \Psi_C(y^C)=\frac12\sum_{e\in E}\bm f_{C,e}^{\top}\Omega_{C,e}\bm f_{C,e}+q_C^\top y^C,
+ \qquad \Omega_{C,e}=\Omega_{C,e}^{\top}\succeq0.
+\end{equation}
+The diagonal entries of $\Omega_{C,e}$ describe company-specific curvature. The off-diagonal entries describe the degree to which the coalition internalizes congestion interactions between members. This matrix is therefore a governance object: it changes whose marginal routing consequences are included in a decision, while the physical cost $c_e$ remains unchanged.
+
+For the main coalition-composition experiment, let $\tau_i>0$ be a company objective type and let $\bar b_e\geq0$ be a fixed reference curvature. We use
+\begin{equation}\label{eq:gamma-governance}
+ \Omega_{C,e}(\gamma)=\bar b_eD_C^{1/2}
+ \left[(1-\gamma)I_C+\gamma\mathbf1_C\mathbf1_C^\top\right]
+ D_C^{1/2},
+ \qquad D_C=\operatorname{diag}(\tau_i)_{i\in C},\quad \gamma\in[0,1].
+\end{equation}
+The scalar $\gamma$ is a governance parameter, not an information-quality estimate or an empirically calibrated technology parameter. At $\gamma=0$, companies retain only their own diagonal management curvature. At $\gamma>0$, the coalition internalizes cross-member interactions, with the same member types $\tau_i$ and reference slopes $\bar b_e$. The path is chosen so that increasing coordination adds off-diagonal terms without changing the sign of the curvature matrix; this makes comparative statics interpretable as a change in governance rather than a loss of well-posedness.
+
+\begin{proposition}[Convex governance path and inert partition labels]\label{prop:governance}
+The matrix $\Omega_{C,e}(\gamma)$ is positive semidefinite for every $\gamma\in[0,1]$. Under identity-preserving constraints, if $\gamma=0$ and $(\tau_i,q_i,d^i,\Lambda_i)$ are fixed, changing the coalition partition does not change the VI operator or its equilibrium set.
+\end{proposition}
+
+\begin{proof}
+For any vector $v$,
+\[
+ v^\top\Omega_{C,e}(\gamma)v
+ =\bar b_e(1-\gamma)\|D_C^{1/2}v\|^2
+ +\bar b_e\gamma(\mathbf1_C^\top D_C^{1/2}v)^2\geq0.
+\]
+At $\gamma=0$, the management penalty is the sum of company-specific quadratic terms regardless of the coalition block in which each company is placed. Identity-preserving feasible sets are the same product of member-level OD polytopes for every partition, and the common physical term depends only on total edge flow. Therefore both the feasible set and stacked operator are unchanged.
+\end{proof}
+
+\subsection{Stage 2: mixed Nash--Wardrop continuation equilibrium}\label{sec:model_equilibrium}
+
+Let $h$ be HDV route flow and define
+\begin{equation}\label{eq:feasible}
+ \mathcal Z_\Pi=\left\{((y^C)_{C\in\Pi},h): y^C\in\mathcal Y_C,\ h\geq0,\ \Gamma_Hh=d^H\right\}.
+\end{equation}
+
+\begin{definition}[Heterogeneous-coalition mixed Nash--Wardrop equilibrium]\label{def:eq}
+A feasible profile $z^*=((y^{C*})_{C\in\Pi},h^*)$ is an equilibrium for $(\Pi,\mathcal G)$ if every coalition minimizes \eqref{eq:coalition-objective} over its feasible set given other populations, while HDVs use only minimum experienced-cost routes within each OD pair. Equivalently, if $\mathcal F_\Pi$ stacks $G_C$ for all coalitions and $G_H$, then
+\begin{equation}\label{eq:VI}
+ \mathcal F_\Pi(z^*)^\top(z-z^*)\geq0
+ \qquad\text{for all }z\in\mathcal Z_\Pi.
+\end{equation}
+\end{definition}
+
+This is a finite-player Nash game coupled to a nonatomic Wardrop population. It is not assumed to possess a common potential: each coalition internalizes the marginal consequences specified by its own objective, whereas HDVs take the experienced road cost as given. The coalition block is a best-response condition because the objective is convex in its own flow; the HDV block is Wardrop's equal-cost condition. The same physical cost $c_e$ couples all populations, while $H_C$, $q_C$, $\Gamma_C$, and $d^C$ encode organizational heterogeneity. The variational inequality is consequently a compact equilibrium representation, not an assertion that all agents maximize one social objective.
+
+Because Stage~1 compares different partitions, a continuation-selection rule is required whenever route-flow equilibrium is not unique. Let
+\begin{equation}\label{eq:continuation-selection}
+ z^\sigma(\Pi)\in\operatorname{SOL}(\mathcal F_\Pi,\mathcal Z_\Pi)
+\end{equation}
+denote a deterministic, commonly known selection for every $\Pi\in\mathfrak P(N)$. Aggregate edge flow is unique under the conditions in Proposition~\ref{prop:coalition-monotone}, but the rule is retained because member-level route flows enter firms' private accounting costs. All formation values below are conditional on the same rule $\sigma$; changing it defines a different partition-function game.
+
+\subsection{Private costs used in Stage 1}\label{sec:model_private_costs}
+
+The coalition routing objective $\Phi_C$ determines a Stage~2 best response, but it is not itself a transferable payoff. Its integral term is a device for producing the desired marginal road-cost field, and its off-diagonal governance terms cannot generally be assigned uniquely to individual members. We therefore evaluate firm $i$ at a realized profile $z$ by the additive accounting cost
+\begin{equation}\label{eq:individual-accounting-cost}
+ \ell_i(z)
+ :=\sum_{e\in E}f_e^i c_e(x_e)
+ +\frac12\sum_{e\in E}\bar b_e\tau_i(f_e^i)^2
+ +q_i^\top y^i.
+\end{equation}
+The first term is experienced fleet travel time, the second retains the firm's own management-curvature charge, and the third collects fixed marginal operating costs. Cross-member terms in $\Omega_{C,e}$ affect $\ell_i$ indirectly by changing the continuation flow, but they are not counted again as realized operating cost.
+
+Operating a coalition can additionally require contracting, data integration, monitoring, or joint-dispatch resources. For the declared parametric family, define
+\begin{equation}\label{eq:coalition-governance-cost}
+ G_C(\kappa,\chi)
+ :=\kappa\binom{|C|}{2}
+ +\chi\sum_{\{i,j\}\subseteq C}(\tau_i-\tau_j)^2,
+ \qquad \kappa,\chi\geq0,
+\end{equation}
+with $G_{\{i\}}=0$. The first component charges for each integrated company pair; the second allows heterogeneous objectives to be more costly to reconcile. These are transparent formation primitives rather than estimated costs. Given the selected continuation equilibrium, coalition $C$'s net private cost and transferable worth are
+\begin{equation}\label{eq:coalition-private-value}
+ K_C(\Pi;\sigma)
+ :=\sum_{i\in C}\ell_i\bigl(z^\sigma(\Pi)\bigr)+G_C(\kappa,\chi),
+ \qquad
+ v(C,\Pi;\sigma):=-K_C(\Pi;\sigma).
+\end{equation}
+The dependence on the full partition is substantive: other coalitions and HDVs reroute when $\Pi$ changes. Hence $v$ is a partition function, not a characteristic function of $C$ alone.
+
+\subsection{System benchmark and scope}\label{sec:model_metrics}
+
+Network congestion is measured by total system travel time
+\begin{equation}\label{eq:J}
+ J(x)=\sum_{e\in E}x_ec_e(x_e).
+\end{equation}
+Let $J^{UE}$ be the all-nonatomic Wardrop benchmark and $J^{SO}$ the system-optimal value for the same aggregate OD demand. We report normalized recovery
+\begin{equation}\label{eq:rho}
+ \rho=\frac{J^{UE}-J^{eq}}{J^{UE}-J^{SO}}.
+\end{equation}
+The statistic measures the fraction of the recoverable congestion gap closed relative to the two benchmarks. It is a system-performance statistic, not a firm's Stage~1 payoff, and it does not include governance resources, operating profit, passenger surplus, reliability, or distributional effects.
+
+For descriptive comparison only, company HHI is
+\begin{equation}\label{eq:hhi}
+ \mathrm{HHI}_{\mathrm{firm}}=\sum_{i\in N}\left(\frac{m_i}{\sum_jm_j}\right)^2,
+\end{equation}
+and coalition HHI is defined analogously using $m_C$. These indices summarize mass concentration but omit objective curvature, OD portfolios, route access, cross-member governance, and HDV adjustment.
+
+\paragraph{Standing assumptions.}
+The accepted demand batch, route sets, and physical costs are fixed within each formation episode. Physical costs are continuous and nondecreasing. Each coalition management objective is continuously differentiable and convex in its own route flow. The main continuation theorem further assumes affine physical costs, a fixed active support, full-row-rank OD constraints, positive curvature on every OD-feasible coalition tangent, and a nonredundant HDV tangent after zero-slope directions are removed. These additional conditions are exactly the conditions needed for the projected linear response; they are not imposed on the BPR numerical game. Stage~1 assumes enforceable balanced transfers among the firms consenting to a move and a common continuation-selection rule. Pricing, demand induction, passenger choice, capacity changes, and inter-batch repositioning remain outside scope.

@@ -1,0 +1,94 @@
+{
+  "by_regime": {
+    "mass_linked_prior": {
+      "n": 5,
+      "certified_n": 5,
+      "profile_exact_pass_n": 3,
+      "max_exact_violation_ratio": 1.425205996928525,
+      "anchors": {
+        "8 equal": {
+          "recovery": 0.5034783187531113,
+          "profile_exact_pass": true,
+          "max_exact_violation_ratio": 0.33842266173414653,
+          "profile_coarse_pass": null,
+          "max_coarse_violation_ratio": null
+        },
+        "4 equal": {
+          "recovery": 0.698693879137178,
+          "profile_exact_pass": true,
+          "max_exact_violation_ratio": 0.620359439535315,
+          "profile_coarse_pass": null,
+          "max_coarse_violation_ratio": null
+        },
+        "2 equal": {
+          "recovery": 0.8783152256048244,
+          "profile_exact_pass": true,
+          "max_exact_violation_ratio": 0.9839376169138232,
+          "profile_coarse_pass": null,
+          "max_coarse_violation_ratio": null
+        },
+        "skewed": {
+          "recovery": 0.7777493200174288,
+          "profile_exact_pass": false,
+          "max_exact_violation_ratio": 1.1819220933569998,
+          "profile_coarse_pass": null,
+          "max_coarse_violation_ratio": null
+        },
+        "monopoly": {
+          "recovery": 0.9148085070343712,
+          "profile_exact_pass": false,
+          "max_exact_violation_ratio": 1.425205996928525,
+          "profile_coarse_pass": null,
+          "max_coarse_violation_ratio": null
+        }
+      },
+      "profile_coarse_pass_n": null,
+      "max_coarse_violation_ratio": null
+    },
+    "full_information": {
+      "n": 5,
+      "certified_n": 5,
+      "profile_exact_pass_n": 2,
+      "max_exact_violation_ratio": 1.4261102660806833,
+      "anchors": {
+        "8 equal": {
+          "recovery": 0.534594690030742,
+          "profile_exact_pass": true,
+          "max_exact_violation_ratio": 0.502198046844193,
+          "profile_coarse_pass": true,
+          "max_coarse_violation_ratio": 0.26633073331662627
+        },
+        "4 equal": {
+          "recovery": 0.7188386158362923,
+          "profile_exact_pass": true,
+          "max_exact_violation_ratio": 0.7103824166082385,
+          "profile_coarse_pass": true,
+          "max_coarse_violation_ratio": 0.532786812456179
+        },
+        "2 equal": {
+          "recovery": 0.8790546669894763,
+          "profile_exact_pass": false,
+          "max_exact_violation_ratio": 1.0054000573090003,
+          "profile_coarse_pass": false,
+          "max_coarse_violation_ratio": 1.0663877974928064
+        },
+        "skewed": {
+          "recovery": 0.7971511856894976,
+          "profile_exact_pass": false,
+          "max_exact_violation_ratio": 1.1880325617667857,
+          "profile_coarse_pass": false,
+          "max_coarse_violation_ratio": 1.7704096754140022
+        },
+        "monopoly": {
+          "recovery": 0.914798214781308,
+          "profile_exact_pass": false,
+          "max_exact_violation_ratio": 1.4261102660806833,
+          "profile_coarse_pass": false,
+          "max_coarse_violation_ratio": 2.139165399121025
+        }
+      },
+      "profile_coarse_pass_n": 2,
+      "max_coarse_violation_ratio": 2.139165399121025
+    }
+  }
+}

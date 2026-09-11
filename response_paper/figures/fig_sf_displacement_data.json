@@ -1,0 +1,12 @@
+{
+  "two_fleet_J": 7264734.346791667,
+  "monopoly_J": 7283798.0585874785,
+  "gross_savings": 108746.11497977961,
+  "offsetting_losses": 89682.40318396714,
+  "net_savings": 19063.711795812473,
+  "edge_correlation": 0.5001901904689421,
+  "two_fleet_gap": 9.653835132815546e-08,
+  "monopoly_gap": 9.619006738729876e-08,
+  "two_fleet_paths": 1787,
+  "monopoly_paths": 1816
+}

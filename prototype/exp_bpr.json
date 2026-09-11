@@ -1,0 +1,455 @@
+[
+ {
+  "net": "grid",
+  "alpha": 0.5,
+  "gamma": 0.5,
+  "optK_frozen": [
+   1
+  ],
+  "optK_self": [
+   1
+  ],
+  "opt_frozen": [
+   [
+    [
+     0,
+     1,
+     2,
+     3
+    ]
+   ]
+  ],
+  "opt_self": [
+   [
+    [
+     0,
+     1,
+     2,
+     3
+    ]
+   ]
+  ],
+  "cross_regret": 0.0
+ },
+ {
+  "net": "grid",
+  "alpha": 0.5,
+  "gamma": 1.0,
+  "optK_frozen": [
+   1
+  ],
+  "optK_self": [
+   1
+  ],
+  "opt_frozen": [
+   [
+    [
+     0,
+     1,
+     2,
+     3
+    ]
+   ]
+  ],
+  "opt_self": [
+   [
+    [
+     0,
+     1,
+     2,
+     3
+    ]
+   ]
+  ],
+  "cross_regret": 0.0
+ },
+ {
+  "net": "grid",
+  "alpha": 0.7,
+  "gamma": 0.5,
+  "optK_frozen": [
+   1
+  ],
+  "optK_self": [
+   1
+  ],
+  "opt_frozen": [
+   [
+    [
+     0,
+     1,
+     2,
+     3
+    ]
+   ]
+  ],
+  "opt_self": [
+   [
+    [
+     0,
+     1,
+     2,
+     3
+    ]
+   ]
+  ],
+  "cross_regret": 0.0
+ },
+ {
+  "net": "grid",
+  "alpha": 0.7,
+  "gamma": 1.0,
+  "optK_frozen": [
+   2
+  ],
+  "optK_self": [
+   1
+  ],
+  "opt_frozen": [
+   [
+    [
+     0,
+     1,
+     2
+    ],
+    [
+     3
+    ]
+   ],
+   [
+    [
+     0,
+     1,
+     3
+    ],
+    [
+     2
+    ]
+   ]
+  ],
+  "opt_self": [
+   [
+    [
+     0,
+     1,
+     2,
+     3
+    ]
+   ]
+  ],
+  "cross_regret": 0.0040644978586673545
+ },
+ {
+  "net": "grid",
+  "alpha": 0.9,
+  "gamma": 0.5,
+  "optK_frozen": [
+   2
+  ],
+  "optK_self": [
+   1
+  ],
+  "opt_frozen": [
+   [
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ]
+   ]
+  ],
+  "opt_self": [
+   [
+    [
+     0,
+     1,
+     2,
+     3
+    ]
+   ]
+  ],
+  "cross_regret": 0.004214045915613887
+ },
+ {
+  "net": "grid",
+  "alpha": 0.9,
+  "gamma": 1.0,
+  "optK_frozen": [
+   2
+  ],
+  "optK_self": [
+   1
+  ],
+  "opt_frozen": [
+   [
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ]
+   ]
+  ],
+  "opt_self": [
+   [
+    [
+     0,
+     1,
+     2,
+     3
+    ]
+   ]
+  ],
+  "cross_regret": 0.002756897955344859
+ },
+ {
+  "net": "braess",
+  "alpha": 0.5,
+  "gamma": 0.5,
+  "optK_frozen": [
+   1
+  ],
+  "optK_self": [
+   1
+  ],
+  "opt_frozen": [
+   [
+    [
+     0,
+     1,
+     2,
+     3
+    ]
+   ]
+  ],
+  "opt_self": [
+   [
+    [
+     0,
+     1,
+     2,
+     3
+    ]
+   ]
+  ],
+  "cross_regret": 0.0
+ },
+ {
+  "net": "braess",
+  "alpha": 0.5,
+  "gamma": 1.0,
+  "optK_frozen": [
+   1,
+   2
+  ],
+  "optK_self": [
+   1
+  ],
+  "opt_frozen": [
+   [
+    [
+     0,
+     1,
+     2
+    ],
+    [
+     3
+    ]
+   ],
+   [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   [
+    [
+     0,
+     1,
+     3
+    ],
+    [
+     2
+    ]
+   ],
+   [
+    [
+     0,
+     1,
+     2,
+     3
+    ]
+   ]
+  ],
+  "opt_self": [
+   [
+    [
+     0,
+     1,
+     2,
+     3
+    ]
+   ]
+  ],
+  "cross_regret": 0.0072083097989545444
+ },
+ {
+  "net": "braess",
+  "alpha": 0.7,
+  "gamma": 0.5,
+  "optK_frozen": [
+   1
+  ],
+  "optK_self": [
+   1
+  ],
+  "opt_frozen": [
+   [
+    [
+     0,
+     1,
+     2,
+     3
+    ]
+   ]
+  ],
+  "opt_self": [
+   [
+    [
+     0,
+     1,
+     2,
+     3
+    ]
+   ]
+  ],
+  "cross_regret": 0.0
+ },
+ {
+  "net": "braess",
+  "alpha": 0.7,
+  "gamma": 1.0,
+  "optK_frozen": [
+   1
+  ],
+  "optK_self": [
+   1
+  ],
+  "opt_frozen": [
+   [
+    [
+     0,
+     1,
+     2,
+     3
+    ]
+   ]
+  ],
+  "opt_self": [
+   [
+    [
+     0,
+     1,
+     2,
+     3
+    ]
+   ]
+  ],
+  "cross_regret": 0.0
+ },
+ {
+  "net": "braess",
+  "alpha": 0.9,
+  "gamma": 0.5,
+  "optK_frozen": [
+   1
+  ],
+  "optK_self": [
+   1
+  ],
+  "opt_frozen": [
+   [
+    [
+     0,
+     1,
+     2,
+     3
+    ]
+   ]
+  ],
+  "opt_self": [
+   [
+    [
+     0,
+     1,
+     2,
+     3
+    ]
+   ]
+  ],
+  "cross_regret": 0.0
+ },
+ {
+  "net": "braess",
+  "alpha": 0.9,
+  "gamma": 1.0,
+  "optK_frozen": [
+   2
+  ],
+  "optK_self": [
+   1
+  ],
+  "opt_frozen": [
+   [
+    [
+     0,
+     1,
+     2
+    ],
+    [
+     3
+    ]
+   ],
+   [
+    [
+     0,
+     1,
+     3
+    ],
+    [
+     2
+    ]
+   ]
+  ],
+  "opt_self": [
+   [
+    [
+     0,
+     1,
+     2,
+     3
+    ]
+   ]
+  ],
+  "cross_regret": 0.02382067424102138
+ }
+]

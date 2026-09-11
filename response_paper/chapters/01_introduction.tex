@@ -1,0 +1,88 @@
+\section{Introduction}\label{sec:intro}
+
+The transition to mixed-autonomy traffic creates an organizational problem in addition to a control problem. Autonomous vehicles (AVs) will be dispatched by multiple firms, platforms, or routing authorities, while human-driven vehicles (HDVs) continue to respond to congestion through individual route choice. The firms need not value the same operational outcome: one may emphasize the travel time of its own fleet, another may internalize a larger share of congestion, and a third may encode reliability, energy, or service obligations. The same set of firms can therefore be operated as independent routing centers, coordinated in partial coalitions, or placed under a common dispatcher. These arrangements are not equivalent when the aggregate demand and the physical road network are held fixed.
+
+This paper studies the resulting design problem. Given a set of heterogeneous
+AV companies, when should their routing be centralized, when should partial
+independence be retained, and can a local rule select the organization without
+relying on a full ex post enumeration of partitions? The question is
+deliberately conditional. A partition and a governance rule are specified
+before routing begins; companies retain the OD obligations associated with the
+trips they have accepted; and the analysis compares the equilibria induced by
+alternative arrangements. We do not model whether firms merge or sign an
+agreement. The object of interest is the operational consequence of an
+arrangement that a platform, fleet manager, or public authority could choose
+among feasible alternatives.
+
+The need for this distinction is practical as well as theoretical. Ownership concentration statistics such as the Herfindahl--Hirschman Index (HHI) summarize who controls how much mass and are used in market-screening contexts \citep{usdojftc2023}. They do not record what those firms optimize, which firms are grouped together, how many routing decision centers remain, which OD obligations each member must preserve, or which parts of a coalition response can be offset by HDV rerouting. Consequently, two organizations with the same company HHI, coalition size, and aggregate demand can induce different network flows. The conditional design problem can be written as
+\begin{equation}
+\Pi^\star(\alpha,\theta,\gamma)\in\arg\min_{\Pi\in\mathfrak P(N)}J\!\left(x^\star(\Pi;\alpha,\theta,\gamma)\right),
+\label{eq:design-map-intro}
+\end{equation}
+where $\Pi$ is a feasible partition of the companies, $\gamma$ is a governance intensity, $\alpha$ is AV penetration, $\theta$ collects objective types, and $x^\star$ is the mixed-autonomy equilibrium induced by that arrangement. The map is a design object, not an endogenous coalition-formation equilibrium.
+
+We implement this design problem as a coalition-structured mixed Nash--Wardrop game. Each coalition is an atomic splittable player with a convex management objective, while HDVs form a nonatomic Wardrop population. All vehicles experience the same physical edge cost; heterogeneity enters through the objectives used to manage AV flows. The main treatment uses identity-preserving coordination: members may jointly choose routes, but each member must satisfy its own accepted OD demand. Operational pooling, which relaxes those member-level constraints, is analyzed separately because it changes feasible authority rather than merely changing objective aggregation. The formulation links atomic congestion games and Cournot--Wardrop interaction \citep{haurie1985,orda1993,harker1988,boulogne2002} with multiclass assignment \citep{dafermos1972} and mixed-autonomy routing \citep{mehr2019,lazar2021,biyik2021}.
+
+The model makes the transmission mechanism explicit. Demand conservation
+restricts every coalition's route response to an OD-feasible tangent. After
+this response is aggregated in edge space, HDVs can absorb any component that
+lies in their own Wardrop adjustment space. The remaining component is the
+activated coalition response. Projecting that response onto the gradient of
+system travel time produces a directional test for a proposed merge. The
+criterion distinguishes a screened regime, in which organization is locally
+neutral, from regimes in which stronger coupling raises or lowers congestion.
+In the canonical bottleneck, it also identifies an interior effective-response
+target at which partial coordination can dominate both grand and singleton
+organization.
+
+Our first contribution is a unified representation of heterogeneous coalition control in mixed-autonomy routing. The model separates the physical cost function shared by all vehicles from the company management objective, the coalition governance matrix, the number of underlying companies $n$, and the number of active coalition decision centers $K=|\Pi|$. The convex quadratic family contains independent routing, partial cross-member internalization, and common-dispatcher arrangements while preserving the OD obligations needed for a clean coalition comparison.
+
+Our second contribution is a regime theory for coalition design. Starting from
+the bordered sensitivity systems used for equilibrium networks with
+polyhedral constraints \citep{tobin1988,qiu1989,patriksson2004,josefsson2006},
+we derive the OD-restricted coalition response, aggregate it in edge space,
+and quotient it by the endogenous HDV Wardrop tangent. On a fixed affine
+support, the activated response signature is sufficient for aggregate
+equilibrium and minimal for the complete conditional response map. Its
+system-cost projection gives a general-network merge-direction score. The
+canonical bottleneck sharpens this score into a threshold theorem: complete
+HDV screening makes organization neutral, a boundary regime favors changes
+that reduce effective response, and an interior regime can favor partial
+coordination. Parametric equilibrium computation supplies the complementary
+support-traversal perspective \citep{klimm2025}.
+
+Our third contribution is a certified, regret-based selection framework. We
+evaluate one- and two-step agglomerative policies against complete
+four-company scans, using enumeration only to audit the selected partitions.
+Both policies attain a state optimum in all four Sioux Falls conditions. On
+independent Braess and directed-grid networks, the one-step rule is exact in
+$29$ of $32$ states with mean regret $0.332$ recovery points, while two-step
+lookahead is exact in all $32$ states. Across the $480$ certified
+cross-network profiles, grand coordination is preferred at lower penetration,
+whereas partial coordination emerges at high penetration under sufficiently
+strong governance on both topologies. An explicit governance-burden model
+produces calculable intervals in which grand, partial, or fragmented control is
+optimal. Composition sensitivity, company-count, spatial-exposure, and HHI
+diagnostics establish why the policy must use the response state rather than a
+mass statistic.
+
+The numerical evidence is deliberately bounded. The three networks are
+computational benchmarks, not an empirical sample of mobility markets. The
+reported rankings hold within the declared objective family,
+identity-preserving governance rule, demand portfolios, and route sets; the
+affine regime results are not asserted as global BPR theorems. The two-step
+policy's zero observed regret is a benchmark result rather than a universal
+guarantee. Pricing, passenger acceptance, empty-vehicle repositioning,
+platform profits, empirical calibration, and endogenous formation remain
+outside the paper's scope.
+
+The remainder of the paper follows this logic. Section~\ref{sec:model} defines
+the physical network, company objectives, coalition governance, equilibrium,
+and performance measures. Section~\ref{sec:response} establishes
+well-posedness, the activated response, the general merge score, and the
+canonical regimes. Section~\ref{sec:ownership} interprets coalition
+composition, governance burden, HHI, and the boundary between objective
+coordination and pooling. Section~\ref{sec:experiments} reports mechanism,
+regret, and cross-network evidence. Section~\ref{sec:discussion} discusses
+implementation and scope, and Section~\ref{sec:conclusion} summarizes the
+bounded implications.

@@ -1,0 +1,326 @@
+{
+  "protocol": {
+    "alphas": [
+      0.1,
+      0.3,
+      0.5,
+      0.7,
+      0.9
+    ],
+    "profiles_per_alpha": 100,
+    "subset_rule": "first 20 seeded draws within each Dirichlet concentration",
+    "beta_override": 1.0,
+    "alpha_0.9_source": "certified full-information decomposition rows",
+    "VI_tolerance": 1e-06,
+    "omitted_route_relative_tolerance": 1e-06,
+    "parallel_chunks": 4
+  },
+  "rows": 500,
+  "by_alpha": {
+    "0.1": {
+      "n": 100,
+      "certified_n": 100,
+      "spearman": 0.8296069606960694,
+      "kendall": 0.637979797979798,
+      "pairwise": [
+        {
+          "min_abs_delta_HHI": 0.0,
+          "eligible_pairs": 4950,
+          "inverted_pairs": 896,
+          "inversion_rate": 0.181010101010101,
+          "median_abs_delta_J": 412.4941760674119,
+          "max_abs_delta_J": 3484.139273384586,
+          "median_abs_delta_J_pct_UE": 0.0055144617023259864,
+          "max_abs_delta_J_pct_UE": 0.04657799722609727,
+          "share_inversions_over_0.10pct_UE": 0.0,
+          "share_inversions_over_0.25pct_UE": 0.0,
+          "share_inversions_over_0.50pct_UE": 0.0
+        },
+        {
+          "min_abs_delta_HHI": 0.02,
+          "eligible_pairs": 4466,
+          "inverted_pairs": 661,
+          "inversion_rate": 0.14800716524854457,
+          "median_abs_delta_J": 432.6608474571258,
+          "max_abs_delta_J": 2508.3414559410885,
+          "median_abs_delta_J_pct_UE": 0.005784061477290558,
+          "max_abs_delta_J_pct_UE": 0.03353296530635918,
+          "share_inversions_over_0.10pct_UE": 0.0,
+          "share_inversions_over_0.25pct_UE": 0.0,
+          "share_inversions_over_0.50pct_UE": 0.0
+        },
+        {
+          "min_abs_delta_HHI": 0.05,
+          "eligible_pairs": 3797,
+          "inverted_pairs": 401,
+          "inversion_rate": 0.10560969186199631,
+          "median_abs_delta_J": 402.67744942661375,
+          "max_abs_delta_J": 2300.5153415268287,
+          "median_abs_delta_J_pct_UE": 0.005383225999511996,
+          "max_abs_delta_J_pct_UE": 0.03075462511351883,
+          "share_inversions_over_0.10pct_UE": 0.0,
+          "share_inversions_over_0.25pct_UE": 0.0,
+          "share_inversions_over_0.50pct_UE": 0.0
+        }
+      ],
+      "recovery_range": [
+        0.05229212303587256,
+        0.08267637423900226
+      ],
+      "recovery_sd": 0.007379401132431557,
+      "profile_psd_pass_n": 100,
+      "profile_psd_pass_rate": 1.0,
+      "edge_psd_pass_rate": 1.0,
+      "max_exact_violation_ratio": 0.2949291858706921,
+      "coarse_bound_available": true,
+      "profile_coarse_pass_n": 100,
+      "profile_coarse_pass_rate": 1.0,
+      "edge_coarse_pass_rate": 1.0,
+      "max_coarse_violation_ratio": 0.44227454658630716
+    },
+    "0.3": {
+      "n": 100,
+      "certified_n": 100,
+      "spearman": 0.8222502250225021,
+      "kendall": 0.6254545454545455,
+      "pairwise": [
+        {
+          "min_abs_delta_HHI": 0.0,
+          "eligible_pairs": 4950,
+          "inverted_pairs": 927,
+          "inversion_rate": 0.18727272727272729,
+          "median_abs_delta_J": 1275.0117310872301,
+          "max_abs_delta_J": 14267.64973814506,
+          "median_abs_delta_J_pct_UE": 0.01704509728628956,
+          "max_abs_delta_J_pct_UE": 0.19073822766007803,
+          "share_inversions_over_0.10pct_UE": 0.017259978425026967,
+          "share_inversions_over_0.25pct_UE": 0.0,
+          "share_inversions_over_0.50pct_UE": 0.0
+        },
+        {
+          "min_abs_delta_HHI": 0.02,
+          "eligible_pairs": 4466,
+          "inverted_pairs": 689,
+          "inversion_rate": 0.15427675772503358,
+          "median_abs_delta_J": 1319.6965297367424,
+          "max_abs_delta_J": 9652.620284606703,
+          "median_abs_delta_J_pct_UE": 0.017642469625404993,
+          "max_abs_delta_J_pct_UE": 0.1290418337393924,
+          "share_inversions_over_0.10pct_UE": 0.00725689404934688,
+          "share_inversions_over_0.25pct_UE": 0.0,
+          "share_inversions_over_0.50pct_UE": 0.0
+        },
+        {
+          "min_abs_delta_HHI": 0.05,
+          "eligible_pairs": 3797,
+          "inverted_pairs": 422,
+          "inversion_rate": 0.11114037397945746,
+          "median_abs_delta_J": 1257.6078472500667,
+          "max_abs_delta_J": 9652.620284606703,
+          "median_abs_delta_J_pct_UE": 0.0168124320598208,
+          "max_abs_delta_J_pct_UE": 0.1290418337393924,
+          "share_inversions_over_0.10pct_UE": 0.004739336492890996,
+          "share_inversions_over_0.25pct_UE": 0.0,
+          "share_inversions_over_0.50pct_UE": 0.0
+        }
+      ],
+      "recovery_range": [
+        0.2192140608688528,
+        0.31815418869283385
+      ],
+      "recovery_sd": 0.02392105070607037,
+      "profile_psd_pass_n": 100,
+      "profile_psd_pass_rate": 1.0,
+      "edge_psd_pass_rate": 1.0,
+      "max_exact_violation_ratio": 0.732178134889236,
+      "coarse_bound_available": true,
+      "profile_coarse_pass_n": 91,
+      "profile_coarse_pass_rate": 0.91,
+      "edge_coarse_pass_rate": 0.9976315789473684,
+      "max_coarse_violation_ratio": 1.0982061145103448
+    },
+    "0.5": {
+      "n": 100,
+      "certified_n": 100,
+      "spearman": 0.9288928892889288,
+      "kendall": 0.787070707070707,
+      "pairwise": [
+        {
+          "min_abs_delta_HHI": 0.0,
+          "eligible_pairs": 4950,
+          "inverted_pairs": 527,
+          "inversion_rate": 0.10646464646464647,
+          "median_abs_delta_J": 2927.3911990774795,
+          "max_abs_delta_J": 19714.096583570354,
+          "median_abs_delta_J_pct_UE": 0.03913506563641941,
+          "max_abs_delta_J_pct_UE": 0.26354949212249706,
+          "share_inversions_over_0.10pct_UE": 0.21821631878557876,
+          "share_inversions_over_0.25pct_UE": 0.0018975332068311196,
+          "share_inversions_over_0.50pct_UE": 0.0
+        },
+        {
+          "min_abs_delta_HHI": 0.02,
+          "eligible_pairs": 4466,
+          "inverted_pairs": 362,
+          "inversion_rate": 0.08105687416032244,
+          "median_abs_delta_J": 2693.9741914500482,
+          "max_abs_delta_J": 14451.344783091918,
+          "median_abs_delta_J_pct_UE": 0.03601461152115295,
+          "max_abs_delta_J_pct_UE": 0.19319396970212072,
+          "share_inversions_over_0.10pct_UE": 0.19337016574585636,
+          "share_inversions_over_0.25pct_UE": 0.0,
+          "share_inversions_over_0.50pct_UE": 0.0
+        },
+        {
+          "min_abs_delta_HHI": 0.05,
+          "eligible_pairs": 3797,
+          "inverted_pairs": 183,
+          "inversion_rate": 0.048195944166447194,
+          "median_abs_delta_J": 2241.1105996686965,
+          "max_abs_delta_J": 12527.77287404798,
+          "median_abs_delta_J_pct_UE": 0.02996046802495985,
+          "max_abs_delta_J_pct_UE": 0.1674785433045384,
+          "share_inversions_over_0.10pct_UE": 0.15846994535519127,
+          "share_inversions_over_0.25pct_UE": 0.0,
+          "share_inversions_over_0.50pct_UE": 0.0
+        }
+      ],
+      "recovery_range": [
+        0.40236368887071117,
+        0.5971626239447763
+      ],
+      "recovery_sd": 0.050846466235130706,
+      "profile_psd_pass_n": 97,
+      "profile_psd_pass_rate": 0.97,
+      "edge_psd_pass_rate": 0.9992105263157894,
+      "max_exact_violation_ratio": 1.0240234206994605,
+      "coarse_bound_available": true,
+      "profile_coarse_pass_n": 65,
+      "profile_coarse_pass_rate": 0.65,
+      "edge_coarse_pass_rate": 0.9093421052631578,
+      "max_coarse_violation_ratio": 1.5359461635650382
+    },
+    "0.7": {
+      "n": 100,
+      "certified_n": 100,
+      "spearman": 0.9456945694569456,
+      "kendall": 0.7971717171717172,
+      "pairwise": [
+        {
+          "min_abs_delta_HHI": 0.0,
+          "eligible_pairs": 4950,
+          "inverted_pairs": 502,
+          "inversion_rate": 0.10141414141414141,
+          "median_abs_delta_J": 3243.12287952099,
+          "max_abs_delta_J": 21071.14913193602,
+          "median_abs_delta_J_pct_UE": 0.04335595010226997,
+          "max_abs_delta_J_pct_UE": 0.28169135869950146,
+          "share_inversions_over_0.10pct_UE": 0.20916334661354583,
+          "share_inversions_over_0.25pct_UE": 0.00398406374501992,
+          "share_inversions_over_0.50pct_UE": 0.0
+        },
+        {
+          "min_abs_delta_HHI": 0.02,
+          "eligible_pairs": 4466,
+          "inverted_pairs": 297,
+          "inversion_rate": 0.0665024630541872,
+          "median_abs_delta_J": 3547.683286528103,
+          "max_abs_delta_J": 15598.1171040982,
+          "median_abs_delta_J_pct_UE": 0.047427490497087735,
+          "max_abs_delta_J_pct_UE": 0.2085246880792043,
+          "share_inversions_over_0.10pct_UE": 0.20875420875420875,
+          "share_inversions_over_0.25pct_UE": 0.0,
+          "share_inversions_over_0.50pct_UE": 0.0
+        },
+        {
+          "min_abs_delta_HHI": 0.05,
+          "eligible_pairs": 3797,
+          "inverted_pairs": 131,
+          "inversion_rate": 0.03450092178035291,
+          "median_abs_delta_J": 3794.7325514890254,
+          "max_abs_delta_J": 13287.998131543398,
+          "median_abs_delta_J_pct_UE": 0.050730188545343696,
+          "max_abs_delta_J_pct_UE": 0.17764167604877934,
+          "share_inversions_over_0.10pct_UE": 0.1984732824427481,
+          "share_inversions_over_0.25pct_UE": 0.0,
+          "share_inversions_over_0.50pct_UE": 0.0
+        }
+      ],
+      "recovery_range": [
+        0.548331864309025,
+        0.7429009779052547
+      ],
+      "recovery_sd": 0.05532519634381814,
+      "profile_psd_pass_n": 76,
+      "profile_psd_pass_rate": 0.76,
+      "edge_psd_pass_rate": 0.9556578947368422,
+      "max_exact_violation_ratio": 1.243831730433814,
+      "coarse_bound_available": true,
+      "profile_coarse_pass_n": 40,
+      "profile_coarse_pass_rate": 0.4,
+      "edge_coarse_pass_rate": 0.6894736842105263,
+      "max_coarse_violation_ratio": 1.8655516779471986
+    },
+    "0.9": {
+      "n": 100,
+      "certified_n": 100,
+      "spearman": 0.9748454845484547,
+      "kendall": 0.8650505050505051,
+      "pairwise": [
+        {
+          "min_abs_delta_HHI": 0.0,
+          "eligible_pairs": 4950,
+          "inverted_pairs": 334,
+          "inversion_rate": 0.06747474747474748,
+          "median_abs_delta_J": 2296.892556433566,
+          "max_abs_delta_J": 16388.19969088398,
+          "median_abs_delta_J_pct_UE": 0.03070619361845382,
+          "max_abs_delta_J_pct_UE": 0.2190869709410908,
+          "share_inversions_over_0.10pct_UE": 0.0718562874251497,
+          "share_inversions_over_0.25pct_UE": 0.0,
+          "share_inversions_over_0.50pct_UE": 0.0
+        },
+        {
+          "min_abs_delta_HHI": 0.02,
+          "eligible_pairs": 4466,
+          "inverted_pairs": 180,
+          "inversion_rate": 0.040304523063143756,
+          "median_abs_delta_J": 2920.0031016035937,
+          "max_abs_delta_J": 10921.193960581906,
+          "median_abs_delta_J_pct_UE": 0.039036297258739,
+          "max_abs_delta_J_pct_UE": 0.14600086336603352,
+          "share_inversions_over_0.10pct_UE": 0.05555555555555555,
+          "share_inversions_over_0.25pct_UE": 0.0,
+          "share_inversions_over_0.50pct_UE": 0.0
+        },
+        {
+          "min_abs_delta_HHI": 0.05,
+          "eligible_pairs": 3797,
+          "inverted_pairs": 95,
+          "inversion_rate": 0.02501975243613379,
+          "median_abs_delta_J": 3306.6951184216887,
+          "max_abs_delta_J": 10921.193960581906,
+          "median_abs_delta_J_pct_UE": 0.0442058207115746,
+          "max_abs_delta_J_pct_UE": 0.14600086336603352,
+          "share_inversions_over_0.10pct_UE": 0.06315789473684211,
+          "share_inversions_over_0.25pct_UE": 0.0,
+          "share_inversions_over_0.50pct_UE": 0.0
+        }
+      ],
+      "recovery_range": [
+        0.7134035514542975,
+        0.8978245119365995
+      ],
+      "recovery_sd": 0.05151035032156434,
+      "profile_psd_pass_n": 56,
+      "profile_psd_pass_rate": 0.56,
+      "edge_psd_pass_rate": 0.7714473684210527,
+      "max_exact_violation_ratio": 1.4094478807259059,
+      "coarse_bound_available": true,
+      "profile_coarse_pass_n": 26,
+      "profile_coarse_pass_rate": 0.26,
+      "edge_coarse_pass_rate": 0.46460526315789474,
+      "max_coarse_violation_ratio": 2.114037153720912
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "model": "fixed-reference symmetric PSD coalition governance",
+  "instance": "two parallel edges, one OD, two companies, one coalition",
+  "jacobian_shape": [
+    6,
+    6
+  ],
+  "max_jacobian_symmetry_error": 1.1102230246251565e-10,
+  "max_potential_gradient_error": 3.5766047901120146e-09,
+  "min_symmetric_part_eigenvalue": 7.499542057901847e-07,
+  "passed": true
+}

@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.DS_Store
+coalition_prototype.zip
+repo_add.zip
+*.aux
+*.log
+*.out
+*.bbl
+*.blg
+*.synctex.gz
+*.fdb_latexmk
+*.fls

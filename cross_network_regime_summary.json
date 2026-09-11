@@ -1,0 +1,848 @@
+{
+  "states": [
+    {
+      "network": "braess",
+      "alpha": 0.3,
+      "gamma": 0.25,
+      "best_partition_id": "P01",
+      "best_K": 1,
+      "best_recovery": 0.3524376732416987,
+      "gain_vs_singleton_pp": 22.083025070641586,
+      "grand_regret_pp": 0.0,
+      "greedy_path": [
+        "P15",
+        "P09",
+        "P07",
+        "P01"
+      ],
+      "greedy_partition_id": "P01",
+      "greedy_regret_pp": 0.0,
+      "two_step_path": [
+        "P15",
+        "P13",
+        "P04",
+        "P01"
+      ],
+      "two_step_partition_id": "P01",
+      "two_step_regret_pp": 0.0
+    },
+    {
+      "network": "braess",
+      "alpha": 0.3,
+      "gamma": 0.5,
+      "best_partition_id": "P01",
+      "best_K": 1,
+      "best_recovery": 0.5090851312749137,
+      "gain_vs_singleton_pp": 37.747770873963084,
+      "grand_regret_pp": 0.0,
+      "greedy_path": [
+        "P15",
+        "P09",
+        "P07",
+        "P01"
+      ],
+      "greedy_partition_id": "P01",
+      "greedy_regret_pp": 0.0,
+      "two_step_path": [
+        "P15",
+        "P13",
+        "P04",
+        "P01"
+      ],
+      "two_step_partition_id": "P01",
+      "two_step_regret_pp": 0.0
+    },
+    {
+      "network": "braess",
+      "alpha": 0.3,
+      "gamma": 0.75,
+      "best_partition_id": "P01",
+      "best_K": 1,
+      "best_recovery": 0.5151089100451247,
+      "gain_vs_singleton_pp": 38.35014875098403,
+      "grand_regret_pp": 0.0,
+      "greedy_path": [
+        "P15",
+        "P09",
+        "P07",
+        "P01"
+      ],
+      "greedy_partition_id": "P01",
+      "greedy_regret_pp": 0.0,
+      "two_step_path": [
+        "P15",
+        "P13",
+        "P04",
+        "P01"
+      ],
+      "two_step_partition_id": "P01",
+      "two_step_regret_pp": 0.0
+    },
+    {
+      "network": "braess",
+      "alpha": 0.3,
+      "gamma": 1.0,
+      "best_partition_id": "P01",
+      "best_K": 1,
+      "best_recovery": 0.5151089100451247,
+      "gain_vs_singleton_pp": 38.35014875098403,
+      "grand_regret_pp": 0.0,
+      "greedy_path": [
+        "P15",
+        "P09",
+        "P07"
+      ],
+      "greedy_partition_id": "P07",
+      "greedy_regret_pp": 0.0,
+      "two_step_path": [
+        "P15",
+        "P13",
+        "P04",
+        "P01"
+      ],
+      "two_step_partition_id": "P01",
+      "two_step_regret_pp": 0.0
+    },
+    {
+      "network": "braess",
+      "alpha": 0.5,
+      "gamma": 0.25,
+      "best_partition_id": "P01",
+      "best_K": 1,
+      "best_recovery": 0.7010506590050676,
+      "gain_vs_singleton_pp": 25.88404127800723,
+      "grand_regret_pp": 0.0,
+      "greedy_path": [
+        "P15",
+        "P09",
+        "P07",
+        "P01"
+      ],
+      "greedy_partition_id": "P01",
+      "greedy_regret_pp": 0.0,
+      "two_step_path": [
+        "P15",
+        "P13",
+        "P04",
+        "P01"
+      ],
+      "two_step_partition_id": "P01",
+      "two_step_regret_pp": 0.0
+    },
+    {
+      "network": "braess",
+      "alpha": 0.5,
+      "gamma": 0.5,
+      "best_partition_id": "P01",
+      "best_K": 1,
+      "best_recovery": 0.7405877576845709,
+      "gain_vs_singleton_pp": 29.837751145957558,
+      "grand_regret_pp": 0.0,
+      "greedy_path": [
+        "P15",
+        "P09",
+        "P07"
+      ],
+      "greedy_partition_id": "P07",
+      "greedy_regret_pp": 0.0,
+      "two_step_path": [
+        "P15",
+        "P13",
+        "P04",
+        "P01"
+      ],
+      "two_step_partition_id": "P01",
+      "two_step_regret_pp": 0.0
+    },
+    {
+      "network": "braess",
+      "alpha": 0.5,
+      "gamma": 0.75,
+      "best_partition_id": "P01",
+      "best_K": 1,
+      "best_recovery": 0.7492486814493654,
+      "gain_vs_singleton_pp": 30.703843522437012,
+      "grand_regret_pp": 0.0,
+      "greedy_path": [
+        "P15",
+        "P09",
+        "P07",
+        "P01"
+      ],
+      "greedy_partition_id": "P01",
+      "greedy_regret_pp": 0.0,
+      "two_step_path": [
+        "P15",
+        "P13",
+        "P04",
+        "P01"
+      ],
+      "two_step_partition_id": "P01",
+      "two_step_regret_pp": 0.0
+    },
+    {
+      "network": "braess",
+      "alpha": 0.5,
+      "gamma": 1.0,
+      "best_partition_id": "P01",
+      "best_K": 1,
+      "best_recovery": 0.8650985168839789,
+      "gain_vs_singleton_pp": 42.28882706589836,
+      "grand_regret_pp": 0.0,
+      "greedy_path": [
+        "P15",
+        "P09",
+        "P07",
+        "P01"
+      ],
+      "greedy_partition_id": "P01",
+      "greedy_regret_pp": 0.0,
+      "two_step_path": [
+        "P15",
+        "P13",
+        "P04",
+        "P01"
+      ],
+      "two_step_partition_id": "P01",
+      "two_step_regret_pp": 0.0
+    },
+    {
+      "network": "braess",
+      "alpha": 0.7,
+      "gamma": 0.25,
+      "best_partition_id": "P01",
+      "best_K": 1,
+      "best_recovery": 0.8883813595160258,
+      "gain_vs_singleton_pp": 19.99325898580856,
+      "grand_regret_pp": 0.0,
+      "greedy_path": [
+        "P15",
+        "P09",
+        "P07",
+        "P01"
+      ],
+      "greedy_partition_id": "P01",
+      "greedy_regret_pp": 0.0,
+      "two_step_path": [
+        "P15",
+        "P13",
+        "P04",
+        "P01"
+      ],
+      "two_step_partition_id": "P01",
+      "two_step_regret_pp": 0.0
+    },
+    {
+      "network": "braess",
+      "alpha": 0.7,
+      "gamma": 0.5,
+      "best_partition_id": "P01",
+      "best_K": 1,
+      "best_recovery": 0.8883813595160258,
+      "gain_vs_singleton_pp": 19.99325898580856,
+      "grand_regret_pp": 0.0,
+      "greedy_path": [
+        "P15",
+        "P09",
+        "P07"
+      ],
+      "greedy_partition_id": "P07",
+      "greedy_regret_pp": 0.0,
+      "two_step_path": [
+        "P15",
+        "P13",
+        "P04",
+        "P01"
+      ],
+      "two_step_partition_id": "P01",
+      "two_step_regret_pp": 0.0
+    },
+    {
+      "network": "braess",
+      "alpha": 0.7,
+      "gamma": 0.75,
+      "best_partition_id": "P01",
+      "best_K": 1,
+      "best_recovery": 0.971775004061529,
+      "gain_vs_singleton_pp": 28.33262344035884,
+      "grand_regret_pp": 0.0,
+      "greedy_path": [
+        "P15",
+        "P09"
+      ],
+      "greedy_partition_id": "P09",
+      "greedy_regret_pp": 8.339364454550314,
+      "two_step_path": [
+        "P15",
+        "P12",
+        "P04",
+        "P01"
+      ],
+      "two_step_partition_id": "P01",
+      "two_step_regret_pp": 0.0
+    },
+    {
+      "network": "braess",
+      "alpha": 0.7,
+      "gamma": 1.0,
+      "best_partition_id": "P01",
+      "best_K": 1,
+      "best_recovery": 0.9995804717785598,
+      "gain_vs_singleton_pp": 31.113170212061924,
+      "grand_regret_pp": 0.0,
+      "greedy_path": [
+        "P15",
+        "P09",
+        "P07",
+        "P01"
+      ],
+      "greedy_partition_id": "P01",
+      "greedy_regret_pp": 0.0,
+      "two_step_path": [
+        "P15",
+        "P13",
+        "P04",
+        "P01"
+      ],
+      "two_step_partition_id": "P01",
+      "two_step_regret_pp": 0.0
+    },
+    {
+      "network": "braess",
+      "alpha": 0.9,
+      "gamma": 0.25,
+      "best_partition_id": "P01",
+      "best_K": 1,
+      "best_recovery": 0.9710474291864974,
+      "gain_vs_singleton_pp": 10.513744626951105,
+      "grand_regret_pp": 0.0,
+      "greedy_path": [
+        "P15",
+        "P09",
+        "P07"
+      ],
+      "greedy_partition_id": "P07",
+      "greedy_regret_pp": 0.0,
+      "two_step_path": [
+        "P15",
+        "P13",
+        "P04",
+        "P01"
+      ],
+      "two_step_partition_id": "P01",
+      "two_step_regret_pp": 0.0
+    },
+    {
+      "network": "braess",
+      "alpha": 0.9,
+      "gamma": 0.5,
+      "best_partition_id": "P01",
+      "best_K": 1,
+      "best_recovery": 0.9924616000456178,
+      "gain_vs_singleton_pp": 12.655161712863139,
+      "grand_regret_pp": 0.0,
+      "greedy_path": [
+        "P15",
+        "P09"
+      ],
+      "greedy_partition_id": "P09",
+      "greedy_regret_pp": 2.141417085912034,
+      "two_step_path": [
+        "P15",
+        "P12",
+        "P04",
+        "P01"
+      ],
+      "two_step_partition_id": "P01",
+      "two_step_regret_pp": 0.0
+    },
+    {
+      "network": "braess",
+      "alpha": 0.9,
+      "gamma": 0.75,
+      "best_partition_id": "P02",
+      "best_K": 2,
+      "best_recovery": 0.9848930661462039,
+      "gain_vs_singleton_pp": 11.898308322921746,
+      "grand_regret_pp": 2.0207200060347374,
+      "greedy_path": [
+        "P15",
+        "P09",
+        "P07"
+      ],
+      "greedy_partition_id": "P07",
+      "greedy_regret_pp": 0.0,
+      "two_step_path": [
+        "P15",
+        "P13",
+        "P07"
+      ],
+      "two_step_partition_id": "P07",
+      "two_step_regret_pp": 0.0
+    },
+    {
+      "network": "braess",
+      "alpha": 0.9,
+      "gamma": 1.0,
+      "best_partition_id": "P05",
+      "best_K": 2,
+      "best_recovery": 0.9996890795275497,
+      "gain_vs_singleton_pp": 13.37790966105633,
+      "grand_regret_pp": 18.205112281909464,
+      "greedy_path": [
+        "P15",
+        "P09",
+        "P07"
+      ],
+      "greedy_partition_id": "P07",
+      "greedy_regret_pp": 0.12959346520148296,
+      "two_step_path": [
+        "P15",
+        "P12",
+        "P05"
+      ],
+      "two_step_partition_id": "P05",
+      "two_step_regret_pp": 0.0
+    },
+    {
+      "network": "grid",
+      "alpha": 0.3,
+      "gamma": 0.25,
+      "best_partition_id": "P01",
+      "best_K": 1,
+      "best_recovery": 0.21363875856316109,
+      "gain_vs_singleton_pp": 7.100753877882193,
+      "grand_regret_pp": 0.0,
+      "greedy_path": [
+        "P15",
+        "P09",
+        "P07",
+        "P01"
+      ],
+      "greedy_partition_id": "P01",
+      "greedy_regret_pp": 0.0,
+      "two_step_path": [
+        "P15",
+        "P13",
+        "P04",
+        "P01"
+      ],
+      "two_step_partition_id": "P01",
+      "two_step_regret_pp": 0.0
+    },
+    {
+      "network": "grid",
+      "alpha": 0.3,
+      "gamma": 0.5,
+      "best_partition_id": "P01",
+      "best_K": 1,
+      "best_recovery": 0.28164982219390233,
+      "gain_vs_singleton_pp": 13.901860240956317,
+      "grand_regret_pp": 0.0,
+      "greedy_path": [
+        "P15",
+        "P09",
+        "P07",
+        "P01"
+      ],
+      "greedy_partition_id": "P01",
+      "greedy_regret_pp": 0.0,
+      "two_step_path": [
+        "P15",
+        "P13",
+        "P04",
+        "P01"
+      ],
+      "two_step_partition_id": "P01",
+      "two_step_regret_pp": 0.0
+    },
+    {
+      "network": "grid",
+      "alpha": 0.3,
+      "gamma": 0.75,
+      "best_partition_id": "P01",
+      "best_K": 1,
+      "best_recovery": 0.32931683253083005,
+      "gain_vs_singleton_pp": 18.668561274649644,
+      "grand_regret_pp": 0.0,
+      "greedy_path": [
+        "P15",
+        "P12",
+        "P04",
+        "P01"
+      ],
+      "greedy_partition_id": "P01",
+      "greedy_regret_pp": 0.0,
+      "two_step_path": [
+        "P15",
+        "P13",
+        "P04",
+        "P01"
+      ],
+      "two_step_partition_id": "P01",
+      "two_step_regret_pp": 0.0
+    },
+    {
+      "network": "grid",
+      "alpha": 0.3,
+      "gamma": 1.0,
+      "best_partition_id": "P01",
+      "best_K": 1,
+      "best_recovery": 0.3726798042043542,
+      "gain_vs_singleton_pp": 23.00485844200206,
+      "grand_regret_pp": 0.0,
+      "greedy_path": [
+        "P15",
+        "P12",
+        "P03",
+        "P01"
+      ],
+      "greedy_partition_id": "P01",
+      "greedy_regret_pp": 0.0,
+      "two_step_path": [
+        "P15",
+        "P13",
+        "P04",
+        "P01"
+      ],
+      "two_step_partition_id": "P01",
+      "two_step_regret_pp": 0.0
+    },
+    {
+      "network": "grid",
+      "alpha": 0.5,
+      "gamma": 0.25,
+      "best_partition_id": "P01",
+      "best_K": 1,
+      "best_recovery": 0.593311144073406,
+      "gain_vs_singleton_pp": 15.279421981490938,
+      "grand_regret_pp": 0.0,
+      "greedy_path": [
+        "P15",
+        "P09",
+        "P07",
+        "P01"
+      ],
+      "greedy_partition_id": "P01",
+      "greedy_regret_pp": 0.0,
+      "two_step_path": [
+        "P15",
+        "P12",
+        "P04",
+        "P01"
+      ],
+      "two_step_partition_id": "P01",
+      "two_step_regret_pp": 0.0
+    },
+    {
+      "network": "grid",
+      "alpha": 0.5,
+      "gamma": 0.5,
+      "best_partition_id": "P01",
+      "best_K": 1,
+      "best_recovery": 0.6721104261723758,
+      "gain_vs_singleton_pp": 23.15935019138792,
+      "grand_regret_pp": 0.0,
+      "greedy_path": [
+        "P15",
+        "P12",
+        "P05",
+        "P01"
+      ],
+      "greedy_partition_id": "P01",
+      "greedy_regret_pp": 0.0,
+      "two_step_path": [
+        "P15",
+        "P12",
+        "P04",
+        "P01"
+      ],
+      "two_step_partition_id": "P01",
+      "two_step_regret_pp": 0.0
+    },
+    {
+      "network": "grid",
+      "alpha": 0.5,
+      "gamma": 0.75,
+      "best_partition_id": "P01",
+      "best_K": 1,
+      "best_recovery": 0.708036194862754,
+      "gain_vs_singleton_pp": 26.751927060425462,
+      "grand_regret_pp": 0.0,
+      "greedy_path": [
+        "P15",
+        "P12",
+        "P05",
+        "P01"
+      ],
+      "greedy_partition_id": "P01",
+      "greedy_regret_pp": 0.0,
+      "two_step_path": [
+        "P15",
+        "P12",
+        "P04",
+        "P01"
+      ],
+      "two_step_partition_id": "P01",
+      "two_step_regret_pp": 0.0
+    },
+    {
+      "network": "grid",
+      "alpha": 0.5,
+      "gamma": 1.0,
+      "best_partition_id": "P01",
+      "best_K": 1,
+      "best_recovery": 0.7311350808438392,
+      "gain_vs_singleton_pp": 29.061815658533973,
+      "grand_regret_pp": 0.0,
+      "greedy_path": [
+        "P15",
+        "P12",
+        "P04",
+        "P01"
+      ],
+      "greedy_partition_id": "P01",
+      "greedy_regret_pp": 0.0,
+      "two_step_path": [
+        "P15",
+        "P12",
+        "P04",
+        "P01"
+      ],
+      "two_step_partition_id": "P01",
+      "two_step_regret_pp": 0.0
+    },
+    {
+      "network": "grid",
+      "alpha": 0.7,
+      "gamma": 0.25,
+      "best_partition_id": "P01",
+      "best_K": 1,
+      "best_recovery": 0.7849303616110554,
+      "gain_vs_singleton_pp": 14.78986278988007,
+      "grand_regret_pp": 0.0,
+      "greedy_path": [
+        "P15",
+        "P12",
+        "P04",
+        "P01"
+      ],
+      "greedy_partition_id": "P01",
+      "greedy_regret_pp": 0.0,
+      "two_step_path": [
+        "P15",
+        "P12",
+        "P04",
+        "P01"
+      ],
+      "two_step_partition_id": "P01",
+      "two_step_regret_pp": 0.0
+    },
+    {
+      "network": "grid",
+      "alpha": 0.7,
+      "gamma": 0.5,
+      "best_partition_id": "P01",
+      "best_K": 1,
+      "best_recovery": 0.8379989020956427,
+      "gain_vs_singleton_pp": 20.09671683833879,
+      "grand_regret_pp": 0.0,
+      "greedy_path": [
+        "P15",
+        "P12",
+        "P04",
+        "P01"
+      ],
+      "greedy_partition_id": "P01",
+      "greedy_regret_pp": 0.0,
+      "two_step_path": [
+        "P15",
+        "P12",
+        "P04",
+        "P01"
+      ],
+      "two_step_partition_id": "P01",
+      "two_step_regret_pp": 0.0
+    },
+    {
+      "network": "grid",
+      "alpha": 0.7,
+      "gamma": 0.75,
+      "best_partition_id": "P01",
+      "best_K": 1,
+      "best_recovery": 0.8504924975619088,
+      "gain_vs_singleton_pp": 21.34607638496522,
+      "grand_regret_pp": 0.0,
+      "greedy_path": [
+        "P15",
+        "P12",
+        "P04",
+        "P01"
+      ],
+      "greedy_partition_id": "P01",
+      "greedy_regret_pp": 0.0,
+      "two_step_path": [
+        "P15",
+        "P12",
+        "P04",
+        "P01"
+      ],
+      "two_step_partition_id": "P01",
+      "two_step_regret_pp": 0.0
+    },
+    {
+      "network": "grid",
+      "alpha": 0.7,
+      "gamma": 1.0,
+      "best_partition_id": "P01",
+      "best_K": 1,
+      "best_recovery": 0.8321050165639565,
+      "gain_vs_singleton_pp": 19.50732828516999,
+      "grand_regret_pp": 0.0,
+      "greedy_path": [
+        "P15",
+        "P12",
+        "P03",
+        "P01"
+      ],
+      "greedy_partition_id": "P01",
+      "greedy_regret_pp": 0.0,
+      "two_step_path": [
+        "P15",
+        "P12",
+        "P04",
+        "P01"
+      ],
+      "two_step_partition_id": "P01",
+      "two_step_regret_pp": 0.0
+    },
+    {
+      "network": "grid",
+      "alpha": 0.9,
+      "gamma": 0.25,
+      "best_partition_id": "P01",
+      "best_K": 1,
+      "best_recovery": 0.9672253022977595,
+      "gain_vs_singleton_pp": 11.902680755076677,
+      "grand_regret_pp": 0.0,
+      "greedy_path": [
+        "P15",
+        "P12",
+        "P04",
+        "P01"
+      ],
+      "greedy_partition_id": "P01",
+      "greedy_regret_pp": 0.0,
+      "two_step_path": [
+        "P15",
+        "P12",
+        "P04",
+        "P01"
+      ],
+      "two_step_partition_id": "P01",
+      "two_step_regret_pp": 0.0
+    },
+    {
+      "network": "grid",
+      "alpha": 0.9,
+      "gamma": 0.5,
+      "best_partition_id": "P05",
+      "best_K": 2,
+      "best_recovery": 0.9684690026838436,
+      "gain_vs_singleton_pp": 12.02705079368509,
+      "grand_regret_pp": 2.493766043009449,
+      "greedy_path": [
+        "P15",
+        "P12",
+        "P05"
+      ],
+      "greedy_partition_id": "P05",
+      "greedy_regret_pp": 0.0,
+      "two_step_path": [
+        "P15",
+        "P12",
+        "P05"
+      ],
+      "two_step_partition_id": "P05",
+      "two_step_regret_pp": 0.0
+    },
+    {
+      "network": "grid",
+      "alpha": 0.9,
+      "gamma": 0.75,
+      "best_partition_id": "P04",
+      "best_K": 2,
+      "best_recovery": 0.9784682697223563,
+      "gain_vs_singleton_pp": 13.026977497536274,
+      "grand_regret_pp": 10.172461279709044,
+      "greedy_path": [
+        "P15",
+        "P12",
+        "P04"
+      ],
+      "greedy_partition_id": "P04",
+      "greedy_regret_pp": 0.0,
+      "two_step_path": [
+        "P15",
+        "P12",
+        "P04"
+      ],
+      "two_step_partition_id": "P04",
+      "two_step_regret_pp": 0.0
+    },
+    {
+      "network": "grid",
+      "alpha": 0.9,
+      "gamma": 1.0,
+      "best_partition_id": "P03",
+      "best_K": 2,
+      "best_recovery": 0.9813431259189461,
+      "gain_vs_singleton_pp": 13.314463117195253,
+      "grand_regret_pp": 15.736223135586114,
+      "greedy_path": [
+        "P15",
+        "P12",
+        "P03"
+      ],
+      "greedy_partition_id": "P03",
+      "greedy_regret_pp": 0.0,
+      "two_step_path": [
+        "P15",
+        "P12",
+        "P03"
+      ],
+      "two_step_partition_id": "P03",
+      "two_step_regret_pp": 0.0
+    }
+  ],
+  "policy_regret_summary": {
+    "greedy_merge": {
+      "mean_recovery_regret_pp": 0.3315742189269947,
+      "max_recovery_regret_pp": 8.339364454550314,
+      "exact_state_count": 29,
+      "states": 32
+    },
+    "two_step_merge": {
+      "mean_recovery_regret_pp": 0.0,
+      "max_recovery_regret_pp": 0.0,
+      "exact_state_count": 32,
+      "states": 32
+    },
+    "always_grand": {
+      "mean_recovery_regret_pp": 1.5196338358202752,
+      "max_recovery_regret_pp": 18.205112281909464,
+      "exact_state_count": 27,
+      "states": 32
+    },
+    "always_singleton": {
+      "mean_recovery_regret_pp": 21.751959299871217,
+      "max_recovery_regret_pp": 42.28882706589836,
+      "exact_state_count": 0,
+      "states": 32
+    }
+  },
+  "certified_rows": 480,
+  "rows": 480,
+  "max_VI_gap": 9.970758081805178e-07,
+  "max_relative_omitted_route_slack": 3.7921681705776907e-16
+}

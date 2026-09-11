@@ -1,0 +1,1722 @@
+[
+ {
+  "net": "braess",
+  "alpha": 0.1,
+  "gamma": 0.25,
+  "Jstar": 319999.99999999895,
+  "optK": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "sign_acc": null,
+  "n_merges": 0,
+  "spearman": null,
+  "one_step": {
+   "regret_rel": 2.182787284255035e-15,
+   "solves": 7,
+   "K": 4
+  },
+  "two_step": {
+   "regret_rel": 2.182787284255035e-15,
+   "solves": 14,
+   "K": 4
+  },
+  "score_k1": {
+   "regret_rel": 2.182787284255035e-15,
+   "solves": 1,
+   "K": 4
+  },
+  "score_k2": {
+   "regret_rel": 2.182787284255035e-15,
+   "solves": 1,
+   "K": 4
+  },
+  "surrogate": {
+   "regret_rel": 2.182787284255035e-15,
+   "solves": 1,
+   "K": 4
+  },
+  "grand": {
+   "regret_rel": 3.637978807091725e-15,
+   "solves": 1,
+   "K": 1
+  }
+ },
+ {
+  "net": "braess",
+  "alpha": 0.1,
+  "gamma": 0.5,
+  "Jstar": 319999.99999999825,
+  "optK": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "sign_acc": null,
+  "n_merges": 0,
+  "spearman": null,
+  "one_step": {
+   "regret_rel": 4.36557456851008e-15,
+   "solves": 7,
+   "K": 4
+  },
+  "two_step": {
+   "regret_rel": 4.36557456851008e-15,
+   "solves": 14,
+   "K": 4
+  },
+  "score_k1": {
+   "regret_rel": 4.36557456851008e-15,
+   "solves": 1,
+   "K": 4
+  },
+  "score_k2": {
+   "regret_rel": 4.36557456851008e-15,
+   "solves": 1,
+   "K": 4
+  },
+  "surrogate": {
+   "regret_rel": 4.36557456851008e-15,
+   "solves": 1,
+   "K": 4
+  },
+  "grand": {
+   "regret_rel": 0.0,
+   "solves": 1,
+   "K": 1
+  }
+ },
+ {
+  "net": "braess",
+  "alpha": 0.1,
+  "gamma": 0.75,
+  "Jstar": 319999.99999999563,
+  "optK": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "sign_acc": null,
+  "n_merges": 0,
+  "spearman": null,
+  "one_step": {
+   "regret_rel": 1.2551026884466581e-14,
+   "solves": 7,
+   "K": 4
+  },
+  "two_step": {
+   "regret_rel": 1.2551026884466581e-14,
+   "solves": 14,
+   "K": 4
+  },
+  "score_k1": {
+   "regret_rel": 1.2551026884466581e-14,
+   "solves": 1,
+   "K": 4
+  },
+  "score_k2": {
+   "regret_rel": 1.2551026884466581e-14,
+   "solves": 1,
+   "K": 4
+  },
+  "surrogate": {
+   "regret_rel": 1.2551026884466581e-14,
+   "solves": 1,
+   "K": 4
+  },
+  "grand": {
+   "regret_rel": 0.0,
+   "solves": 1,
+   "K": 1
+  }
+ },
+ {
+  "net": "braess",
+  "alpha": 0.1,
+  "gamma": 1.0,
+  "Jstar": 319999.99999999965,
+  "optK": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "sign_acc": null,
+  "n_merges": 0,
+  "spearman": null,
+  "one_step": {
+   "regret_rel": 0.0,
+   "solves": 7,
+   "K": 4
+  },
+  "two_step": {
+   "regret_rel": 0.0,
+   "solves": 14,
+   "K": 4
+  },
+  "score_k1": {
+   "regret_rel": 0.0,
+   "solves": 1,
+   "K": 4
+  },
+  "score_k2": {
+   "regret_rel": 0.0,
+   "solves": 1,
+   "K": 4
+  },
+  "surrogate": {
+   "regret_rel": 0.0,
+   "solves": 1,
+   "K": 4
+  },
+  "grand": {
+   "regret_rel": 7.275957614183434e-16,
+   "solves": 1,
+   "K": 1
+  }
+ },
+ {
+  "net": "braess",
+  "alpha": 0.3,
+  "gamma": 0.25,
+  "Jstar": 313245.8669467793,
+  "optK": [
+   1
+  ],
+  "sign_acc": 0.8275862068965517,
+  "n_merges": 29,
+  "spearman": 0.7968961755235873,
+  "one_step": {
+   "regret_rel": 0.0,
+   "solves": 11,
+   "K": 1
+  },
+  "two_step": {
+   "regret_rel": 0.0,
+   "solves": 15,
+   "K": 1
+  },
+  "score_k1": {
+   "regret_rel": 0.021561762710720748,
+   "solves": 1,
+   "K": 4
+  },
+  "score_k2": {
+   "regret_rel": 0.021561762710720748,
+   "solves": 1,
+   "K": 4
+  },
+  "surrogate": {
+   "regret_rel": 0.021561762710720748,
+   "solves": 1,
+   "K": 4
+  },
+  "grand": {
+   "regret_rel": 0.0,
+   "solves": 1,
+   "K": 1
+  }
+ },
+ {
+  "net": "braess",
+  "alpha": 0.3,
+  "gamma": 0.5,
+  "Jstar": 306514.27425972413,
+  "optK": [
+   1
+  ],
+  "sign_acc": 0.7586206896551724,
+  "n_merges": 29,
+  "spearman": 0.7798029556650246,
+  "one_step": {
+   "regret_rel": 0.0,
+   "solves": 11,
+   "K": 1
+  },
+  "two_step": {
+   "regret_rel": 0.0,
+   "solves": 15,
+   "K": 1
+  },
+  "score_k1": {
+   "regret_rel": 0.04399705616596681,
+   "solves": 1,
+   "K": 4
+  },
+  "score_k2": {
+   "regret_rel": 0.04399705616596681,
+   "solves": 1,
+   "K": 4
+  },
+  "surrogate": {
+   "regret_rel": 0.04399705616596681,
+   "solves": 1,
+   "K": 4
+  },
+  "grand": {
+   "regret_rel": 0.0,
+   "solves": 1,
+   "K": 1
+  }
+ },
+ {
+  "net": "braess",
+  "alpha": 0.3,
+  "gamma": 0.75,
+  "Jstar": 301215.8281410974,
+  "optK": [
+   1
+  ],
+  "sign_acc": 0.6206896551724138,
+  "n_merges": 29,
+  "spearman": 0.7847290640394087,
+  "one_step": {
+   "regret_rel": 0.0,
+   "solves": 11,
+   "K": 1
+  },
+  "two_step": {
+   "regret_rel": 0.0,
+   "solves": 15,
+   "K": 1
+  },
+  "score_k1": {
+   "regret_rel": 0.062361171306387596,
+   "solves": 1,
+   "K": 4
+  },
+  "score_k2": {
+   "regret_rel": 0.062361171306387596,
+   "solves": 1,
+   "K": 4
+  },
+  "surrogate": {
+   "regret_rel": 0.062361171306387596,
+   "solves": 1,
+   "K": 4
+  },
+  "grand": {
+   "regret_rel": 0.0,
+   "solves": 1,
+   "K": 1
+  }
+ },
+ {
+  "net": "braess",
+  "alpha": 0.3,
+  "gamma": 1.0,
+  "Jstar": 300799.99999999977,
+  "optK": [
+   1
+  ],
+  "sign_acc": 0.6551724137931034,
+  "n_merges": 29,
+  "spearman": 0.1993101809686219,
+  "one_step": {
+   "regret_rel": 0.0,
+   "solves": 11,
+   "K": 1
+  },
+  "two_step": {
+   "regret_rel": 0.0,
+   "solves": 15,
+   "K": 1
+  },
+  "score_k1": {
+   "regret_rel": 0.0638297872340426,
+   "solves": 1,
+   "K": 4
+  },
+  "score_k2": {
+   "regret_rel": 0.0638297872340426,
+   "solves": 1,
+   "K": 4
+  },
+  "surrogate": {
+   "regret_rel": 0.0638297872340426,
+   "solves": 1,
+   "K": 4
+  },
+  "grand": {
+   "regret_rel": 0.0,
+   "solves": 1,
+   "K": 1
+  }
+ },
+ {
+  "net": "braess",
+  "alpha": 0.5,
+  "gamma": 0.25,
+  "Jstar": 298650.2059806356,
+  "optK": [
+   1
+  ],
+  "sign_acc": 1.0,
+  "n_merges": 29,
+  "spearman": 0.9781992930461098,
+  "one_step": {
+   "regret_rel": 0.0,
+   "solves": 11,
+   "K": 1
+  },
+  "two_step": {
+   "regret_rel": 0.0,
+   "solves": 15,
+   "K": 1
+  },
+  "score_k1": {
+   "regret_rel": 0.0,
+   "solves": 4,
+   "K": 1
+  },
+  "score_k2": {
+   "regret_rel": 0.0,
+   "solves": 6,
+   "K": 1
+  },
+  "surrogate": {
+   "regret_rel": 0.0,
+   "solves": 2,
+   "K": 1
+  },
+  "grand": {
+   "regret_rel": 0.0,
+   "solves": 1,
+   "K": 1
+  }
+ },
+ {
+  "net": "braess",
+  "alpha": 0.5,
+  "gamma": 0.5,
+  "Jstar": 290105.6726678672,
+  "optK": [
+   1
+  ],
+  "sign_acc": 1.0,
+  "n_merges": 29,
+  "spearman": 0.9768415865976843,
+  "one_step": {
+   "regret_rel": 0.0,
+   "solves": 11,
+   "K": 1
+  },
+  "two_step": {
+   "regret_rel": 0.0,
+   "solves": 15,
+   "K": 1
+  },
+  "score_k1": {
+   "regret_rel": 0.0,
+   "solves": 4,
+   "K": 1
+  },
+  "score_k2": {
+   "regret_rel": 0.0,
+   "solves": 6,
+   "K": 1
+  },
+  "surrogate": {
+   "regret_rel": 0.0,
+   "solves": 2,
+   "K": 1
+  },
+  "grand": {
+   "regret_rel": 0.0,
+   "solves": 1,
+   "K": 1
+  }
+ },
+ {
+  "net": "braess",
+  "alpha": 0.5,
+  "gamma": 0.75,
+  "Jstar": 290000.00000000064,
+  "optK": [
+   1
+  ],
+  "sign_acc": 1.0,
+  "n_merges": 29,
+  "spearman": 0.8408866995073889,
+  "one_step": {
+   "regret_rel": 0.0,
+   "solves": 11,
+   "K": 1
+  },
+  "two_step": {
+   "regret_rel": 0.0,
+   "solves": 15,
+   "K": 1
+  },
+  "score_k1": {
+   "regret_rel": 0.0,
+   "solves": 4,
+   "K": 1
+  },
+  "score_k2": {
+   "regret_rel": 0.0,
+   "solves": 6,
+   "K": 1
+  },
+  "surrogate": {
+   "regret_rel": 0.0,
+   "solves": 2,
+   "K": 1
+  },
+  "grand": {
+   "regret_rel": 0.0,
+   "solves": 1,
+   "K": 1
+  }
+ },
+ {
+  "net": "braess",
+  "alpha": 0.5,
+  "gamma": 1.0,
+  "Jstar": 289999.99999999994,
+  "optK": [
+   1,
+   2
+  ],
+  "sign_acc": 1.0,
+  "n_merges": 23,
+  "spearman": 0.49271066490574983,
+  "one_step": {
+   "regret_rel": 2.207876793269454e-15,
+   "solves": 11,
+   "K": 2
+  },
+  "two_step": {
+   "regret_rel": 0.0,
+   "solves": 15,
+   "K": 1
+  },
+  "score_k1": {
+   "regret_rel": 2.207876793269454e-15,
+   "solves": 4,
+   "K": 2
+  },
+  "score_k2": {
+   "regret_rel": 2.207876793269454e-15,
+   "solves": 6,
+   "K": 2
+  },
+  "surrogate": {
+   "regret_rel": 0.0,
+   "solves": 2,
+   "K": 1
+  },
+  "grand": {
+   "regret_rel": 0.0,
+   "solves": 1,
+   "K": 1
+  }
+ },
+ {
+  "net": "braess",
+  "alpha": 0.7,
+  "gamma": 0.25,
+  "Jstar": 286325.0002799505,
+  "optK": [
+   1
+  ],
+  "sign_acc": 1.0,
+  "n_merges": 29,
+  "spearman": 0.9692042669104556,
+  "one_step": {
+   "regret_rel": 0.0,
+   "solves": 11,
+   "K": 1
+  },
+  "two_step": {
+   "regret_rel": 0.0,
+   "solves": 15,
+   "K": 1
+  },
+  "score_k1": {
+   "regret_rel": 0.0,
+   "solves": 4,
+   "K": 1
+  },
+  "score_k2": {
+   "regret_rel": 0.0,
+   "solves": 6,
+   "K": 1
+  },
+  "surrogate": {
+   "regret_rel": 0.0,
+   "solves": 2,
+   "K": 1
+  },
+  "grand": {
+   "regret_rel": 0.0,
+   "solves": 1,
+   "K": 1
+  }
+ },
+ {
+  "net": "braess",
+  "alpha": 0.7,
+  "gamma": 0.5,
+  "Jstar": 280799.99999999994,
+  "optK": [
+   1
+  ],
+  "sign_acc": 1.0,
+  "n_merges": 29,
+  "spearman": 0.8747074108514478,
+  "one_step": {
+   "regret_rel": 0.0,
+   "solves": 11,
+   "K": 1
+  },
+  "two_step": {
+   "regret_rel": 0.0,
+   "solves": 15,
+   "K": 1
+  },
+  "score_k1": {
+   "regret_rel": 0.0,
+   "solves": 4,
+   "K": 1
+  },
+  "score_k2": {
+   "regret_rel": 0.0,
+   "solves": 6,
+   "K": 1
+  },
+  "surrogate": {
+   "regret_rel": 0.0,
+   "solves": 2,
+   "K": 1
+  },
+  "grand": {
+   "regret_rel": 0.0,
+   "solves": 1,
+   "K": 1
+  }
+ },
+ {
+  "net": "braess",
+  "alpha": 0.7,
+  "gamma": 0.75,
+  "Jstar": 280800.0000000001,
+  "optK": [
+   1,
+   2
+  ],
+  "sign_acc": 1.0,
+  "n_merges": 23,
+  "spearman": 0.4704719688969647,
+  "one_step": {
+   "regret_rel": 2.0729223972032543e-15,
+   "solves": 11,
+   "K": 2
+  },
+  "two_step": {
+   "regret_rel": 0.0,
+   "solves": 15,
+   "K": 1
+  },
+  "score_k1": {
+   "regret_rel": 2.487506876643905e-15,
+   "solves": 4,
+   "K": 2
+  },
+  "score_k2": {
+   "regret_rel": 2.0729223972032543e-15,
+   "solves": 6,
+   "K": 2
+  },
+  "surrogate": {
+   "regret_rel": 0.0,
+   "solves": 2,
+   "K": 1
+  },
+  "grand": {
+   "regret_rel": 0.0,
+   "solves": 1,
+   "K": 1
+  }
+ },
+ {
+  "net": "braess",
+  "alpha": 0.7,
+  "gamma": 1.0,
+  "Jstar": 277926.1884622782,
+  "optK": [
+   1
+  ],
+  "sign_acc": 0.896551724137931,
+  "n_merges": 29,
+  "spearman": 0.7450111090841937,
+  "one_step": {
+   "regret_rel": 0.0,
+   "solves": 11,
+   "K": 1
+  },
+  "two_step": {
+   "regret_rel": 0.0,
+   "solves": 15,
+   "K": 1
+  },
+  "score_k1": {
+   "regret_rel": 0.0,
+   "solves": 4,
+   "K": 1
+  },
+  "score_k2": {
+   "regret_rel": 0.0,
+   "solves": 6,
+   "K": 1
+  },
+  "surrogate": {
+   "regret_rel": 0.0,
+   "solves": 2,
+   "K": 1
+  },
+  "grand": {
+   "regret_rel": 0.0,
+   "solves": 1,
+   "K": 1
+  }
+ },
+ {
+  "net": "braess",
+  "alpha": 0.9,
+  "gamma": 0.25,
+  "Jstar": 276270.24984472455,
+  "optK": [
+   1
+  ],
+  "sign_acc": 1.0,
+  "n_merges": 29,
+  "spearman": 0.9800443756405167,
+  "one_step": {
+   "regret_rel": 0.0,
+   "solves": 11,
+   "K": 1
+  },
+  "two_step": {
+   "regret_rel": 0.0,
+   "solves": 15,
+   "K": 1
+  },
+  "score_k1": {
+   "regret_rel": 0.0,
+   "solves": 4,
+   "K": 1
+  },
+  "score_k2": {
+   "regret_rel": 0.0,
+   "solves": 6,
+   "K": 1
+  },
+  "surrogate": {
+   "regret_rel": 0.0,
+   "solves": 2,
+   "K": 1
+  },
+  "grand": {
+   "regret_rel": 0.0,
+   "solves": 1,
+   "K": 1
+  }
+ },
+ {
+  "net": "braess",
+  "alpha": 0.9,
+  "gamma": 0.5,
+  "Jstar": 273199.9999999999,
+  "optK": [
+   1,
+   2
+  ],
+  "sign_acc": 1.0,
+  "n_merges": 27,
+  "spearman": 0.910646363016852,
+  "one_step": {
+   "regret_rel": 8.522351524665803e-16,
+   "solves": 11,
+   "K": 2
+  },
+  "two_step": {
+   "regret_rel": 0.0,
+   "solves": 15,
+   "K": 1
+  },
+  "score_k1": {
+   "regret_rel": 8.522351524665803e-16,
+   "solves": 4,
+   "K": 2
+  },
+  "score_k2": {
+   "regret_rel": 8.522351524665803e-16,
+   "solves": 6,
+   "K": 2
+  },
+  "surrogate": {
+   "regret_rel": 0.0,
+   "solves": 2,
+   "K": 1
+  },
+  "grand": {
+   "regret_rel": 0.0,
+   "solves": 1,
+   "K": 1
+  }
+ },
+ {
+  "net": "braess",
+  "alpha": 0.9,
+  "gamma": 0.75,
+  "Jstar": 273200.0000000002,
+  "optK": [
+   1,
+   2
+  ],
+  "sign_acc": 1.0,
+  "n_merges": 23,
+  "spearman": 0.41699604743083,
+  "one_step": {
+   "regret_rel": 0.0,
+   "solves": 11,
+   "K": 2
+  },
+  "two_step": {
+   "regret_rel": 6.391763643499346e-16,
+   "solves": 15,
+   "K": 1
+  },
+  "score_k1": {
+   "regret_rel": 0.0,
+   "solves": 4,
+   "K": 2
+  },
+  "score_k2": {
+   "regret_rel": 0.0,
+   "solves": 6,
+   "K": 2
+  },
+  "surrogate": {
+   "regret_rel": 6.391763643499346e-16,
+   "solves": 2,
+   "K": 1
+  },
+  "grand": {
+   "regret_rel": 6.391763643499346e-16,
+   "solves": 1,
+   "K": 1
+  }
+ },
+ {
+  "net": "braess",
+  "alpha": 0.9,
+  "gamma": 1.0,
+  "Jstar": 267560.4340880776,
+  "optK": [
+   1
+  ],
+  "sign_acc": 0.8275862068965517,
+  "n_merges": 29,
+  "spearman": 0.8804039973172492,
+  "one_step": {
+   "regret_rel": 0.0,
+   "solves": 11,
+   "K": 1
+  },
+  "two_step": {
+   "regret_rel": 0.0,
+   "solves": 15,
+   "K": 1
+  },
+  "score_k1": {
+   "regret_rel": 0.0,
+   "solves": 4,
+   "K": 1
+  },
+  "score_k2": {
+   "regret_rel": 0.0,
+   "solves": 6,
+   "K": 1
+  },
+  "surrogate": {
+   "regret_rel": 0.0,
+   "solves": 2,
+   "K": 1
+  },
+  "grand": {
+   "regret_rel": 0.0,
+   "solves": 1,
+   "K": 1
+  }
+ },
+ {
+  "net": "grid",
+  "alpha": 0.1,
+  "gamma": 0.25,
+  "Jstar": 189599.66467806237,
+  "optK": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "sign_acc": null,
+  "n_merges": 0,
+  "spearman": null,
+  "one_step": {
+   "regret_rel": 3.070029739361787e-15,
+   "solves": 7,
+   "K": 4
+  },
+  "two_step": {
+   "regret_rel": 3.070029739361787e-15,
+   "solves": 14,
+   "K": 4
+  },
+  "score_k1": {
+   "regret_rel": 3.070029739361787e-15,
+   "solves": 1,
+   "K": 4
+  },
+  "score_k2": {
+   "regret_rel": 3.070029739361787e-15,
+   "solves": 1,
+   "K": 4
+  },
+  "surrogate": {
+   "regret_rel": 3.070029739361787e-15,
+   "solves": 1,
+   "K": 4
+  },
+  "grand": {
+   "regret_rel": 3.070029739361787e-15,
+   "solves": 1,
+   "K": 1
+  }
+ },
+ {
+  "net": "grid",
+  "alpha": 0.1,
+  "gamma": 0.5,
+  "Jstar": 189599.66467806243,
+  "optK": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "sign_acc": null,
+  "n_merges": 0,
+  "spearman": null,
+  "one_step": {
+   "regret_rel": 2.7630267654256075e-15,
+   "solves": 7,
+   "K": 4
+  },
+  "two_step": {
+   "regret_rel": 2.7630267654256075e-15,
+   "solves": 14,
+   "K": 4
+  },
+  "score_k1": {
+   "regret_rel": 2.7630267654256075e-15,
+   "solves": 1,
+   "K": 4
+  },
+  "score_k2": {
+   "regret_rel": 2.7630267654256075e-15,
+   "solves": 1,
+   "K": 4
+  },
+  "surrogate": {
+   "regret_rel": 2.7630267654256075e-15,
+   "solves": 1,
+   "K": 4
+  },
+  "grand": {
+   "regret_rel": 1.5350148696808931e-15,
+   "solves": 1,
+   "K": 1
+  }
+ },
+ {
+  "net": "grid",
+  "alpha": 0.1,
+  "gamma": 0.75,
+  "Jstar": 189599.66467806263,
+  "optK": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "sign_acc": null,
+  "n_merges": 0,
+  "spearman": null,
+  "one_step": {
+   "regret_rel": 1.6885163566489805e-15,
+   "solves": 7,
+   "K": 4
+  },
+  "two_step": {
+   "regret_rel": 1.6885163566489805e-15,
+   "solves": 14,
+   "K": 4
+  },
+  "score_k1": {
+   "regret_rel": 1.6885163566489805e-15,
+   "solves": 1,
+   "K": 4
+  },
+  "score_k2": {
+   "regret_rel": 1.6885163566489805e-15,
+   "solves": 1,
+   "K": 4
+  },
+  "surrogate": {
+   "regret_rel": 1.6885163566489805e-15,
+   "solves": 1,
+   "K": 4
+  },
+  "grand": {
+   "regret_rel": 1.074510408776624e-15,
+   "solves": 1,
+   "K": 1
+  }
+ },
+ {
+  "net": "grid",
+  "alpha": 0.1,
+  "gamma": 1.0,
+  "Jstar": 189599.66467806196,
+  "optK": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "sign_acc": null,
+  "n_merges": 0,
+  "spearman": null,
+  "one_step": {
+   "regret_rel": 5.219050556915049e-15,
+   "solves": 7,
+   "K": 4
+  },
+  "two_step": {
+   "regret_rel": 5.219050556915049e-15,
+   "solves": 14,
+   "K": 4
+  },
+  "score_k1": {
+   "regret_rel": 5.219050556915049e-15,
+   "solves": 1,
+   "K": 4
+  },
+  "score_k2": {
+   "regret_rel": 5.219050556915049e-15,
+   "solves": 1,
+   "K": 4
+  },
+  "surrogate": {
+   "regret_rel": 5.219050556915049e-15,
+   "solves": 1,
+   "K": 4
+  },
+  "grand": {
+   "regret_rel": 4.91204758297887e-15,
+   "solves": 1,
+   "K": 1
+  }
+ },
+ {
+  "net": "grid",
+  "alpha": 0.3,
+  "gamma": 0.25,
+  "Jstar": 189599.6646780626,
+  "optK": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "sign_acc": null,
+  "n_merges": 0,
+  "spearman": null,
+  "one_step": {
+   "regret_rel": 1.5350148696808917e-15,
+   "solves": 7,
+   "K": 4
+  },
+  "two_step": {
+   "regret_rel": 1.5350148696808917e-15,
+   "solves": 14,
+   "K": 4
+  },
+  "score_k1": {
+   "regret_rel": 1.5350148696808917e-15,
+   "solves": 1,
+   "K": 4
+  },
+  "score_k2": {
+   "regret_rel": 1.5350148696808917e-15,
+   "solves": 1,
+   "K": 4
+  },
+  "surrogate": {
+   "regret_rel": 1.5350148696808917e-15,
+   "solves": 1,
+   "K": 4
+  },
+  "grand": {
+   "regret_rel": 4.605044609042675e-16,
+   "solves": 1,
+   "K": 1
+  }
+ },
+ {
+  "net": "grid",
+  "alpha": 0.3,
+  "gamma": 0.5,
+  "Jstar": 189599.66467806243,
+  "optK": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "sign_acc": null,
+  "n_merges": 0,
+  "spearman": null,
+  "one_step": {
+   "regret_rel": 2.456023791489429e-15,
+   "solves": 7,
+   "K": 4
+  },
+  "two_step": {
+   "regret_rel": 2.456023791489429e-15,
+   "solves": 14,
+   "K": 4
+  },
+  "score_k1": {
+   "regret_rel": 2.456023791489429e-15,
+   "solves": 1,
+   "K": 4
+  },
+  "score_k2": {
+   "regret_rel": 2.456023791489429e-15,
+   "solves": 1,
+   "K": 4
+  },
+  "surrogate": {
+   "regret_rel": 2.456023791489429e-15,
+   "solves": 1,
+   "K": 4
+  },
+  "grand": {
+   "regret_rel": 3.0700297393617863e-16,
+   "solves": 1,
+   "K": 1
+  }
+ },
+ {
+  "net": "grid",
+  "alpha": 0.3,
+  "gamma": 0.75,
+  "Jstar": 189599.6646780626,
+  "optK": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "sign_acc": null,
+  "n_merges": 0,
+  "spearman": null,
+  "one_step": {
+   "regret_rel": 1.5350148696808917e-15,
+   "solves": 7,
+   "K": 4
+  },
+  "two_step": {
+   "regret_rel": 1.5350148696808917e-15,
+   "solves": 14,
+   "K": 4
+  },
+  "score_k1": {
+   "regret_rel": 1.5350148696808917e-15,
+   "solves": 1,
+   "K": 4
+  },
+  "score_k2": {
+   "regret_rel": 1.5350148696808917e-15,
+   "solves": 1,
+   "K": 4
+  },
+  "surrogate": {
+   "regret_rel": 1.5350148696808917e-15,
+   "solves": 1,
+   "K": 4
+  },
+  "grand": {
+   "regret_rel": 0.0,
+   "solves": 1,
+   "K": 1
+  }
+ },
+ {
+  "net": "grid",
+  "alpha": 0.3,
+  "gamma": 1.0,
+  "Jstar": 189599.66467806225,
+  "optK": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "sign_acc": null,
+  "n_merges": 0,
+  "spearman": null,
+  "one_step": {
+   "regret_rel": 3.377032713297968e-15,
+   "solves": 7,
+   "K": 4
+  },
+  "two_step": {
+   "regret_rel": 3.377032713297968e-15,
+   "solves": 14,
+   "K": 4
+  },
+  "score_k1": {
+   "regret_rel": 3.377032713297968e-15,
+   "solves": 1,
+   "K": 4
+  },
+  "score_k2": {
+   "regret_rel": 3.377032713297968e-15,
+   "solves": 1,
+   "K": 4
+  },
+  "surrogate": {
+   "regret_rel": 3.377032713297968e-15,
+   "solves": 1,
+   "K": 4
+  },
+  "grand": {
+   "regret_rel": 9.210089218085367e-16,
+   "solves": 1,
+   "K": 1
+  }
+ },
+ {
+  "net": "grid",
+  "alpha": 0.5,
+  "gamma": 0.25,
+  "Jstar": 189566.79874564084,
+  "optK": [
+   1
+  ],
+  "sign_acc": 1.0,
+  "n_merges": 31,
+  "spearman": 0.9735834035416981,
+  "one_step": {
+   "regret_rel": 0.0,
+   "solves": 11,
+   "K": 1
+  },
+  "two_step": {
+   "regret_rel": 0.0,
+   "solves": 15,
+   "K": 1
+  },
+  "score_k1": {
+   "regret_rel": 0.0,
+   "solves": 4,
+   "K": 1
+  },
+  "score_k2": {
+   "regret_rel": 0.0,
+   "solves": 6,
+   "K": 1
+  },
+  "surrogate": {
+   "regret_rel": 0.0,
+   "solves": 2,
+   "K": 1
+  },
+  "grand": {
+   "regret_rel": 0.0,
+   "solves": 1,
+   "K": 1
+  }
+ },
+ {
+  "net": "grid",
+  "alpha": 0.5,
+  "gamma": 0.5,
+  "Jstar": 189561.62710790202,
+  "optK": [
+   1
+  ],
+  "sign_acc": 1.0,
+  "n_merges": 31,
+  "spearman": 0.9298245803087758,
+  "one_step": {
+   "regret_rel": 0.0,
+   "solves": 11,
+   "K": 1
+  },
+  "two_step": {
+   "regret_rel": 0.0,
+   "solves": 15,
+   "K": 1
+  },
+  "score_k1": {
+   "regret_rel": 0.0,
+   "solves": 4,
+   "K": 1
+  },
+  "score_k2": {
+   "regret_rel": 0.0,
+   "solves": 6,
+   "K": 1
+  },
+  "surrogate": {
+   "regret_rel": 0.0,
+   "solves": 2,
+   "K": 1
+  },
+  "grand": {
+   "regret_rel": 0.0,
+   "solves": 1,
+   "K": 1
+  }
+ },
+ {
+  "net": "grid",
+  "alpha": 0.5,
+  "gamma": 0.75,
+  "Jstar": 189557.38421301526,
+  "optK": [
+   1
+  ],
+  "sign_acc": 1.0,
+  "n_merges": 31,
+  "spearman": 0.5576612903225807,
+  "one_step": {
+   "regret_rel": 0.0,
+   "solves": 11,
+   "K": 1
+  },
+  "two_step": {
+   "regret_rel": 0.0,
+   "solves": 15,
+   "K": 1
+  },
+  "score_k1": {
+   "regret_rel": 0.0,
+   "solves": 4,
+   "K": 1
+  },
+  "score_k2": {
+   "regret_rel": 0.0,
+   "solves": 6,
+   "K": 1
+  },
+  "surrogate": {
+   "regret_rel": 0.0,
+   "solves": 2,
+   "K": 1
+  },
+  "grand": {
+   "regret_rel": 0.0,
+   "solves": 1,
+   "K": 1
+  }
+ },
+ {
+  "net": "grid",
+  "alpha": 0.5,
+  "gamma": 1.0,
+  "Jstar": 189561.25083270328,
+  "optK": [
+   2
+  ],
+  "sign_acc": 0.45161290322580644,
+  "n_merges": 31,
+  "spearman": -0.47701612903225804,
+  "one_step": {
+   "regret_rel": 0.0,
+   "solves": 11,
+   "K": 2
+  },
+  "two_step": {
+   "regret_rel": 0.0,
+   "solves": 15,
+   "K": 2
+  },
+  "score_k1": {
+   "regret_rel": 2.9783788845967493e-05,
+   "solves": 3,
+   "K": 3
+  },
+  "score_k2": {
+   "regret_rel": 2.9783788845967493e-05,
+   "solves": 5,
+   "K": 3
+  },
+  "surrogate": {
+   "regret_rel": 6.898239145060716e-05,
+   "solves": 2,
+   "K": 1
+  },
+  "grand": {
+   "regret_rel": 6.898239145060716e-05,
+   "solves": 1,
+   "K": 1
+  }
+ },
+ {
+  "net": "grid",
+  "alpha": 0.7,
+  "gamma": 0.25,
+  "Jstar": 189515.63945956633,
+  "optK": [
+   1
+  ],
+  "sign_acc": 1.0,
+  "n_merges": 31,
+  "spearman": 0.9788263961871175,
+  "one_step": {
+   "regret_rel": 0.0,
+   "solves": 11,
+   "K": 1
+  },
+  "two_step": {
+   "regret_rel": 0.0,
+   "solves": 15,
+   "K": 1
+  },
+  "score_k1": {
+   "regret_rel": 0.0,
+   "solves": 4,
+   "K": 1
+  },
+  "score_k2": {
+   "regret_rel": 0.0,
+   "solves": 6,
+   "K": 1
+  },
+  "surrogate": {
+   "regret_rel": 0.0,
+   "solves": 2,
+   "K": 1
+  },
+  "grand": {
+   "regret_rel": 0.0,
+   "solves": 1,
+   "K": 1
+  }
+ },
+ {
+  "net": "grid",
+  "alpha": 0.7,
+  "gamma": 0.5,
+  "Jstar": 189487.78185476497,
+  "optK": [
+   1
+  ],
+  "sign_acc": 1.0,
+  "n_merges": 31,
+  "spearman": 0.9451612903225807,
+  "one_step": {
+   "regret_rel": 0.0,
+   "solves": 11,
+   "K": 1
+  },
+  "two_step": {
+   "regret_rel": 0.0,
+   "solves": 15,
+   "K": 1
+  },
+  "score_k1": {
+   "regret_rel": 0.0,
+   "solves": 4,
+   "K": 1
+  },
+  "score_k2": {
+   "regret_rel": 0.0,
+   "solves": 6,
+   "K": 1
+  },
+  "surrogate": {
+   "regret_rel": 0.0,
+   "solves": 2,
+   "K": 1
+  },
+  "grand": {
+   "regret_rel": 0.0,
+   "solves": 1,
+   "K": 1
+  }
+ },
+ {
+  "net": "grid",
+  "alpha": 0.7,
+  "gamma": 0.75,
+  "Jstar": 189476.47541012522,
+  "optK": [
+   1
+  ],
+  "sign_acc": 1.0,
+  "n_merges": 31,
+  "spearman": 0.6100806451612903,
+  "one_step": {
+   "regret_rel": 0.0,
+   "solves": 11,
+   "K": 1
+  },
+  "two_step": {
+   "regret_rel": 0.0,
+   "solves": 15,
+   "K": 1
+  },
+  "score_k1": {
+   "regret_rel": 0.0,
+   "solves": 4,
+   "K": 1
+  },
+  "score_k2": {
+   "regret_rel": 0.0,
+   "solves": 6,
+   "K": 1
+  },
+  "surrogate": {
+   "regret_rel": 0.0,
+   "solves": 2,
+   "K": 1
+  },
+  "grand": {
+   "regret_rel": 0.0,
+   "solves": 1,
+   "K": 1
+  }
+ },
+ {
+  "net": "grid",
+  "alpha": 0.7,
+  "gamma": 1.0,
+  "Jstar": 189447.54416279797,
+  "optK": [
+   1
+  ],
+  "sign_acc": 1.0,
+  "n_merges": 31,
+  "spearman": 0.4143980725514063,
+  "one_step": {
+   "regret_rel": 0.0,
+   "solves": 11,
+   "K": 1
+  },
+  "two_step": {
+   "regret_rel": 0.0,
+   "solves": 15,
+   "K": 1
+  },
+  "score_k1": {
+   "regret_rel": 0.0,
+   "solves": 4,
+   "K": 1
+  },
+  "score_k2": {
+   "regret_rel": 0.0,
+   "solves": 6,
+   "K": 1
+  },
+  "surrogate": {
+   "regret_rel": 0.0,
+   "solves": 2,
+   "K": 1
+  },
+  "grand": {
+   "regret_rel": 0.0,
+   "solves": 1,
+   "K": 1
+  }
+ },
+ {
+  "net": "grid",
+  "alpha": 0.9,
+  "gamma": 0.25,
+  "Jstar": 189460.6556381875,
+  "optK": [
+   1
+  ],
+  "sign_acc": 1.0,
+  "n_merges": 31,
+  "spearman": 0.9450549498577093,
+  "one_step": {
+   "regret_rel": 0.0,
+   "solves": 11,
+   "K": 1
+  },
+  "two_step": {
+   "regret_rel": 0.0,
+   "solves": 15,
+   "K": 1
+  },
+  "score_k1": {
+   "regret_rel": 0.0,
+   "solves": 4,
+   "K": 1
+  },
+  "score_k2": {
+   "regret_rel": 0.0,
+   "solves": 6,
+   "K": 1
+  },
+  "surrogate": {
+   "regret_rel": 0.0,
+   "solves": 2,
+   "K": 1
+  },
+  "grand": {
+   "regret_rel": 0.0,
+   "solves": 1,
+   "K": 1
+  }
+ },
+ {
+  "net": "grid",
+  "alpha": 0.9,
+  "gamma": 0.5,
+  "Jstar": 189422.27878047328,
+  "optK": [
+   1
+  ],
+  "sign_acc": 1.0,
+  "n_merges": 31,
+  "spearman": 0.8689516129032258,
+  "one_step": {
+   "regret_rel": 0.0,
+   "solves": 11,
+   "K": 1
+  },
+  "two_step": {
+   "regret_rel": 0.0,
+   "solves": 15,
+   "K": 1
+  },
+  "score_k1": {
+   "regret_rel": 0.0,
+   "solves": 4,
+   "K": 1
+  },
+  "score_k2": {
+   "regret_rel": 0.0,
+   "solves": 6,
+   "K": 1
+  },
+  "surrogate": {
+   "regret_rel": 0.0,
+   "solves": 2,
+   "K": 1
+  },
+  "grand": {
+   "regret_rel": 0.0,
+   "solves": 1,
+   "K": 1
+  }
+ },
+ {
+  "net": "grid",
+  "alpha": 0.9,
+  "gamma": 0.75,
+  "Jstar": 189393.96835814236,
+  "optK": [
+   1
+  ],
+  "sign_acc": 1.0,
+  "n_merges": 31,
+  "spearman": 0.8923170175376998,
+  "one_step": {
+   "regret_rel": 0.0,
+   "solves": 11,
+   "K": 1
+  },
+  "two_step": {
+   "regret_rel": 0.0,
+   "solves": 15,
+   "K": 1
+  },
+  "score_k1": {
+   "regret_rel": 0.0,
+   "solves": 4,
+   "K": 1
+  },
+  "score_k2": {
+   "regret_rel": 0.0,
+   "solves": 6,
+   "K": 1
+  },
+  "surrogate": {
+   "regret_rel": 0.0,
+   "solves": 2,
+   "K": 1
+  },
+  "grand": {
+   "regret_rel": 0.0,
+   "solves": 1,
+   "K": 1
+  }
+ },
+ {
+  "net": "grid",
+  "alpha": 0.9,
+  "gamma": 1.0,
+  "Jstar": 189369.1028212713,
+  "optK": [
+   1
+  ],
+  "sign_acc": 1.0,
+  "n_merges": 31,
+  "spearman": 0.8650666294792079,
+  "one_step": {
+   "regret_rel": 0.0,
+   "solves": 11,
+   "K": 1
+  },
+  "two_step": {
+   "regret_rel": 0.0,
+   "solves": 15,
+   "K": 1
+  },
+  "score_k1": {
+   "regret_rel": 0.0,
+   "solves": 4,
+   "K": 1
+  },
+  "score_k2": {
+   "regret_rel": 0.0,
+   "solves": 6,
+   "K": 1
+  },
+  "surrogate": {
+   "regret_rel": 0.0,
+   "solves": 2,
+   "K": 1
+  },
+  "grand": {
+   "regret_rel": 0.0,
+   "solves": 1,
+   "K": 1
+  }
+ }
+]
