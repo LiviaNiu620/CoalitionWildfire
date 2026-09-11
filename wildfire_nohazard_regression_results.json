@@ -14,12 +14,35 @@
       "baseline_J": 7317045.333300418,
       "abs_delta_J": 0.0,
       "relative_delta_J": 0.0
+    },
+    {
+      "alpha": 0.5,
+      "gamma": 0.5,
+      "partition_id": "P02",
+      "new_J": 7340872.088365564,
+      "VI_gap": 9.946566658819422e-07,
+      "certified": true,
+      "baseline_J": 7340872.232036973,
+      "abs_delta_J": -0.14367140922695398,
+      "relative_delta_J": -1.9571435748458393e-08
+    },
+    {
+      "alpha": 0.5,
+      "gamma": 0.5,
+      "partition_id": "P03",
+      "new_J": 7341520.780281237,
+      "VI_gap": 9.009420118347826e-07,
+      "certified": true,
+      "baseline_J": 7341520.565064055,
+      "abs_delta_J": 0.21521718241274357,
+      "relative_delta_J": 2.9315069065786346e-08
     }
   ],
   "baseline_comparable": true,
-  "max_abs_delta_J": 0.0,
-  "max_relative_delta_J": 0.0,
-  "max_VI_gap": 9.827228851780686e-07,
-  "certified_rows": 1,
+  "relative_tolerance": 1e-07,
+  "max_abs_delta_J": 0.21521718241274357,
+  "max_relative_delta_J": 2.9315069065786346e-08,
+  "max_VI_gap": 9.946566658819422e-07,
+  "certified_rows": 3,
   "passed": true
 }

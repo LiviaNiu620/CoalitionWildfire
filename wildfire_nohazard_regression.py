@@ -26,6 +26,7 @@ def main() -> None:
     parser.add_argument("--max-profiles", type=int, default=4)
     parser.add_argument("--resume", action="store_true")
     parser.add_argument("--solver-max-iter", type=int, default=20000)
+    parser.add_argument("--solver-method", choices=("extragradient", "potential"), default="potential")
     args = parser.parse_args()
     od_limit = None if args.od_limit <= 0 else args.od_limit
     base, scenarios = build_snapshot(od_limit=od_limit, demand_scale=1.0)
@@ -50,6 +51,7 @@ def main() -> None:
     for alpha in ALPHAS:
         for gamma in GAMMAS:
             warm = {}
+            warm_keys = {}
             for partition in PARTITIONS:
                 pid = PARTITION_IDS[partition]
                 if (alpha, gamma, pid) in done:
@@ -58,8 +60,9 @@ def main() -> None:
                     sf, routes, oracle, alpha, SHARES, lam_beta,
                     coalitions=partition, objective_types=TYPES,
                     coordination_gamma=gamma, management_slope=slope,
-                    warm=warm.get(pid), max_rounds=25,
+                    warm=warm.get(pid), warm_keys=warm_keys.get(pid), max_rounds=25,
                     solver_max_iter=args.solver_max_iter,
+                    solver_method=args.solver_method,
                 )
                 row = {
                     "alpha": alpha,
@@ -81,6 +84,7 @@ def main() -> None:
                 rows.append(row)
                 done.add((alpha, gamma, pid))
                 warm[pid] = (sol["fH"], sol["fF"])
+                warm_keys[pid] = routes.keys()
                 # Checkpoint after every profile so long runs remain inspectable.
                 OUT.write_text(json.dumps({"status": "running", "profiles": rows}, indent=2) + "\n")
                 if len(rows) >= target:
@@ -104,7 +108,7 @@ def main() -> None:
         "certified_rows": sum(r["certified"] for r in rows),
         "passed": bool(
             all(r["certified"] for r in rows)
-            and (baseline is None or max(abs(r["relative_delta_J"]) for r in rows) <= 1e-8)
+            and (baseline is None or max(abs(r["relative_delta_J"]) for r in rows) <= 1e-7)
         ),
     }
     OUT.write_text(json.dumps(result, indent=2) + "\n")

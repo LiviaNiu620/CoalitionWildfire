@@ -1,0 +1,16 @@
+{
+  "status": "full_od_input_identity",
+  "network": "Sioux Falls",
+  "od_count": 528,
+  "checks": {
+    "edge_count_equal": true,
+    "t0_exact": true,
+    "capacity_exact": true,
+    "od_count_equal": true,
+    "od_demand_exact": true,
+    "od_routes_exact": true,
+    "no_closed_edges": true,
+    "oracle_edge_count": true
+  },
+  "passed": true
+}
