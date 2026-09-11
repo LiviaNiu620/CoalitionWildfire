@@ -177,7 +177,8 @@ class SFGame:
                  dem_firm_override=None, coalitions=None,
                  objective_types=None, coordination_gamma=0.0,
                  management_slope=None, management_slope_mode="reference",
-                 public_edge_penalty=None, operational_pooling=False):
+                 public_edge_penalty=None, perceived_edge_penalty=None,
+                 operational_pooling=False):
         """
         kappa      : prior slope multiplier.  The prior mean slope on edge e is
                      theta_bar_e = kappa * c'_e(x^UE_e), so beta0_e =
@@ -217,14 +218,20 @@ class SFGame:
                      applied to every population. It represents a declared
                      common risk/information penalty and preserves the common
                      potential when fixed during a solve.
+        perceived_edge_penalty : explicit alias for public_edge_penalty used
+                     when separating a stale perceived state from a true
+                     physical evaluation state. At most one alias may be set.
         """
         self.sf, self.mode = sf, mode
         self.E = sf["edges"]
         self.t0, self.cap = sf["t0"], sf["cap"]
-        if public_edge_penalty is None:
+        if public_edge_penalty is not None and perceived_edge_penalty is not None:
+            raise ValueError("set only one of public_edge_penalty or perceived_edge_penalty")
+        selected_penalty = public_edge_penalty if public_edge_penalty is not None else perceived_edge_penalty
+        if selected_penalty is None:
             self.public_edge_penalty = np.zeros(self.E)
         else:
-            penalty = np.asarray(public_edge_penalty, dtype=float)
+            penalty = np.asarray(selected_penalty, dtype=float)
             if penalty.shape != (self.E,) or np.any(penalty < 0):
                 raise ValueError("public_edge_penalty must be a nonnegative length-E vector")
             self.public_edge_penalty = penalty

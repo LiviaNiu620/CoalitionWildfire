@@ -1,0 +1,112 @@
+{
+  "status": "epsilon_selection",
+  "planning_data": true,
+  "source": "wildfire_full_partition_audit_results.json",
+  "partition_count_required": 15,
+  "states": [
+    {
+      "scenario_id": "critical_edge_closure",
+      "alpha": 0.5,
+      "gamma": 0.5,
+      "critical_vc_limit": 1.75,
+      "order_cost_limit": null,
+      "feasible_count": 15,
+      "selected_partition_id": "P04",
+      "selected_K": 2,
+      "selected_J": 7660009.34166258,
+      "selected_critical_vc_max": 1.732392028967988,
+      "selected_total_av_travel_cost": 3855359.267964581
+    },
+    {
+      "scenario_id": "critical_edge_closure",
+      "alpha": 0.5,
+      "gamma": 1.0,
+      "critical_vc_limit": 1.75,
+      "order_cost_limit": null,
+      "feasible_count": 15,
+      "selected_partition_id": "P12",
+      "selected_K": 3,
+      "selected_J": 7654061.89447761,
+      "selected_critical_vc_max": 1.7355514675639208,
+      "selected_total_av_travel_cost": 3848635.7000660314
+    },
+    {
+      "scenario_id": "critical_edge_closure",
+      "alpha": 0.9,
+      "gamma": 0.5,
+      "critical_vc_limit": 1.75,
+      "order_cost_limit": null,
+      "feasible_count": 13,
+      "selected_partition_id": "P10",
+      "selected_K": 3,
+      "selected_J": 7622963.78286404,
+      "selected_critical_vc_max": 1.7473377159464127,
+      "selected_total_av_travel_cost": 6884050.351172848
+    },
+    {
+      "scenario_id": "critical_edge_closure",
+      "alpha": 0.9,
+      "gamma": 1.0,
+      "critical_vc_limit": 1.75,
+      "order_cost_limit": null,
+      "feasible_count": 14,
+      "selected_partition_id": "P15",
+      "selected_K": 4,
+      "selected_J": 7625679.213755798,
+      "selected_critical_vc_max": 1.7486790966744004,
+      "selected_total_av_travel_cost": 6882325.650976384
+    },
+    {
+      "scenario_id": "mild_capacity_degradation",
+      "alpha": 0.5,
+      "gamma": 0.5,
+      "critical_vc_limit": 1.75,
+      "order_cost_limit": null,
+      "feasible_count": 5,
+      "selected_partition_id": "P01",
+      "selected_K": 1,
+      "selected_J": 7843277.093277214,
+      "selected_critical_vc_max": 1.7400314357675721,
+      "selected_total_av_travel_cost": 3951459.5116035515
+    },
+    {
+      "scenario_id": "mild_capacity_degradation",
+      "alpha": 0.5,
+      "gamma": 1.0,
+      "critical_vc_limit": 1.75,
+      "order_cost_limit": null,
+      "feasible_count": 13,
+      "selected_partition_id": "P01",
+      "selected_K": 1,
+      "selected_J": 7845972.721791588,
+      "selected_critical_vc_max": 1.7260717125253884,
+      "selected_total_av_travel_cost": 3967175.977193079
+    },
+    {
+      "scenario_id": "mild_capacity_degradation",
+      "alpha": 0.9,
+      "gamma": 0.5,
+      "critical_vc_limit": 1.75,
+      "order_cost_limit": null,
+      "feasible_count": 4,
+      "selected_partition_id": "P07",
+      "selected_K": 2,
+      "selected_J": 7791960.787403946,
+      "selected_critical_vc_max": 1.7446518758037313,
+      "selected_total_av_travel_cost": 7037254.518030464
+    },
+    {
+      "scenario_id": "mild_capacity_degradation",
+      "alpha": 0.9,
+      "gamma": 1.0,
+      "critical_vc_limit": 1.75,
+      "order_cost_limit": null,
+      "feasible_count": 13,
+      "selected_partition_id": "P10",
+      "selected_K": 3,
+      "selected_J": 7783497.092458726,
+      "selected_critical_vc_max": 1.7453505359121217,
+      "selected_total_av_travel_cost": 7024975.086600661
+    }
+  ]
+}
