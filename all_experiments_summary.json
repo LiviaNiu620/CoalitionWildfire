@@ -1,0 +1,244 @@
+{
+  "status": "completed_experiments_summary",
+  "wildfire_full_partition": {
+    "source": "mild_and_critical",
+    "rows": 120,
+    "certified_rows": 120,
+    "states": [
+      {
+        "source": "mild_and_critical",
+        "scenario_id": "critical_edge_closure",
+        "alpha": 0.5,
+        "gamma": 0.5,
+        "best_partition_id": "P04",
+        "best_K": 2,
+        "best_J": 7660009.34166258,
+        "critical_best_partition_id": "P01",
+        "critical_best_vc": 1.7163133488599103,
+        "critical_best_J": 7672422.425305902,
+        "J_range": 23468.11361140944,
+        "critical_vc_range": 0.019014750506032074,
+        "certified_rows": 15
+      },
+      {
+        "source": "mild_and_critical",
+        "scenario_id": "critical_edge_closure",
+        "alpha": 0.5,
+        "gamma": 1.0,
+        "best_partition_id": "P12",
+        "best_K": 3,
+        "best_J": 7654061.89447761,
+        "critical_best_partition_id": "P01",
+        "critical_best_vc": 1.7063046426924895,
+        "critical_best_J": 7697933.434273467,
+        "J_range": 43871.539795857854,
+        "critical_vc_range": 0.029246824871431265,
+        "certified_rows": 15
+      },
+      {
+        "source": "mild_and_critical",
+        "scenario_id": "critical_edge_closure",
+        "alpha": 0.9,
+        "gamma": 0.5,
+        "best_partition_id": "P12",
+        "best_K": 3,
+        "best_J": 7612234.038913898,
+        "critical_best_partition_id": "P01",
+        "critical_best_vc": 1.7171294017826335,
+        "critical_best_J": 7741651.199497473,
+        "J_range": 129417.16058357526,
+        "critical_vc_range": 0.038298891781460176,
+        "certified_rows": 15
+      },
+      {
+        "source": "mild_and_critical",
+        "scenario_id": "critical_edge_closure",
+        "alpha": 0.9,
+        "gamma": 1.0,
+        "best_partition_id": "P12",
+        "best_K": 3,
+        "best_J": 7609815.11465164,
+        "critical_best_partition_id": "P02",
+        "critical_best_vc": 1.716802500392167,
+        "critical_best_J": 7763736.904350182,
+        "J_range": 334063.73595196195,
+        "critical_vc_range": 0.03912462796488381,
+        "certified_rows": 15
+      },
+      {
+        "source": "mild_and_critical",
+        "scenario_id": "mild_capacity_degradation",
+        "alpha": 0.5,
+        "gamma": 0.5,
+        "best_partition_id": "P01",
+        "best_K": 1,
+        "best_J": 7843277.093277214,
+        "critical_best_partition_id": "P07",
+        "critical_best_vc": 1.7372423585221257,
+        "critical_best_J": 7861376.435938283,
+        "J_range": 54716.95999597199,
+        "critical_vc_range": 0.019083145161628456,
+        "certified_rows": 15
+      },
+      {
+        "source": "mild_and_critical",
+        "scenario_id": "mild_capacity_degradation",
+        "alpha": 0.5,
+        "gamma": 1.0,
+        "best_partition_id": "P01",
+        "best_K": 1,
+        "best_J": 7845972.721791588,
+        "critical_best_partition_id": "P01",
+        "critical_best_vc": 1.7260717125253884,
+        "critical_best_J": 7845972.721791588,
+        "J_range": 52021.33183306828,
+        "critical_vc_range": 0.031874023624475,
+        "certified_rows": 15
+      },
+      {
+        "source": "mild_and_critical",
+        "scenario_id": "mild_capacity_degradation",
+        "alpha": 0.9,
+        "gamma": 0.5,
+        "best_partition_id": "P12",
+        "best_K": 3,
+        "best_J": 7774273.623902395,
+        "critical_best_partition_id": "P01",
+        "critical_best_vc": 1.7412995863186658,
+        "critical_best_J": 7807503.910543423,
+        "J_range": 33230.28664102778,
+        "critical_vc_range": 0.026563484298867124,
+        "certified_rows": 15
+      },
+      {
+        "source": "mild_and_critical",
+        "scenario_id": "mild_capacity_degradation",
+        "alpha": 0.9,
+        "gamma": 1.0,
+        "best_partition_id": "P12",
+        "best_K": 3,
+        "best_J": 7770825.254442303,
+        "critical_best_partition_id": "P01",
+        "critical_best_vc": 1.7153548361459767,
+        "critical_best_J": 7903149.193323021,
+        "J_range": 132323.93888071738,
+        "critical_vc_range": 0.056116286082416034,
+        "certified_rows": 15
+      }
+    ]
+  },
+  "wildfire_multiple_corridor": {
+    "source": "multiple_corridor",
+    "rows": 60,
+    "certified_rows": 60,
+    "states": [
+      {
+        "source": "multiple_corridor",
+        "scenario_id": "multiple_corridor_degradation",
+        "alpha": 0.5,
+        "gamma": 0.5,
+        "best_partition_id": "P06",
+        "best_K": 2,
+        "best_J": 9953419.671425683,
+        "critical_best_partition_id": "P01",
+        "critical_best_vc": 1.8138752106202858,
+        "critical_best_J": 9955552.131333767,
+        "J_range": 7367.4113967921585,
+        "critical_vc_range": 0.005105548736907606,
+        "certified_rows": 15
+      },
+      {
+        "source": "multiple_corridor",
+        "scenario_id": "multiple_corridor_degradation",
+        "alpha": 0.5,
+        "gamma": 1.0,
+        "best_partition_id": "P12",
+        "best_K": 3,
+        "best_J": 9953668.818315824,
+        "critical_best_partition_id": "P01",
+        "critical_best_vc": 1.8134697360154448,
+        "critical_best_J": 9962641.818894355,
+        "J_range": 10082.517080707476,
+        "critical_vc_range": 0.00586340560410914,
+        "certified_rows": 15
+      },
+      {
+        "source": "multiple_corridor",
+        "scenario_id": "multiple_corridor_degradation",
+        "alpha": 0.9,
+        "gamma": 0.5,
+        "best_partition_id": "P12",
+        "best_K": 3,
+        "best_J": 9888772.871950174,
+        "critical_best_partition_id": "P15",
+        "critical_best_vc": 1.8337709549318746,
+        "critical_best_J": 9892918.469384693,
+        "J_range": 31705.34511191584,
+        "critical_vc_range": 0.014308384651949835,
+        "certified_rows": 15
+      },
+      {
+        "source": "multiple_corridor",
+        "scenario_id": "multiple_corridor_degradation",
+        "alpha": 0.9,
+        "gamma": 1.0,
+        "best_partition_id": "P15",
+        "best_K": 4,
+        "best_J": 9892918.467131458,
+        "critical_best_partition_id": "P11",
+        "critical_best_vc": 1.831756279338515,
+        "critical_best_J": 9896812.822503433,
+        "J_range": 84663.79643757455,
+        "critical_vc_range": 0.017791973274187134,
+        "certified_rows": 15
+      }
+    ]
+  },
+  "information_delay": [
+    {
+      "information_case": "perfect",
+      "rows": 60,
+      "certified_rows": 60,
+      "mean_physical_J": 386717.7791759397,
+      "mean_true_risk_cost": 39181.644895889265,
+      "mean_critical_vc": 1.1437575990115327
+    },
+    {
+      "information_case": "stale_half",
+      "rows": 60,
+      "certified_rows": 60,
+      "mean_physical_J": 381092.9906192029,
+      "mean_true_risk_cost": 42865.37148557967,
+      "mean_critical_vc": 1.180314695329439
+    },
+    {
+      "information_case": "stale_none",
+      "rows": 60,
+      "certified_rows": 60,
+      "mean_physical_J": 381658.30234380555,
+      "mean_true_risk_cost": 45002.24101389864,
+      "mean_critical_vc": 1.2487480415270247
+    }
+  ],
+  "merge_score_prototype": {
+    "prototype/exp_pred_n6.json": {
+      "rows": 24,
+      "gamma_05_sign_accuracy_mean": 0.9928375912408759,
+      "gamma_05_pred2_k2_exact": 12,
+      "gamma_05_pred2_k2_mean_solves": 13.166666666666666,
+      "gamma_1_sign_accuracy_mean": 0.4033997126835205
+    },
+    "prototype/exp_pred_n8.json": {
+      "rows": 4,
+      "gamma_05_sign_accuracy_mean": 0.9852941176470589,
+      "gamma_05_pred2_k2_exact": 4,
+      "gamma_05_pred2_k2_mean_solves": 19.5,
+      "gamma_1_sign_accuracy_mean": null
+    }
+  },
+  "interpretation": {
+    "full_partition": "Hazard topology and AV share change the TSTT-best coalition structure; critical-v/c constrained choices can differ.",
+    "information": "Stale public risk information lowers perceived cost but increases true risk cost and critical v/c.",
+    "merge_score": "Fixed-support prediction is strong at gamma=0.5 and unreliable near gamma=1; use fallback certification near degeneracy."
+  }
+}
