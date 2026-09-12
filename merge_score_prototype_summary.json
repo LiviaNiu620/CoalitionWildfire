@@ -1,0 +1,20 @@
+{
+  "status": "historical_prototype_summary",
+  "rerun_status": "not_rerun",
+  "reason": "The current Anaconda SciPy binary is incompatible with prototype scipy.sparse._sparsetools.",
+  "source_files": [
+    "prototype/exp_pred_n6.json",
+    "prototype/exp_pred_n8.json",
+    "prototype/exp_n6.json",
+    "prototype/exp_n8.json",
+    "prototype/test1.log",
+    "prototype/symbolic_checks_rerun.log"
+  ],
+  "evidence": {
+    "adjoint_finite_difference": "Agree to 4-5 significant digits on Braess and grid in the archived test log.",
+    "n6_gamma_0_5": "Predicted two-step reached zero regret with 13-15 solves in archived profiles.",
+    "n8_gamma_0_5": "Predicted two-step reached zero regret with 19-20 solves in archived profiles.",
+    "gamma_1": "Sign accuracy is materially lower and nonzero regret appears in archived profiles; fallback certification is required.",
+    "interpretation": "Merge score is a conditional fixed-support screening device, not a global optimizer."
+  }
+}
