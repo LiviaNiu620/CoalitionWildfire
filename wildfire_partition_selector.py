@@ -12,10 +12,12 @@ OUT = Path("wildfire_partition_selection.json")
 
 def main() -> None:
     parser = argparse.ArgumentParser()
+    parser.add_argument("--raw", type=Path, default=RAW)
     parser.add_argument("--critical-vc-limit", type=float, default=None)
     parser.add_argument("--order-cost-limit", type=float, default=None)
     args = parser.parse_args()
-    data = json.loads(RAW.read_text())
+    raw_path = args.raw
+    data = json.loads(raw_path.read_text())
     rows = data["profiles"]
     groups = {}
     for row in rows:
@@ -44,7 +46,7 @@ def main() -> None:
     result = {
         "status": "epsilon_selection",
         "planning_data": True,
-        "source": str(RAW),
+        "source": str(raw_path),
         "partition_count_required": 15,
         "states": states,
     }

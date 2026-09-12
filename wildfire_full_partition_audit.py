@@ -20,10 +20,10 @@ TYPES = np.array([0.5, 0.5, 1.5, 1.5])
 PART_BY_ID = {PARTITION_IDS[p]: p for p in PARTITIONS}
 
 
-def write_checkpoint(meta, rows, status):
+def write_checkpoint(meta, rows, status, output):
     payload = dict(meta)
     payload.update({"status": status, "profiles": rows})
-    OUT.write_text(json.dumps(payload, indent=2) + "\n")
+    output.write_text(json.dumps(payload, indent=2) + "\n")
 
 
 def main() -> None:
@@ -33,7 +33,9 @@ def main() -> None:
     parser.add_argument("--gammas", nargs="+", type=float, default=[0.5, 1.0])
     parser.add_argument("--max-profiles", type=int, default=10_000)
     parser.add_argument("--resume", action="store_true")
+    parser.add_argument("--output", type=Path, default=OUT)
     args = parser.parse_args()
+    output = args.output
     base, catalog = build_snapshot(None, 1.0)
     total = sum(o["demand"] for o in base["od_list"])
     lam_beta = LAM_TIMES_M / (0.9 * total)
@@ -43,8 +45,8 @@ def main() -> None:
     if missing:
         raise SystemExit(f"unknown scenarios: {missing}")
     rows = []
-    if args.resume and OUT.exists():
-        old = json.loads(OUT.read_text())
+    if args.resume and output.exists():
+        old = json.loads(output.read_text())
         rows = list(old.get("profiles", []))
     done = {(r["scenario_id"], r["alpha"], r["gamma"], r["partition_id"]) for r in rows}
     target = min(args.max_profiles, len(args.scenarios) * len(args.alphas) * len(args.gammas) * len(PARTITIONS))
@@ -117,12 +119,12 @@ def main() -> None:
                     done.add(key)
                     warm[pid] = (sol["fH"], sol["fF"])
                     warm_keys[pid] = routes.keys()
-                    write_checkpoint(meta, rows, "running")
+                    write_checkpoint(meta, rows, "running", output)
                     print(f"[{len(rows)}/{target}] {key} gap={sol['gap']:.2e} cert={sol['certified']}", flush=True)
                     if len(rows) >= target:
-                        write_checkpoint(meta, rows, "complete")
+                        write_checkpoint(meta, rows, "complete", output)
                         return
-    write_checkpoint(meta, rows, "complete")
+    write_checkpoint(meta, rows, "complete", output)
 
 
 if __name__ == "__main__":
